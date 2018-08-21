@@ -8,21 +8,21 @@ User.create!([{
   password: "123456",
   first_name: "Kevin",
   last_name: "Merkel",
-  remote_photo_url: "https://fr.depositphotos.com/59095529/stock-illustration-profile-icon-male-avatar.html"
+  remote_photo_url: "https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg"
 },
 {
   email: "test2@example.com",
   password: "123456",
   first_name: "Melissa",
   last_name: "The Unicorn",
-  remote_photo_url: "http://profilepicturesdp.com/best-avatar-profile-pictures-6/"
+  remote_photo_url: "https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg"
 },
 {
   email: "test3@example.com",
   password: "123456",
   first_name: "Ed",
   last_name: "The Dear",
-  remote_photo_url: "https://fr.depositphotos.com/59095529/stock-illustration-profile-icon-male-avatar.html"
+  remote_photo_url: "https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg"
 }])
 
 Sport.create!([{
@@ -58,10 +58,10 @@ Event.create!([{
   intensity: 2,
   remote_photo_url: "https://cdn.funcheap.com/wp-content/uploads/2013/01/old-school-tiger_grande.jpg",
   price: 5,
-  location: "Templehof, Berlin"
+  address: "Templehof, Berlin",
   capacity: 100,
   user_id: 1,
-  sport_id: 1,
+  sport_id: 1
 },
 {
   title: "Skiing down La Vallée Blanche",
@@ -70,7 +70,7 @@ Event.create!([{
   intensity: 4,
   remote_photo_url: "http://www.guides-megeve.com/media/min/Vallee_blanche_1760_1024x768_maxprod.jpg",
   price: 5,
-  location: "Chamonix, France"
+  address: "Chamonix, France",
   capacity: 6,
   user_id: 2,
   sport_id: 2,
@@ -83,9 +83,81 @@ Event.create!([{
   intensity: 4,
   remote_photo_url: "http://www.bettingsites.us/wp-content/uploads/box-1024x683.jpg",
   price: 5,
-  location: "Neuköln, Berlin"
+  address: "Neuköln, Berlin",
   capacity: 15,
   user_id: 3,
+  sport_id: 3
+},
+{
+  title: "Muay Thai boxing bootcamp",
+  description: "Muay Thai is an AWESOME workout that gets you fitter and healthier, whilst teaching you street effective self-defence skills.",
+  date: "10.10.2018",
+  intensity: 4,
+  remote_photo_url: "http://www.bettingsites.us/wp-content/uploads/box-1024x683.jpg",
+  price: 5,
+  address: "Neuköln, Berlin",
+  capacity: 15,
+  user_id: 3,
+  sport_id: 1
+},
+{
+  title: "Muay Thai boxing bootcamp",
+  description: "Muay Thai is an AWESOME workout that gets you fitter and healthier, whilst teaching you street effective self-defence skills.",
+  date: "10.10.2018",
+  intensity: 4,
+  remote_photo_url: "http://www.bettingsites.us/wp-content/uploads/box-1024x683.jpg",
+  price: 5,
+  address: "Neuköln, Berlin",
+  capacity: 15,
+  user_id: 3,
+  sport_id: 2
+},
+{
+  title: "Skiing down La Vallée Blanche",
+  description: "20km offpiste on the longest glacier in Europe - with a professionnal mountain guide from the valley",
+  date: "20.12.2018",
+  intensity: 4,
+  remote_photo_url: "http://www.guides-megeve.com/media/min/Vallee_blanche_1760_1024x768_maxprod.jpg",
+  price: 5,
+  address: "Chamonix, France",
+  capacity: 6,
+  user_id: 2,
+  sport_id: 2
+},
+{
+  title: "Skiing down La Vallée Blanche",
+  description: "20km offpiste on the longest glacier in Europe - with a professionnal mountain guide from the valley",
+  date: "20.12.2018",
+  intensity: 4,
+  remote_photo_url: "http://www.guides-megeve.com/media/min/Vallee_blanche_1760_1024x768_maxprod.jpg",
+  price: 5,
+  address: "Chamonix, France",
+  capacity: 6,
+  user_id: 2,
+  sport_id: 1
+},
+{
+  title: "Pingpong tournament",
+  description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
+  date: "20.09.2018",
+  intensity: 2,
+  remote_photo_url: "https://cdn.funcheap.com/wp-content/uploads/2013/01/old-school-tiger_grande.jpg",
+  price: 5,
+  address: "Templehof, Berlin",
+  capacity: 100,
+  user_id: 1,
   sport_id: 3,
-
-}])
+},
+{
+  title: "Skiing down La Vallée Blanche",
+  description: "20km offpiste on the longest glacier in Europe - with a professionnal mountain guide from the valley",
+  date: "20.12.2018",
+  intensity: 4,
+  remote_photo_url: "http://www.guides-megeve.com/media/min/Vallee_blanche_1760_1024x768_maxprod.jpg",
+  price: 5,
+  address: "Chamonix, France",
+  capacity: 6,
+  user_id: 2,
+  sport_id: 3
+}]
+)
