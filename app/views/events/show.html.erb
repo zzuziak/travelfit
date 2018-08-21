@@ -1,0 +1,61 @@
+<div class="no-gutters">
+
+  <div class="event-info-container col-xs-12 col-md-5">
+    <div class="event-info">
+      <div class="event-creator">
+        <%= cl_image_tag @event.user.photo, class: "avatar avatar-small" %>
+        <%= @event.user.first_name %>
+        <%= @event.user.last_name %>
+      </div>
+      <div class="event-intensity">
+        <% @event.intensity.times do %>
+          <%= image_tag("muscles.svg", width: "3%", alt: "bicep", class: "img-intensity") %>
+        <% end %>
+        <% (5 - @event.intensity).times do %>
+          <%= image_tag("muscles_alt.svg", width: "3%", alt: "bicep", class: "img-intensity") %>
+        <% end %>
+      </div>
+      <div class="event-details">
+        <h3><%= @event.address %></h3>
+        <h3><%= @event.date %></h3>
+        <h3><%= @event.capacity %></h3>
+      </div>
+      <div class="event-title">
+        <h1><%= @event.title %></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="event-photo col-xs-12 col-md-7" style="background-image: linear-gradient(to right, rgba(162,162,162,1) 0%,rgba(162,162,162,1) 2%,rgba(162,162,162,0) 41%,rgba(162,162,162,0) 100%), url('<%= cl_image_path(@event.photo, width: 1120, crop: :fill) %>');">
+  </div>
+</div>
+
+
+
+<div class="event-description">
+  <%= @event.description %>
+</div>
+
+<div class="btn btn-join text-center">
+  <p class="join-event">JOIN THE EVENT</p>
+</div>
+
+<div class="event.map">
+
+</div>
+
+
+
+<div class="event-discussion">
+  <div class="event-discussion-head text-center">
+    <h2>Discussion</h2>
+  </div>
+
+</div>
+
+<div class="event-related">
+  <div class="event-related-head text-center">
+    <h2>Related Events</h2>
+  </div>
+
+</div>
