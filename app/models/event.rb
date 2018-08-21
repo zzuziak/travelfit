@@ -17,4 +17,12 @@ class Event < ApplicationRecord
   validates :address, presence: true
   validates :description, presence: true
 
+
+  include PgSearch
+  pg_search_scope :text_search,
+  against: [ :title, :description, :location, :category ],
+  using: {
+    tsearch: { prefix: true }
+  }
+
 end
