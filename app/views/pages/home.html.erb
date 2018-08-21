@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="wrapper banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'background.jpg' %>);">
+  <div class="container">
+    <div class="row">
+      <div class="call-to-action text-center hidden-xs hidden-sm">
+        <h1>Travel fit - join the club!</h1>
+      </div>
+    </div>
+
+      <%= form_tag(events_path, method: :get, class:"form-group") do %>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
+          <div class="form-inline search-flex">
+          <%= text_field_tag :address, params[:address], placeholder: "Location", class:"form-control search-stretch input-field" %>
+          </div>
+        </div>
+      </div>
+    <div class="row">
+      <div class="form-inline search-flex">
+          <div class="col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
+            <%= date_field_tag :date_from, params[:date_from], value: Time.now.strftime('%Y-%m-%d'), class: "form-control date-field datepicker", placeholder: "From" %>
+            <%= date_field_tag :date_to, params[:date_to], :value => Time.now.strftime('%Y-%m-%d'), class: "form-control date-field", placeholder: "To" %>
+            <%= submit_tag 'Search', name: nil, class:"btn search-button" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
