@@ -6,15 +6,69 @@
 .card-sport{
   margin: 0 -15px 0 0;
   height: 200px;
+  position: relative;
   h1{
     margin: 0;
     color: white;
     text-align: center;
     padding-top: 10px;
     left: 0;
+    z-index: 10;
+    mix-blend-mode: screen;
   }
 }
 
+// overlays
+
+.overlay-red {
+  background-color: rgba(255,30,30,0.6);
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.overlay-green {
+  background-color: rgba(30,230,30,0.4);
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.overlay-blue {
+  background-color: rgba(30,20,230,0.6);
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.overlay-yellow {
+  background-color: rgba(231, 184, 17, 0.6);
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.overlay-purple {
+  background-color: rgba(82, 21, 143, 0.6);
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.overlay-mint {
+  background-color: rgba(21, 143, 128, 0.6);
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
 // event specific
 
 .events-row {
