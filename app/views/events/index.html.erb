@@ -1,0 +1,30 @@
+<%= render 'shared/search_bar' %>
+
+<!-- row for each sport -->
+<div class="sport-rows">
+  <% @sports.each do |sport| %>
+    <div class="row">
+      <div class="col-xs-3">
+        <!-- fixed sport's card -->
+        <div class="card-sport" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url(<%= sport.photo %>);">
+          <h1><%= sport.category %></h1>
+        </div>
+      </div>
+      <div class="col-xs-9">
+        <div class="events-row">
+          <!-- vertical scroll with events in the category -->
+          <% sport.events.each do |event| %>
+          <%= link_to event_path(event) do %>
+            <div class="card-event" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url(<%= event.photo %>);">
+              <div class="card-event-title"><%= event.title.upcase %></div>
+              <div class="card-event-intensity"><%= event.intensity %></div>
+              <div class="card-event-address"><%= event.address %></div>
+              <div class="card-event-date"><%= event.date %></div>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
