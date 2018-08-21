@@ -12,7 +12,7 @@
         <div class="events-row">
           <!-- vertical scroll with events in the category -->
           <% sport.events.each do |event| %>
-            <%= render 'shared/event_card', event: event %>
+            <%= render 'shared/event_card', event: event, events: @events %>
 
           <% end %>
         </div>
