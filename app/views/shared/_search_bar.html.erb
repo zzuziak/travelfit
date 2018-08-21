@@ -1,0 +1,13 @@
+<%= form_tag(events_path, method: :get, class:"form-group") do %>
+    <div class="form-inline search-flex">
+      <div class="row">
+      <div class="col-xs-12">
+        <%= text_field_tag :address, params[:address], placeholder: "Location", class:"form-control search-stretch input-field" %>
+        <%= date_field_tag :date_from, params[:date_from], value: Time.now.strftime('%Y-%m-%d'), class: "form-control input-field date-field datepicker", placeholder: "From" %>
+        <%= date_field_tag :date_to, params[:date_to], :value => Time.now.strftime('%Y-%m-%d'), class: "form-control input-field date-field", placeholder: "To" %>
+        <%= submit_tag 'Search', name: nil, class:"btn search-button" %>
+      </div>
+    </div>
+  </div>
+
+<% end %>
