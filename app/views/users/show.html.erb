@@ -1,0 +1,75 @@
+<h1 class="center-title">Your Dashboard</h1>
+
+<div class="container dashboard-top">
+
+    <div class="user-picture">
+      <%= cl_image_tag @user.photo, class: "avatar" %>
+      <div class="btn btn-primary">Change profile picture</div>
+    </div>
+
+  <div class="user-summary">
+   <table>
+    <tr>
+      <td>Username: </td>
+      <td> <%= @user.first_name %> <%= @user.last_name %></td>
+    </tr>
+    <tr>
+      <td>Email: </td>
+      <td><%=@user.email %></td>
+    </tr>
+    <tr>
+      <td>Sports: </td>
+      <% @user.user_sports.each do |user_sport| %>
+      <tr>
+        <td><%= user_sport.sport.category %></td>
+        <td><%= user_sport.favourite %></td>
+        <td><%= user_sport.level %></td>
+        <td><input id="ex13" type="text" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["beginner", "getting there", "good", "confirmed", "ninja"]'/>
+      </td>
+      </tr>
+      <% end %>
+    </tr>
+   </table>
+  </div>
+</div>
+
+
+<h2 class="center-title">Your Events</h2>
+
+<% @user.participations.each do |participation| %>
+
+  <div class="user-event">
+
+    <div class="event-details">
+
+        <div class="event-summary">
+         <h3><%= participation.event.title %></h3>
+         <p><i class="fas fa-calendar-alt"></i><%= participation.event.date %></p>
+         <div class="event-intensity">
+           <% participation.event.intensity.times do %>
+           <%= image_tag("muscles.svg", width: "3%", alt: "bicep", class: "img-intensity") %>
+           <% end %>
+           <% (5 - participation.event.intensity).times do %>
+           <%= image_tag("muscles_alt.svg", width: "3%", alt: "bicep", class: "img-intensity") %>
+           <% end %>
+           <p><i class="fas fa-map-marker-alt"></i><%= participation.event.address %></p>
+         </div>
+
+       </div>
+
+       <div class="event-description">
+         <p><%= participation.event.description %></p>
+       </div>
+
+   </div>
+
+   <div class="event-picture">
+    <%= cl_image_tag participation.event.photo, crop: :crop, class:"event-cover" %>
+  </div>
+</div>
+
+<% end %>
+
+
+
+

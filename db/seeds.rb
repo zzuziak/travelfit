@@ -1,6 +1,7 @@
 User.delete_all
 Sport.delete_all
 Participation.delete_all
+UserSport.delete_all
 
 
 User.create!([{
@@ -56,7 +57,7 @@ Event.create!([{
   description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
   date: "20.09.2018",
   intensity: 2,
-  remote_photo_url: "https://cdn.funcheap.com/wp-content/uploads/2013/01/old-school-tiger_grande.jpg",
+  remote_photo_url: "http://www.keepintheloop.uk/wp-content/uploads/2016/04/heroes-1920x960-1.jpg",
   price: 5,
   address: "Templehof, Berlin",
   capacity: 100,
@@ -73,8 +74,7 @@ Event.create!([{
   address: "Chamonix, France",
   capacity: 6,
   user_id: 2,
-  sport_id: 2,
-
+  sport_id: 2
 },
 {
   title: "Muay Thai boxing bootcamp",
@@ -101,27 +101,27 @@ Event.create!([{
   sport_id: 1
 },
 {
-  title: "Muay Thai boxing bootcamp",
-  description: "Muay Thai is an AWESOME workout that gets you fitter and healthier, whilst teaching you street effective self-defence skills.",
-  date: "10.10.2018",
-  intensity: 4,
-  remote_photo_url: "http://www.bettingsites.us/wp-content/uploads/box-1024x683.jpg",
+  title: "Canoeing tour",
+  description: "The spree river and its numerous canals run through many famous sights in Berlin such as the TV-tower, the Molecule Men or the Oberbaum-Bridge. Paddle with us through Berlin and be surprised by the wonderful scene!",
+  date: "08.09.2018",
+  intensity: 2,
+  remote_photo_url: "https://berlinonbike.de/wp-content/gallery/canoe/berlin-boat-tour-canoe-alex-tv-tower.jpg",
   price: 5,
-  address: "Neuköln, Berlin",
+  address: "Mitte, Berlin",
   capacity: 15,
-  user_id: 3,
+  user_id: 1,
   sport_id: 2
 },
 {
-  title: "Skiing down La Vallée Blanche",
-  description: "20km offpiste on the longest glacier in Europe - with a professionnal mountain guide from the valley",
-  date: "20.12.2018",
-  intensity: 4,
-  remote_photo_url: "http://www.guides-megeve.com/media/min/Vallee_blanche_1760_1024x768_maxprod.jpg",
+  title: "Swimming competition in Wannsee ",
+  description: "5km swim race in open-waters across the Wannsee lake",
+  date: "28.08.2018",
+  intensity: 5,
+  remote_photo_url: "https://www.dctriclub.org/wp-content/uploads/2017/01/DCTri_2016TrainingTri.jpg",
   price: 5,
-  address: "Chamonix, France",
-  capacity: 6,
-  user_id: 2,
+  address: "Wannsee, Berlin",
+  capacity: 200,
+  user_id: 1,
   sport_id: 2
 },
 {
@@ -146,7 +146,7 @@ Event.create!([{
   address: "Templehof, Berlin",
   capacity: 100,
   user_id: 1,
-  sport_id: 3,
+  sport_id: 3
 },
 {
   title: "Skiing down La Vallée Blanche",
@@ -159,5 +159,36 @@ Event.create!([{
   capacity: 6,
   user_id: 2,
   sport_id: 3
+}]
+)
+
+Participation.create!([{
+  event_id: 1,
+  user_id: 1,
+  status: "going"
+},
+{
+  event_id: 5,
+  user_id: 1,
+  status: "interested"
+},
+{
+  event_id: 6,
+  user_id: 1,
+  status: "going"
+}]
+)
+
+UserSport.create!([{
+  user_id: 1,
+  sport_id: 2,
+  level: 5,
+  favourite: true
+},
+{
+  user_id: 1,
+  sport_id: 1,
+  level: 1,
+  favourite: false
 }]
 )
