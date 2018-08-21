@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     authorize @user
     @events = current_user.participations
-    @sports = current_user.sports
+    @user_sports = current_user.user_sports
   end
 
   private

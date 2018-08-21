@@ -1,6 +1,7 @@
 User.delete_all
 Sport.delete_all
 Participation.delete_all
+UserSport.delete_all
 
 
 User.create!([{
@@ -56,7 +57,7 @@ Event.create!([{
   description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
   date: "20.09.2018",
   intensity: 2,
-  remote_photo_url: "https://cdn.funcheap.com/wp-content/uploads/2013/01/old-school-tiger_grande.jpg",
+  remote_photo_url: "http://www.keepintheloop.uk/wp-content/uploads/2016/04/heroes-1920x960-1.jpg",
   price: 5,
   address: "Templehof, Berlin",
   capacity: 100,
@@ -158,5 +159,36 @@ Event.create!([{
   capacity: 6,
   user_id: 2,
   sport_id: 3
+}]
+)
+
+Participation.create!([{
+  event_id: 1,
+  user_id: 1,
+  status: "going"
+},
+{
+  event_id: 5,
+  user_id: 1,
+  status: "interested"
+},
+{
+  event_id: 6,
+  user_id: 1,
+  status: "going"
+}]
+)
+
+UserSport.create!([{
+  user_id: 1,
+  sport_id: 2,
+  level: 5,
+  favourite: true
+},
+{
+  user_id: 1,
+  sport_id: 1,
+  level: 1,
+  favourite: false
 }]
 )

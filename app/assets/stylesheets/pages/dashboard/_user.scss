@@ -1,0 +1,65 @@
+.fas {
+  padding: 10px;
+}
+
+.fab {
+  padding: 10px;
+}
+
+.dashboard-top {
+  background-color: white;
+  display:flex;
+  justify-elements: space-between;
+}
+
+.user-picture {
+  display:flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.user-summary {
+  padding: 20px
+}
+
+.user-event {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  background-color: white;
+}
+
+.event-details {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.event-summary {
+  flex: 0 0 50%;
+}
+
+.event-description {
+  flex: 0 0 50%;
+  padding: 10px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+}
+
+.event-summary {
+  text-align: center;
+}
+
+.event-cover {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-position: center;
+}
+
+.center-title {
+  text-align: center;
+}
