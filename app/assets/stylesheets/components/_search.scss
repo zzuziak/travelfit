@@ -1,0 +1,41 @@
+.search-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-stretch {
+  flex: 1 0 auto;
+}
+
+.input-field {
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  height: 50px;
+  color: rgb(20, 20, 20);
+  margin-right: 10px;
+  font-size: 20px;
+  font-family: 'Cairo', sans-serif;
+  letter-spacing: 1px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.input-field::placeholder {
+  color: rgba(1, 1, 1, 0.4);
+}
+
+.date-field {
+  flex: 0 0 15%;
+}
+
+.search-button {
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+  background-color: $orange;
+  color: white;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 'Cairo', sans-serif;
+}
