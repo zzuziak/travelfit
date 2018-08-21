@@ -1,12 +1,67 @@
 .event-info-container {
-  height: 45vh;
+  height: 50vh;
   padding-right: 0px;
   padding-left: 0px;
-  background-color: rgba(162,162,162,1);
-  color: white;
+  background-color: white;
+  h3 {
+    font-size: 22px;
+    margin-top: 8px;
+  }
+}
+
+.event-info {
+  padding: 30px;
+  margin-top: 30px;
 }
 
 .event-photo {
-  height: 45vh;
+  height: 50vh;
   padding: 0px;
+}
+
+.event-creator {
+  margin-top: 30px;
+}
+
+.event-intensity {
+  margin-top: 10px;
+}
+
+.event-details {
+  padding-top: 20px;
+}
+
+.desc-container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.event-description {
+  padding: 30px;
+  background-color: #F5F5F5;
+}
+
+.btn-join {
+  width: 100%;
+  height: 60px;
+  line-height: 48px;
+  border-radius: 0;
+  background-color: orange;
+  border-color: orange;
+}
+
+.event-discussion {
+  padding: 0px;
+}
+
+.event-discussion-head {
+  height: 60px;
+}
+
+.event-related {
+  padding: 0px;
+}
+.event-related-head {
+  background-color: white;
+  height: 60px;
 }

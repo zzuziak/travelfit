@@ -1,6 +1,6 @@
 <div class="no-gutters">
 
-  <div class="event-info-container col-xs-12 col-md-5">
+  <div class="event-info-container col-xs-12 col-md-6">
     <div class="event-info">
       <div class="event-creator">
         <%= cl_image_tag @event.user.photo, class: "avatar avatar-small" %>
@@ -9,16 +9,16 @@
       </div>
       <div class="event-intensity">
         <% @event.intensity.times do %>
-          <%= image_tag("muscles.svg", width: "3%", alt: "bicep", class: "img-intensity") %>
+          <%= image_tag("muscles.svg", width: "30px", alt: "bicep", class: "img-intensity") %>
         <% end %>
         <% (5 - @event.intensity).times do %>
-          <%= image_tag("muscles_alt.svg", width: "3%", alt: "bicep", class: "img-intensity") %>
+          <%= image_tag("muscles_alt.svg", width: "30px", alt: "bicep", class: "img-intensity") %>
         <% end %>
       </div>
       <div class="event-details">
-        <h3><%= @event.address %></h3>
-        <h3><%= @event.date %></h3>
-        <h3><%= @event.capacity %></h3>
+        <h3>Adress: <%= @event.address %></h3>
+        <h3>Date: <%= @event.date %></h3>
+        <h3>Capacity: <%= @event.participations.count %>/<%= @event.capacity %></h3>
       </div>
       <div class="event-title">
         <h1><%= @event.title %></h1>
@@ -26,34 +26,47 @@
     </div>
   </div>
 
-  <div class="event-photo col-xs-12 col-md-7" style="background-image: linear-gradient(to right, rgba(162,162,162,1) 0%,rgba(162,162,162,1) 2%,rgba(162,162,162,0) 41%,rgba(162,162,162,0) 100%), url('<%= cl_image_path(@event.photo, width: 1120, crop: :fill) %>');">
+  <div class="event-photo col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path(@event.photo, width: 1120, crop: :fill) %>');">
   </div>
 </div>
 
 
-
-<div class="event-description">
-  <%= @event.description %>
+<div class="desc-container col-xs-12 col-md-6">
+  <div class="event-description">
+    <p><%= @event.description %></p>
+  </div>
+  <div class="btn btn-join btn-success text-center">
+    <p class="join-event">JOIN THE EVENT</p>
+  </div>
 </div>
 
-<div class="btn btn-join text-center">
-  <p class="join-event">JOIN THE EVENT</p>
-</div>
-
-<div class="event.map">
-
+<div class="event-map col-xs-12 col-md-6">
+ <!--  <div id="map" class="hidden-xs" data-markers="<%= @markers.to_json %>">
+  </div> -->
 </div>
 
 
-
-<div class="event-discussion">
+<div class="event-discussion col-xs-12 col-md-9">
   <div class="event-discussion-head text-center">
     <h2>Discussion</h2>
   </div>
-
+  <% @events.posts.each do |post| %>
+    <%= cl_image_tag post.user.photo, class: "avatar avatar-small" %>
+    <%= post.user.first_name %>
+    <%= post.user.last_name %>
+    <%= post.created_at %>
+    <%= post.content %>
+    <% post.replies.each do |reply| %>
+      <%= cl_image_tag reply.user.photo, class: "avatar avatar-small" %>
+      <%= reply.user.first_name %>
+      <%= reply.user.last_name %>
+      <%= reply.created_at %>
+      <%= reply.content %>
+    <% end %>
+  <% end %>
 </div>
 
-<div class="event-related">
+<div class="event-related col-xs-12 col-md-3">
   <div class="event-related-head text-center">
     <h2>Related Events</h2>
   </div>
