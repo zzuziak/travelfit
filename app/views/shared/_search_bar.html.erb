@@ -3,8 +3,8 @@
       <div class="row">
       <div class="col-xs-12">
         <%= text_field_tag :address, params[:address], placeholder: "Location", class:"form-control search-stretch input-field" %>
-        <%= date_field_tag :date_from, params[:date_from], value: Time.now.strftime('%Y-%m-%d'), class: "form-control input-field date-field datepicker", placeholder: "From" %>
-        <%= date_field_tag :date_to, params[:date_to], :value => Time.now.strftime('%Y-%m-%d'), class: "form-control input-field date-field", placeholder: "To" %>
+        <%= date_field_tag :date_from, params[:date_from], placeholder: "FROM", class: "form-control input-field date-field datepicker" %>
+        <%= date_field_tag :date_to, params[:date_to], placeholder: "TO", class: "form-control input-field date-field" %>
         <%= submit_tag 'Search', name: nil, class:"btn search-button" %>
       </div>
     </div>

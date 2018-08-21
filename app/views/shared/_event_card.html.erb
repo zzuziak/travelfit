@@ -1,21 +1,23 @@
 <%= link_to event_path(event) do %>
-  <div class="card-event" style="background-image: url(<%= event.photo %>);">
-    <div class="<% if event.sport.category == "fitness" %>
-                  overlay-red
-                <% elsif event.sport.category == "running" %>
-                  overlay-green
-                <% elsif event.sport.category == "racket sports" %>
-                  overlay-purple
-                <% elsif event.sport.category == "teamsports" %>
-                  overlay-yellow
-                <% elsif event.sport.category == "yoga" %>
-                  overlay-mint
-                <% elsif event.sport.category == "local adventure" %>
-                  overlay-blue
-                <% end %>"></div>
-    <div class="card-event-title"><%= event.title.upcase %></div>
-    <div class="card-event-intensity"><%= event.intensity %></div>
-    <div class="card-event-address"><%= event.address %></div>
-    <div class="card-event-date"><%= event.date %></div>
-  </div>
+  <% if events.include? event %>
+    <div class="card-event" style="background-image: url(<%= event.photo %>);">
+      <div class="<% if event.sport.category == "fitness" %>
+                    overlay-red
+                  <% elsif event.sport.category == "running" %>
+                    overlay-green
+                  <% elsif event.sport.category == "racket sports" %>
+                    overlay-purple
+                  <% elsif event.sport.category == "teamsports" %>
+                    overlay-yellow
+                  <% elsif event.sport.category == "yoga" %>
+                    overlay-mint
+                  <% elsif event.sport.category == "local adventure" %>
+                    overlay-blue
+                  <% end %>"></div>
+      <div class="card-event-title"><%= event.title.upcase %></div>
+      <div class="card-event-intensity"><%= event.intensity %></div>
+      <div class="card-event-address"><%= event.address %></div>
+      <div class="card-event-date"><%= event.date %></div>
+    </div>
+  <% end %>
 <% end %>
