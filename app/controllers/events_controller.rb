@@ -8,30 +8,10 @@ class EventsController < ApplicationController
     if params[:address].present? #all events displayed if searched with no input
 
       @events = policy_scope(Event).search_address(params[:address])
-      if params[:date_from].present?
-        d = params[:date_from].split("-").map {|x| x.to_i}
-        @events = @events.select{ |event| event.date >= Date.new(d[0], d[1], d[2]) }
-      end
-      if params[:date_to].present?
-        d = params[:date_to].split("-").map {|x| x.to_i}
-        @events = @events.select{ |event| event.date <= Date.new(d[0], d[1], d[2]) }
-      end
-      if params[:free].present?
-        @events = @events.select{ |event| event.price == 0 }
-      end
+      set_search_params
     else
       @events = policy_scope(Event)
-      if params[:date_from].present?
-        d = params[:date_from].split("-").map {|x| x.to_i}
-        @events = @events.select{ |event| event.date >= Date.new(d[0], d[1], d[2])  }
-      end
-      if params[:date_to].present?
-        dt = params[:date_to].split("-").map {|x| x.to_i}
-        @events = @events.select{ |event| event.date <= Date.new(dt[0], dt[1], dt[2]) }
-      end
-      if params[:free].present?
-        @events = @events.select{ |event| event.price == 0 }
-      end
+      set_search_params
     end
 
   end
@@ -46,6 +26,20 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def set_search_params
+    if params[:date_from].present?
+      d = params[:date_from].split("-").map {|x| x.to_i}
+      @events = @events.select{ |event| event.date >= Date.new(d[0], d[1], d[2]) }
+    end
+    if params[:date_to].present?
+      d = params[:date_to].split("-").map {|x| x.to_i}
+      @events = @events.select{ |event| event.date <= Date.new(d[0], d[1], d[2]) }
+    end
+    if params[:free].present?
+      @events = @events.select{ |event| event.price == 0 }
+    end
   end
 
 end

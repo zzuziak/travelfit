@@ -1,22 +1,22 @@
 <%= form_tag(events_path, method: :get, class:"form-group") do %>
-      <div class="row">
-        <div class="col-xs-10 col-xs-offset-1">
-          <div class="form-inline search-flex">
-          <%= text_field_tag :address, params[:address], placeholder: "Location", class:"form-control search-stretch input-field" %>
-          <%= date_field_tag :date_from, params[:date_from], placeholder: "FROM", class: "form-control input-field date-field datepicker" %>
-          <%= date_field_tag :date_to, params[:date_to], placeholder: "TO", class: "form-control input-field date-field" %>
-          <!-- <div class="switch-field"> -->
-            <%= form_tag(events_path, method: :get) do %>
-            <label class="switch-label">All</label>
-            <label class="switch">
-              <%= check_box_tag :free, params[:free] %>
-              <span class="slider round"></span>
-            </label>
-            <label class="switch-label">Only free</label>
-            <% end %>
-          <!-- </div> -->
-          <%= submit_tag 'Search', name: nil, class:"btn search-button" %>
-        </div>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="form-inline search-flex">
+        <%= text_field_tag :address, params[:address], placeholder: "Location", class:"form-control search-stretch input-field" %>
+        <%= date_field_tag :date_from, params[:date_from], placeholder: "FROM", class: "form-control input-field date-field datepicker" %>
+        <%= date_field_tag :date_to, params[:date_to], placeholder: "TO", class: "form-control input-field date-field" %>
+      <!-- <div class="switch-field"> -->
+        <!-- <%= form_tag(events_path, method: :get) do %> -->
+        <label class="switch-label">All</label>
+        <label class="switch">
+          <%= check_box_tag :free, params[:free] %>
+          <span class="slider round"></span>
+        </label>
+        <label class="switch-label">Only free</label>
+        <!-- <% end %> -->
+      <!-- </div> -->
+        <%= submit_tag 'Search', name: nil, class:"btn search-button" %>
+      </div>
     </div>
   </div>
 <% end %>
