@@ -5,9 +5,9 @@ class EventsController < ApplicationController
   def index
     @sports = policy_scope(Sport)
 
-    if params[:query].present? #all events displayed if searched with no input
+    if params[:address].present? #all events displayed if searched with no input
 
-      @events = policy_scope(Event).search_address(params[:query])
+      @events = policy_scope(Event).search_address(params[:address])
       if params[:date_from].present?
         d = params[:date_from].split("-").map {|x| x.to_i}
         @events = @events.select{ |event| event.date >= Date.new(d[0], d[1], d[2]) }

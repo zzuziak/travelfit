@@ -40,3 +40,18 @@
   font-size: 20px;
   font-family: 'Cairo', sans-serif;
 }
+
+
+// index page positioning
+
+.search-index-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 100px;
+  flex-wrap: wrap;
+}
+
+.search-fields {
+  flex: 1 0 80%;
+}

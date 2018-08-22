@@ -1,4 +1,19 @@
-<%= render 'shared/search_bar' %>
+
+<div class="search-index-box">
+  <div class="search-fields">
+    <%= render 'shared/search_bar' %>
+  </div>
+  <div class="switch-field">
+      <%= form_tag(events_path, method: :get) do %>
+      <label class="switch-label">All</label>
+      <label class="switch">
+        <%= check_box_tag :paid, params[:paid] %>
+        <span class="slider round"></span>
+      </label>
+      <label class="switch-label">Only free</label>
+      <% end %>
+  </div>
+</div>
 
 <!-- row for each sport -->
 <div class="sport-rows">
