@@ -6,12 +6,16 @@ class EventsController < ApplicationController
     @sports = policy_scope(Sport)
 
     if params[:address].present? #all events displayed if searched with no input
-
       @events = policy_scope(Event).search_address(params[:address])
       set_search_params
     else
       @events = policy_scope(Event)
       set_search_params
+    end
+
+    respond_to do |format|
+      format.html { render 'events/index' }
+      format.js
     end
 
   end

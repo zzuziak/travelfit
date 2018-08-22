@@ -1,8 +1,7 @@
-const results = document.querySelector("#results")
-const filters = document.querySelectorAll("#filters")
+var results = document.querySelector("#results")
 
-filters.forEach((filter) => {
-  filter.onchange = function() {
-    results.innerHTML
-  }
-})
+function refreshResults() {
+  results.innerHTML = "<%= j render 'events/results', events: @events %>";
+}
+
+refreshResults();

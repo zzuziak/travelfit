@@ -1,21 +1,21 @@
-<%= form_tag(events_path, method: :get, class:"form-group") do %>
+<%= form_tag(events_path, method: :get, class:"form-group", remote: true, id:"search-form") do %>
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
       <div class="form-inline search-flex">
-        <%= text_field_tag :address, params[:address], placeholder: "Location", class:"form-control search-stretch input-field" %>
-        <%= date_field_tag :date_from, params[:date_from], placeholder: "FROM", class: "form-control input-field date-field datepicker" %>
-        <%= date_field_tag :date_to, params[:date_to], placeholder: "TO", class: "form-control input-field date-field" %>
+        <%= text_field_tag :address, params[:address], placeholder: "Location", id:"search-text", class:"form-control search-stretch input-field" %>
+        <%= date_field_tag :date_from, params[:date_from], placeholder: "FROM", id:"date-from", class: "form-control input-field date-field datepicker" %>
+        <%= date_field_tag :date_to, params[:date_to], placeholder: "TO", id:"date-to", class: "form-control input-field date-field" %>
       <!-- <div class="switch-field"> -->
         <!-- <%= form_tag(events_path, method: :get) do %> -->
-        <label class="switch-label">All</label>
+        <!-- <label class="switch-label">All</label> -->
         <label class="switch">
           <%= check_box_tag :free, params[:free] %>
-          <span class="slider round"></span>
+          <span id="free" class="slider round"></span>
         </label>
         <label class="switch-label">Only free</label>
         <!-- <% end %> -->
       <!-- </div> -->
-        <%= submit_tag 'Search', name: nil, class:"btn search-button" %>
+        <%= submit_tag 'Search', name: nil, class:"btn search-button", id:"submit" %>
       </div>
     </div>
   </div>
@@ -23,29 +23,6 @@
 
 
 <!-- row for each sport -->
-<div class="sport-rows">
-  <% @sports.each do |sport| %>
-  <% i = 0 %>
-    <% sport.events.each do |event| %>
-      <% if @events.include? event %>
-        <% i += 1 %>
-        <% if i == 1 %>
-          <div class="row">
-            <div class="col-xs-3">
-              <!-- fixed sport's card -->
-              <%= render 'shared/sport_card', sport: sport %>
-            </div>
-            <div class="col-xs-9">
-              <div class="events-row">
-                <!-- vertical scroll with events in the category -->
-                <% sport.events.each do |event| %>
-                  <%= render 'shared/event_card', event: event, events: @events %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
-  <% end %>
+<div class="sport-rows" id="results">
+  <%= render 'events/results', events: @events %>
 </div>
