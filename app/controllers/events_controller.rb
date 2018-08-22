@@ -33,6 +33,11 @@ class EventsController < ApplicationController
 
   def show
     authorize @event
+    @markers = [{
+        lat: @event.latitude,
+        lng: @event.longitude,
+        infoWindow: { content: render_to_string(partial: "/shared/map_box", locals: { event: @event }) },
+      }]
   end
 
 
