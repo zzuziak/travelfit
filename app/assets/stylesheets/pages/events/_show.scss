@@ -1,4 +1,4 @@
-.event-info-container {
+.show-event-info-container {
   height: 50vh;
   padding-right: 0px;
   padding-left: 0px;
@@ -9,34 +9,34 @@
   }
 }
 
-.event-info {
+.show-event-info {
   padding: 30px;
   margin-top: 30px;
 }
 
-.event-photo {
+.show-event-photo {
   height: 50vh;
   padding: 0px;
 }
 
-.event-creator {
+.show-event-creator {
   margin-top: 30px;
 }
 
-.event-intensity {
+.show-event-intensity {
   margin-top: 10px;
 }
 
-.event-details {
+.show-event-details {
   padding-top: 20px;
 }
 
-.desc-container {
+.show-desc-container {
   padding-left: 0px;
   padding-right: 0px;
 }
 
-.event-description {
+.show-event-description {
   padding: 30px;
   background-color: #F5F5F5;
 }
@@ -50,18 +50,63 @@
   border-color: orange;
 }
 
-.event-discussion {
+.show-discussion-container {
+  padding: 30px;
+  background-color: white;
+}
+.show-event-discussion {
   padding: 0px;
 }
 
-.event-discussion-head {
+.show-event-discussion-head {
   height: 60px;
+  h2 {
+    margin: 0;
+    padding-top: 10px;
+  }
 }
 
-.event-related {
+.show-event-related {
   padding: 0px;
 }
-.event-related-head {
+
+.show-event-related-head {
   background-color: white;
   height: 60px;
+  h2 {
+    margin: 0;
+    padding-top: 10px;
+  }
 }
+
+.show-post {
+  background-color: #F5F5F5;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.show-post-content {
+  margin-top: 20px;
+}
+
+.show-reply {
+  margin: 10px;
+  margin-left: 50px;
+  background-color: #F5F5F5;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.show-reply-content {
+  margin-top: 20px;
+}
+
+.show-event-map {
+  padding: 0px;
+}
+
+#map {
+  height: 207.5px;
+}
+
