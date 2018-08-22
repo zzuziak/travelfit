@@ -16,6 +16,9 @@ class EventsController < ApplicationController
         d = params[:date_to].split("-").map {|x| x.to_i}
         @events = @events.select{ |event| event.date <= Date.new(d[0], d[1], d[2]) }
       end
+      if params[:free].present?
+        @events = @events.select{ |event| event.price == 0 }
+      end
     else
       @events = policy_scope(Event)
       if params[:date_from].present?
@@ -25,6 +28,9 @@ class EventsController < ApplicationController
       if params[:date_to].present?
         dt = params[:date_to].split("-").map {|x| x.to_i}
         @events = @events.select{ |event| event.date <= Date.new(dt[0], dt[1], dt[2]) }
+      end
+      if params[:free].present?
+        @events = @events.select{ |event| event.price == 0 }
       end
     end
 
