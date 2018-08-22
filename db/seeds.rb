@@ -398,3 +398,91 @@ UserSport.create!([{
   favourite: false
 }]
 )
+
+Post.create!([{
+  event_id: 1,
+  user_id: 2,
+  content: "Hey guys! Should we bring our own equipment? Also, isn't the weather going to be an issue with all that forecasted snow?"
+},
+{
+  event_id: 1,
+  user_id: 1,
+  content: "New Rules have been posted to the official website, everybody make sure you've read through them!"
+},
+{
+  event_id: 2,
+  user_id: 1,
+  content: "Hey guys! Should we bring our own equipment? Also, isn't the weather going to be an issue with all that forecasted snow?"
+},
+{
+  event_id: 2,
+  user_id: 2,
+  content: "New Rules have been posted to the official website, everybody make sure you've read through them!"
+},
+{
+  event_id: 3,
+  user_id: 3,
+  content: "Hey guys! Should we bring our own equipment? Also, isn't the weather going to be an issue with all that forecasted snow?"
+},
+{
+  event_id: 3,
+  user_id: 1,
+  content: "New Rules have been posted to the official website, everybody make sure you've read through them!"
+},
+{
+  event_id: 4,
+  user_id: 2,
+  content: "Hey guys! Should we bring our own equipment? Also, isn't the weather going to be an issue with all that forecasted snow?"
+},
+{
+  event_id: 4,
+  user_id: 3,
+  content: "New Rules have been posted to the official website, everybody make sure you've read through them!"
+},
+{
+  event_id: 5,
+  user_id: 2,
+  content: "Hey guys! Should we bring our own equipment? Also, isn't the weather going to be an issue with all that forecasted snow?"
+},
+{
+  event_id: 6,
+  user_id: 1,
+  content: "New Rules have been posted to the official website, everybody make sure you've read through them!"
+}]
+)
+
+Reply.create!([{
+  post_id: 1,
+  user_id: 3,
+  content: "Whatever! Snow, rain, i'll power through! You should always bring your own equipment!"
+},
+{
+  post_id: 1,
+  user_id: 2,
+  content: "Alright! See you at the event then!"
+},
+{
+  post_id: 3,
+  user_id: 3,
+  content: "No, don't worry, everything will be provided. Just bring fun!"
+},
+{
+  post_id: 5,
+  user_id: 1,
+  content: "That's fine! Do you guys know if i can easily get to Kreuzberg afterwards?"
+},
+{
+  post_id: 8,
+  user_id: 2,
+  content: "The information you're looking for is in the event details."
+}]
+)
+
+
+
+
+
+
+
+
+
