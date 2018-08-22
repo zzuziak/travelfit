@@ -33,6 +33,8 @@ class EventsController < ApplicationController
 
   def show
     authorize @event
+    @post = Post.new
+    authorize @post
     @markers = [{
         lat: @event.latitude,
         lng: @event.longitude,
