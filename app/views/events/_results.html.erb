@@ -9,12 +9,15 @@
             <!-- fixed sport's card -->
             <%= render 'shared/sport_card', sport: sport %>
           </div>
-          <div class="col-xs-9">
+          <div class="col-xs-9" style="padding: 0; ">
             <div class="events-row">
               <!-- vertical scroll with events in the category -->
               <% sport.events.each do |event| %>
                 <%= render 'shared/event_card', event: event, events: events %>
               <% end %>
+              <div class="arrow">
+                <i class="fa fa-arrow-right arrow-center" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
         </div>

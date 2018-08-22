@@ -1,6 +1,6 @@
 <%= link_to event_path(event) do %>
   <% if events.include? event %>
-    <div class="card-event" style="background-image: url(<%= event.photo %>);">
+    <div class="card-event" style="background-image: url(<%= event.photo %>); background-position: center; background-size: cover;">
       <div class="<% if event.sport.category == "fitness" %>
                     overlay-red
                   <% elsif event.sport.category == "running" %>
