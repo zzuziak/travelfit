@@ -3,23 +3,26 @@
 <!-- row for each sport -->
 <div class="sport-rows">
   <% @sports.each do |sport| %>
+  <% i = 0 %>
     <% sport.events.each do |event| %>
       <% if @events.include? event %>
-        <div class="row">
-          <div class="col-xs-3">
-            <!-- fixed sport's card -->
-            <%= render 'shared/sport_card', sport: sport %>
-          </div>
-          <div class="col-xs-9">
-            <div class="events-row">
-              <!-- vertical scroll with events in the category -->
-              <% sport.events.each do |event| %>
-                <%= render 'shared/event_card', event: event, events: @events %>
-
-              <% end %>
+        <% i += 1 %>
+        <% if i == 1 %>
+          <div class="row">
+            <div class="col-xs-3">
+              <!-- fixed sport's card -->
+              <%= render 'shared/sport_card', sport: sport %>
+            </div>
+            <div class="col-xs-9">
+              <div class="events-row">
+                <!-- vertical scroll with events in the category -->
+                <% sport.events.each do |event| %>
+                  <%= render 'shared/event_card', event: event, events: @events %>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
