@@ -1,0 +1,7 @@
+var results = document.querySelector("#results")
+
+function refreshResults() {
+  results.innerHTML = "<%= j render 'events/results', events: @events %>";
+}
+
+refreshResults();
