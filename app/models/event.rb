@@ -12,6 +12,9 @@ class Event < ApplicationRecord
   has_many :replies, through: :posts
   has_many :users, through: :participations
 
+  INTENSITIES = [1, 2, 3, 4, 5]
+
+  validates :intensity, presence: true, inclusion: {in: INTENSITIES}
   validates :title, presence: true
   validates :date, presence: true
   validates :address, presence: true
