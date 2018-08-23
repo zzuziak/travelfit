@@ -1,9 +1,9 @@
 
 import "bootstrap";
 
-// import "../plugins/flatpickr";
+import "../plugins/flatpickr";
 
-import 'jquery';
+import $ from 'jquery';
 
 global.$ = jQuery;
 global.jQuery = jQuery;
@@ -89,7 +89,14 @@ if (btn) {
   };
 };
 
+
 // navbar hide on scroll
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
+=======
+$(document).ready(function(){
+  $(".category-choice").click(function(){
+    $(this).toggleClass("active");
+  });
+});
