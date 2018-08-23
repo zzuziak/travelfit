@@ -11,12 +11,13 @@
 
 .show-event-info {
   padding: 30px;
-  margin-top: 30px;
 }
 
 .show-event-photo {
   height: 50vh;
   padding: 0px;
+  background-position: center;
+  background-size: cover;
 }
 
 .show-event-creator {
@@ -25,6 +26,7 @@
 
 .show-event-intensity {
   margin-top: 10px;
+  display: inline-block;
 }
 
 .show-event-details {
@@ -39,11 +41,12 @@
 .show-event-description {
   padding: 30px;
   background-color: #F5F5F5;
+  height: 75%;
 }
 
 .btn-join {
   width: 100%;
-  height: 60px;
+  height: 25%;
   line-height: 48px;
   border-radius: 0;
   background-color: orange;
@@ -53,6 +56,7 @@
 .show-discussion-container {
   padding: 30px;
   background-color: white;
+  position: relative;
 }
 .show-event-discussion {
   padding: 0px;
@@ -86,6 +90,19 @@
   margin: 10px;
 }
 
+.show-post-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-post-userinfo {
+  flex: 8 1 auto;
+  margin-left: 20px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
 .show-post-content {
   margin-top: 20px;
 }
@@ -104,9 +121,24 @@
 
 .show-event-map {
   padding: 0px;
+  height: 100%;
 }
 
-#map {
-  height: 207.5px;
+.col-md-6 {
+  padding: 0px;
 }
 
+.col-xs-12 {
+  padding: 0px;
+}
+
+.desc-map-row {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.visible {
+  display: none;
+}

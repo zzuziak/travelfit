@@ -16,7 +16,7 @@
                   <% end %>">
       </div>
       <div class="card-event-title"><%= event.title.upcase %></div>
-      <div class="card-event-intensity"><%= event.intensity %></div>
+      <div class="card-event-intensity"><%= render 'shared/intensity', event: event %></div>
       <div class="card-event-address"><%= event.address %></div>
       <div class="card-event-date"><%= event.date %></div>
     </div>

@@ -13,7 +13,7 @@ class EventsController < ApplicationController
       set_search_params
     end
     set_markers
-    # 
+    #
     # respond_to do |format|
     #   format.html { render 'events/index' }
     #   format.js
@@ -24,6 +24,12 @@ class EventsController < ApplicationController
 
   def show
     authorize @event
+    @post = Post.new
+    authorize @post
+    @reply = Reply.new
+    authorize @reply
+    @participation = Participation.new
+    # authorize @participation
     @markers = [{
         lat: @event.latitude,
         lng: @event.longitude,
@@ -40,11 +46,11 @@ class EventsController < ApplicationController
 
   def set_search_params
     if params[:date_from].present?
-      d = params[:date_from].split("-").map {|x| x.to_i}
+      d = params[:date_from].split(" ")[0].split("-").map {|x| x.to_i}
       @events = @events.select{ |event| event.date >= Date.new(d[0], d[1], d[2]) }
     end
     if params[:date_to].present?
-      d = params[:date_to].split("-").map {|x| x.to_i}
+      d = params[:date_from].split(" ")[2].split("-").map {|x| x.to_i}
       @events = @events.select{ |event| event.date <= Date.new(d[0], d[1], d[2]) }
     end
     if params[:free].present?

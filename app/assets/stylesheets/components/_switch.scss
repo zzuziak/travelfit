@@ -30,7 +30,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $green;
+  background-color: gray;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -68,4 +68,11 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+
+// label
+
+.off {
+  opacity: 0.4;
 }

@@ -3,35 +3,54 @@
     <div class="col-xs-10 col-xs-offset-1">
       <div class="form-inline search-flex">
         <%= text_field_tag :address, params[:address], placeholder: "Location", id:"search-text", class:"form-control search-stretch input-field" %>
-        <%= date_field_tag :date_from, params[:date_from], placeholder: "FROM", id:"date-from", class: "form-control input-field date-field datepicker" %>
-        <%= date_field_tag :date_to, params[:date_to], placeholder: "TO", id:"date-to", class: "form-control input-field date-field" %>
+        <%= date_field_tag :date_from, params[:date_from], placeholder: "FROM", id:"date-from", id:"range_start", class: "form-control input-field date-field datepicker" %>
+        <%= date_field_tag :date_to, params[:date_to], placeholder: "TO", id:"date-to", id:"range_end", class: "form-control input-field date-field datepicker" %>
+        <% if params[:free].present? %>
+        <label class="switch">
+          <%= check_box_tag :free, params[:free], value: params[:free] %>
+          <span id="free" class="slider round"></span>
+        </label>
+          <label class="switch-label">Only free</label>
+        <% else %>
         <label class="switch">
           <%= check_box_tag :free, params[:free] %>
           <span id="free" class="slider round"></span>
         </label>
-        <label class="switch-label">Only free</label>
+          <label class="switch-label off">Only free</label>
+        <% end %>
         <%= submit_tag 'Search', name: nil, class:"btn search-button", id:"submit" %>
       </div>
     </div>
   </div>
 <% end %>
 
-
-<div class="row row-no-padding">
-  <div class="col-xs-10 col-xs-offset-1">
-    <div class="title-bar">
-      <h1>
-        RESULTS
-      </h1>
-      <a href="#map">
-        <div class="btn btn-map">map</div>
-      </a>
+<% if @events.count != 0 %>
+  <div class="row row-no-padding">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="title-bar">
+        <h1>
+          RESULTS
+        </h1>
+        <!-- <a href="#map"> -->
+          <div class="btn btn-map" id="btn-map">map</div>
+        <!-- </a> -->
+      </div>
     </div>
   </div>
-</div>
-<!-- row for each sport -->
-<div class="sport-rows" id="results">
-  <%= render 'events/results', events: @events %>
-</div>
+  <!-- row for each sport -->
+  <div class="sport-rows" id="results">
+    <%= render 'events/results', events: @events %>
+  </div>
 
-<div id="map" style="width:100%; height: 600px;" data-markers="<%= @markers.to_json %>"></div>
+  <div id="map" style="width:100%; height: 600px;" data-markers="<%= @markers.to_json %>"></div>
+  <% else %>
+  <div class="row row-no-padding">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="title-bar">
+        <h1>
+          Unfortunately no events are matching your criteria :(
+        </h1>
+      </div>
+    </div>
+  </div>
+<% end %>
