@@ -2,8 +2,7 @@ import "bootstrap";
 
 // import "../plugins/flatpickr";
 
-
-import $ from 'jquery';
+import 'jquery';
 
 global.$ = jQuery;
 global.jQuery = jQuery;
@@ -17,7 +16,6 @@ global.jQuery = jQuery;
 //   document.getElementById(`sport-${i}`).scrollBy(200,0);
 // })};
 // }
-
 
 document.getElementById("arrow-1").addEventListener("click", event => {
   document.getElementById("sport-1").scrollBy(300,0);

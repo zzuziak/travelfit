@@ -108,7 +108,7 @@
 .events-row {
   position: relative;
   overflow-x: auto;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   display: flex;
   flex-direction: row;
   white-space: nowrap;
