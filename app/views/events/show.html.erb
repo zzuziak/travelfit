@@ -9,11 +9,9 @@
           <%= @event.user.last_name %>
         </div>
         <div class="show-event-intensity">
-          <% @event.intensity.times do %>
-            <%= image_tag("muscles.svg", width: "30px", alt: "bicep", class: "img-intensity") %>
-          <% end %>
+          <%= render 'shared/intensity', event: @event %>
           <% (5 - @event.intensity).times do %>
-            <%= image_tag("muscles_alt.svg", width: "30px", alt: "bicep", class: "img-intensity") %>
+            <%= image_tag("flame_alt.svg", width: "20px", alt: "flame_off", class: "img-intensity img-inline") %>
           <% end %>
         </div>
         <div class="show-event-details">
