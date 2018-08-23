@@ -1,75 +1,126 @@
 <% @title="tbd" %>
 <div class="no-gutters">
 
-  <div class="event-info-container col-xs-12 col-md-6">
-    <div class="event-info">
-      <div class="event-creator">
-        <%= cl_image_tag @event.user.photo, class: "avatar avatar-small" %>
-        <%= @event.user.first_name %>
-        <%= @event.user.last_name %>
-      </div>
-      <div class="event-intensity">
-        <% @event.intensity.times do %>
-          <%= image_tag("muscles.svg", width: "30px", alt: "bicep", class: "img-intensity") %>
-        <% end %>
-        <% (5 - @event.intensity).times do %>
-          <%= image_tag("muscles_alt.svg", width: "30px", alt: "bicep", class: "img-intensity") %>
-        <% end %>
-      </div>
-      <div class="event-details">
-        <h3>Adress: <%= @event.address %></h3>
-        <h3>Date: <%= @event.date %></h3>
-        <h3>Capacity: <%= @event.participations.count %>/<%= @event.capacity %></h3>
-      </div>
-      <div class="event-title">
-        <h1><%= @event.title %></h1>
+  <div class="col-xs-12 col-md-6">
+    <div class="show-event-info-container">
+      <div class="show-event-info">
+        <div class="show-event-creator">
+          <%= cl_image_tag @event.user.photo, class: "avatar avatar-small" %>
+          <%= @event.user.first_name %>
+          <%= @event.user.last_name %>
+        </div>
+        <div class="show-event-intensity">
+          <%= render 'shared/intensity', event: @event %>
+          <% (5 - @event.intensity).times do %>
+            <%= image_tag("flame_alt.svg", width: "20px", alt: "flame_off", class: "img-intensity img-inline") %>
+          <% end %>
+        </div>
+        <div class="show-event-details">
+          <h3>Adress: <%= @event.address %></h3>
+          <h3>Date: <%= @event.date %></h3>
+          <h3>Capacity: <%= @event.participations.count %>/<%= @event.capacity %></h3>
+        </div>
+        <div class="show-event-title">
+          <h1><%= @event.title %></h1>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="event-photo col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path(@event.photo, width: 1120, crop: :fill) %>');">
+  <div class="col-xs-12 col-md-6">
+    <div class="show-event-photo" style="background-image: url('<%= cl_image_path(@event.photo) %>');">
+    </div>
   </div>
 </div>
 
+<div class="row row-no-padding">
+  <div class="desc-map-row">
+    <div class="col-xs-12 col-md-6">
+      <div class="show-desc-container">
+        <div class="show-event-description">
+          <p><%= @event.description %></p>
+        </div>
+        <div class="btn btn-join btn-success text-center">
+          <%= simple_form_for [@event, @participation], method: :post do |f| %>
+            <%= f.hidden_field :status, value: 1 %>
+            <%= f.submit "JOIN THE EVENT", class: "join-event" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
-<div class="desc-container col-xs-12 col-md-6">
-  <div class="event-description">
-    <p><%= @event.description %></p>
-  </div>
-  <div class="btn btn-join btn-success text-center">
-    <p class="join-event">JOIN THE EVENT</p>
+    <div class="col-xs-12 col-md-6">
+      <div class="show-event-map">
+        <div id="map" data-markers="<%= @markers.to_json %>" style="height: 100%"></div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="event-map col-xs-12 col-md-6">
- <!--  <div id="map" class="hidden-xs" data-markers="<%= @markers.to_json %>">
-  </div> -->
+<div class="col-xs-12 col-md-9">
+  <div class="show-event-discussion">
+    <div class="show-event-discussion-head text-center">
+      <h2>Discussion</h2>
+    </div>
+    <div class="show-discussion-container">
+      <% @event.posts.order(created_at: :desc).each do |post| %>
+        <div class="show-post">
+          <div class="show-post-head">
+            <%= cl_image_tag post.user.photo, class: "avatar avatar-small" %>
+            <div class="show-post-userinfo">
+              <%= post.created_at %>
+              <div class="show-post-username">
+                <%= post.user.first_name %>
+                <%= post.user.last_name %>
+              </div>
+            </div>
+
+            <div class="reply-link">
+              <button class="btn btn-success" id="btn<%= post.id %>">Reply</button>
+            </div>
+          </div>
+          <div class="show-post-content">
+            <%= post.content %>
+          </div>
+        </div>
+        <div class="show-reply visible">
+          <%= simple_form_for [@event, Post.find(post.id), @reply], method: :post do |f| %>
+            <%= f.input :content, label: "Reply to this post!" %>
+            <%= f.submit "Reply!", class: "btn btn-success" %>
+          <% end %>
+        </div>
+        <% post.replies.order(created_at: :desc).each do |reply| %>
+          <div class="show-reply">
+            <div class="show-post-head">
+              <%= cl_image_tag reply.user.photo, class: "avatar avatar-small" %>
+              <div class="show-post-userinfo">
+              <%= reply.created_at %>
+              <div class="show-post-username">
+                <%= reply.user.first_name %>
+                <%= reply.user.last_name %>
+              </div>
+            </div>
+            </div>
+            <div class="show-reply-content">
+              <%= reply.content %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="userpost">
+        <%= simple_form_for [@event, @post], method: :post do |f| %>
+          <%= f.input :content, label: "Post something to the event!" %>
+          <%= f.submit "Post!", class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-
-<div class="event-discussion col-xs-12 col-md-9">
-  <div class="event-discussion-head text-center">
-    <h2>Discussion</h2>
+<div class="col-xs-12 col-md-3">
+  <div class="show-event-related">
+    <div class="show-event-related-head text-center">
+      <h2>Related Events</h2>
+    </div>
   </div>
-  <% @events.posts.each do |post| %>
-    <%= cl_image_tag post.user.photo, class: "avatar avatar-small" %>
-    <%= post.user.first_name %>
-    <%= post.user.last_name %>
-    <%= post.created_at %>
-    <%= post.content %>
-    <% post.replies.each do |reply| %>
-      <%= cl_image_tag reply.user.photo, class: "avatar avatar-small" %>
-      <%= reply.user.first_name %>
-      <%= reply.user.last_name %>
-      <%= reply.created_at %>
-      <%= reply.content %>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="event-related col-xs-12 col-md-3">
-  <div class="event-related-head text-center">
-    <h2>Related Events</h2>
-  </div>
-
 </div>

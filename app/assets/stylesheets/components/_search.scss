@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 20px 0;
+  margin: 80px 0 0 0;
 }
 
 .search-stretch {
@@ -13,11 +13,11 @@
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
+  // border-radius: 5px;
   height: 50px;
   color: rgb(20, 20, 20);
   margin-right: 10px;
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Cairo', sans-serif;
   letter-spacing: 1px;
   overflow: hidden;
@@ -36,7 +36,22 @@
   background-color: $orange;
   color: white;
   height: 50px;
-  border-radius: 5px;
+  // border-radius: 5px;
   font-size: 20px;
   font-family: 'Cairo', sans-serif;
+}
+
+
+// index page positioning
+
+.search-index-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 100px;
+  flex-wrap: wrap;
+}
+
+.search-fields {
+  flex: 1 0 80%;
 }

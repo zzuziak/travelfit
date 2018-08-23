@@ -1,12 +1,28 @@
 .sport-rows {
-  margin-top: 100px;
+  // margin-top: 100px;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.row-no-padding {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
 // sport specific
 .card-sport{
-  margin: 0 -15px 0 0;
+  margin: 0;
   height: 200px;
   position: relative;
+  background-position: center;
+  background-size: cover;
   h1{
     margin: 0;
     color: white;
@@ -21,61 +37,82 @@
 // overlays
 
 .overlay-red {
-  background-color: rgba(255,30,30,0.6);
+  background-color: rgba(255,30,30,0.5);
   mix-blend-mode: multiply;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
+  .card-event &:hover{
+    opacity: 0;
+  }
 }
 
 .overlay-green {
-  background-color: rgba(30,230,30,0.4);
+  background-color: rgba(30,230,30,0.5);
   mix-blend-mode: multiply;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
+  .card-event &:hover{
+    opacity: 0;
+  }
 }
 .overlay-blue {
-  background-color: rgba(30,20,230,0.6);
+  background-color: rgba(30,20,230,0.5);
   mix-blend-mode: multiply;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
+  .card-event &:hover{
+    opacity: 0;
+  }
 }
 .overlay-yellow {
-  background-color: rgba(231, 184, 17, 0.6);
+  background-color: rgba(231, 184, 17, 0.8);
   mix-blend-mode: multiply;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
+  .card-event &:hover{
+    opacity: 0;
+  }
 }
 .overlay-purple {
-  background-color: rgba(82, 21, 143, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
   mix-blend-mode: multiply;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
+  .card-event &:hover{
+    opacity: 0;
+  }
 }
 .overlay-mint {
-  background-color: rgba(21, 143, 128, 0.6);
+  background-color: rgba(21, 143, 128, 0.5);
   mix-blend-mode: multiply;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
+  .card-event &:hover{
+    opacity: 0;
+  }
 }
 // event specific
 
 .events-row {
-  overflow-x: scroll;
+  position: relative;
+  overflow-x: auto;
+  // overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
   white-space: nowrap;
-  margin-left: -15px;
-  padding-right: -15px;
+  margin-left: 0;
   font-size: 0; // removes spaces between cards
   &::-webkit-scrollbar {
     display: none;
@@ -96,7 +133,7 @@
   left: 20px;
   bottom: 20px;
   font-size: 24px;
-  width: 30vw;
+  width: 90%;
   overflow-x: hidden;
 }
 
@@ -112,6 +149,8 @@
   left: 20px;
   top: 20px;
   font-size: 16px;
+  overflow-x: hidden;
+
 }
 
 .card-event-address{
@@ -119,4 +158,5 @@
   right: 20px;
   top: 20px;
   font-size: 16px;
+  overflow-x: hidden;
 }

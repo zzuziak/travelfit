@@ -60,7 +60,7 @@ Event.create!([{
   intensity: 2,
   remote_photo_url: "http://www.keepintheloop.uk/wp-content/uploads/2016/04/heroes-1920x960-1.jpg",
   price: 5,
-  address: "Templehof, Berlin",
+  address: "Tempelhofer Feld, Berlin",
   capacity: 100,
   user_id: 1,
   sport_id: 1

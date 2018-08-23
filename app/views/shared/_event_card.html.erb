@@ -1,6 +1,6 @@
 <%= link_to event_path(event) do %>
   <% if events.include? event %>
-    <div class="card-event" style="background-image: url(<%= event.photo %>);">
+    <div class="card-event" style="background-image: url(<%= event.photo %>); background-position: center; background-size: cover;">
       <div class="<% if event.sport.category == "fitness" %>
                     overlay-red
                   <% elsif event.sport.category == "running" %>
@@ -13,9 +13,10 @@
                     overlay-mint
                   <% elsif event.sport.category == "local adventure" %>
                     overlay-blue
-                  <% end %>"></div>
+                  <% end %>">
+      </div>
       <div class="card-event-title"><%= event.title.upcase %></div>
-      <div class="card-event-intensity"><%= event.intensity %></div>
+      <div class="card-event-intensity"><%= render 'shared/intensity', event: event %></div>
       <div class="card-event-address"><%= event.address %></div>
       <div class="card-event-date"><%= event.date %></div>
     </div>

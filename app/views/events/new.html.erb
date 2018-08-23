@@ -9,7 +9,9 @@
         <%= simple_form_for @event do |f| %>
           <%= f.input :title, placeholder: "What's the title of your event?" %>
           <%= f.input :description, placeholder: "What's your event about?"%>
-          <%= f.association :sport, as: :check_boxes, label_method: lambda { |sport| "#{sport.category}"}, class: "category-choices" %>
+          <div class="category-choices">
+          <%= f.association :sport, as: :check_boxes, label_method: lambda { |sport| "#{sport.category}"}%>
+          </div>
           <%= f.input :address, placeholder: "Where will it take place?"%>
           <%= f.input :intensity, collection: Event::INTENSITIES, prompt: "Which Intensity?" %>
           <%= f.input :capacity, placeholder: "How many people can join your event?"%>
