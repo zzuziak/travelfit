@@ -12,11 +12,12 @@ class EventsController < ApplicationController
       @events = policy_scope(Event)
       set_search_params
     end
-
-    respond_to do |format|
-      format.html { render 'events/index' }
-      format.js
-    end
+    set_markers
+    # 
+    # respond_to do |format|
+    #   format.html { render 'events/index' }
+    #   format.js
+    # end
 
   end
 
@@ -48,6 +49,17 @@ class EventsController < ApplicationController
     end
     if params[:free].present?
       @events = @events.select{ |event| event.price == 0 }
+    end
+  end
+
+
+  def set_markers
+    @markers = @events.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        infoWindow: { content: render_to_string(partial: "/shared/map_box", locals: { event: event }) },
+      }
     end
   end
 

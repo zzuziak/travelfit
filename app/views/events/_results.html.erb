@@ -15,7 +15,9 @@
               <% sport.events.each do |event| %>
                 <%= render 'shared/event_card', event: event, events: events %>
               <% end %>
-              <% if sport.events.count > 2 %>
+              <!-- show the arrow only with 3+ events in the row -->
+              <% e = events.select { |event| event.sport == sport } %>
+              <% if e.count > 2 %>
                 <div class="arrow" id="arrow-<%= sport.id %>">
                   <i class="fa fa-arrow-right arrow-center" aria-hidden="true"></i>
                 </div>

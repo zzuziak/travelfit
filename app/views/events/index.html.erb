@@ -1,4 +1,4 @@
-<%= form_tag(events_path, method: :get, class:"form-group", remote: true, id:"search-form") do %>
+<%= form_tag(events_path, method: :get, class:"form-group", id:"search-form") do %>
   <div class="row row-no-padding">
     <div class="col-xs-10 col-xs-offset-1">
       <div class="form-inline search-flex">
@@ -19,10 +19,19 @@
 
 <div class="row row-no-padding">
   <div class="col-xs-10 col-xs-offset-1">
-    <h1 class="title-bar">RESULTS</h1>
+    <div class="title-bar">
+      <h1>
+        RESULTS
+      </h1>
+      <a href="#map">
+        <div class="btn btn-map">map</div>
+      </a>
+    </div>
   </div>
 </div>
 <!-- row for each sport -->
 <div class="sport-rows" id="results">
   <%= render 'events/results', events: @events %>
 </div>
+
+<div id="map" style="width:100%; height: 600px;" data-markers="<%= @markers.to_json %>"></div>
