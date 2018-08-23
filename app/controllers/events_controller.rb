@@ -13,7 +13,7 @@ class EventsController < ApplicationController
       set_search_params
     end
     set_markers
-    # 
+    #
     # respond_to do |format|
     #   format.html { render 'events/index' }
     #   format.js

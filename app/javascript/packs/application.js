@@ -2,8 +2,7 @@ import "bootstrap";
 
 // import "../plugins/flatpickr";
 
-
-import $ from 'jquery';
+import 'jquery';
 
 global.$ = jQuery;
 global.jQuery = jQuery;
@@ -18,33 +17,41 @@ global.jQuery = jQuery;
 // })};
 // }
 
+let arrow = document.getElementById("arrow-1");
 
-document.getElementById("arrow-1").addEventListener("click", event => {
+if (arrow) { arrow.addEventListener("click", event => {
   document.getElementById("sport-1").scrollBy(300,0);
-});
+})};
 
-let arrow = document.getElementById("arrow-2");
+arrow = document.getElementById("arrow-2");
 
 if (arrow) { arrow.addEventListener("click", event => {
   document.getElementById("sport-2").scrollBy(300,0);
 })};
 
-document.getElementById("arrow-3").addEventListener("click", event => {
+arrow = document.getElementById("arrow-3");
+
+if (arrow) { arrow.addEventListener("click", event => {
   document.getElementById("sport-3").scrollBy(300,0);
-});
+})};
 
-document.getElementById("arrow-4").addEventListener("click", event => {
+arrow = document.getElementById("arrow-4");
+
+if (arrow) { arrow.addEventListener("click", event => {
   document.getElementById("sport-4").scrollBy(300,0);
-});
+})};
 
-document.getElementById("arrow-5").addEventListener("click", event => {
+arrow = document.getElementById("arrow-5");
+
+if (arrow) { arrow.addEventListener("click", event => {
   document.getElementById("sport-5").scrollBy(300,0);
-});
+})};
 
-document.getElementById("arrow-6").addEventListener("click", event => {
+arrow = document.getElementById("arrow-6");
+
+if (arrow) { arrow.addEventListener("click", event => {
   document.getElementById("sport-6").scrollBy(300,0);
-});
-
+})};
 
 // document.querySelector("#search-text").addEventListener("blur", event => {
 //   console.log(document.getElementById("search-form"));

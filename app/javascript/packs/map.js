@@ -26,7 +26,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const cards = document.querySelectorAll('.card-event');
   cards.forEach((card, index) => {
     // Put a microphone on each card listenning for a hover event
-    card.addEventListener('mouseover', () => {
+    card.addEventListener('mouseenter', () => {
       // Here we trigger the display of the corresponding marker infoWindow as it is the default behavior of a click on a  marker
       google.maps.event.trigger(mapMarkers[index], 'click');
     });
