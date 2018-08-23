@@ -1,6 +1,6 @@
 class ParticipationsController < ApplicationController
   before_action :set_user, only: [:new, :create, :index, :update, :requests]
-  before_action :set_job, only: [:new, :create]
+  before_action :set_event, only: [:new, :create]
   before_action :set_participation, only: [ :update, :destroy ]
 
 
@@ -17,9 +17,9 @@ class ParticipationsController < ApplicationController
   def create
     @user = current_user
     @participation = Participation.new(participation_params)
-    authorize @participation
     @participation.user = @user
     @participation.event = @event
+    authorize @participation
 
     if @participation.save!
       redirect_to event_path(@event)

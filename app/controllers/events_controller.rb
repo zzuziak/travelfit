@@ -28,7 +28,7 @@ class EventsController < ApplicationController
     @reply = Reply.new
     authorize @reply
     @participation = Participation.new
-    authorize @participation
+    # authorize @participation
     @markers = [{
         lat: @event.latitude,
         lng: @event.longitude,
