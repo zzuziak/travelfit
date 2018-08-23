@@ -42,7 +42,10 @@
           <p><%= @event.description %></p>
         </div>
         <div class="btn btn-join btn-success text-center">
-          <p class="join-event">JOIN THE EVENT</p>
+          <%= simple_form_for [@event, @participation], method: :post do |f| %>
+            <%= f.hidden_field :status, value: 1 %>
+            <%= f.submit "JOIN THE EVENT", class: "join-event" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -61,7 +64,7 @@
       <h2>Discussion</h2>
     </div>
     <div class="show-discussion-container">
-      <% @event.posts.order(created_at: :desc).each_with_index do |post, index| %>
+      <% @event.posts.order(created_at: :desc).each do |post| %>
         <div class="show-post">
           <div class="show-post-head">
             <%= cl_image_tag post.user.photo, class: "avatar avatar-small" %>
@@ -72,15 +75,22 @@
                 <%= post.user.last_name %>
               </div>
             </div>
+
             <div class="reply-link">
-              <%= link_to "Reply", nil, id: "reply_to_#{index + 1}" %>
+              <button class="btn btn-success" id="btn<%= post.id %>">Reply</button>
             </div>
           </div>
           <div class="show-post-content">
             <%= post.content %>
           </div>
         </div>
-        <% post.replies.each do |reply| %>
+        <div class="show-reply visible">
+          <%= simple_form_for [@event, Post.find(post.id), @reply], method: :post do |f| %>
+            <%= f.input :content, label: "Reply to this post!" %>
+            <%= f.submit "Reply!", class: "btn btn-success" %>
+          <% end %>
+        </div>
+        <% post.replies.order(created_at: :desc).each do |reply| %>
           <div class="show-reply">
             <div class="show-post-head">
               <%= cl_image_tag reply.user.photo, class: "avatar avatar-small" %>
@@ -100,8 +110,8 @@
       <% end %>
       <div class="userpost">
         <%= simple_form_for [@event, @post], method: :post do |f| %>
-        <%= f.input :content, label: "Post something to the event!" %>
-        <%= f.submit "Post!", class: "btn btn-success" %>
+          <%= f.input :content, label: "Post something to the event!" %>
+          <%= f.submit "Post!", class: "btn btn-success" %>
         <% end %>
       </div>
     </div>

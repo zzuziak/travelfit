@@ -11,6 +11,7 @@ class RepliesController < ApplicationController
     @user = current_user
     @reply = Reply.new(reply_params)
     authorize @reply
+    @posts = @event.posts
     @reply.user = @user
     @reply.post = @post
     if @reply.save!

@@ -55,6 +55,7 @@
 .show-discussion-container {
   padding: 30px;
   background-color: white;
+  position: relative;
 }
 .show-event-discussion {
   padding: 0px;
@@ -135,4 +136,8 @@
   align-items: stretch;
   width: 100%;
   flex-wrap: wrap;
+}
+
+.visible {
+  display: none;
 }
