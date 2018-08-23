@@ -19,16 +19,16 @@
     </tr>
     <tr>
       <td>Sports: </td>
-      <% @user.user_sports.each do |user_sport| %>
-      <tr>
-        <td><%= user_sport.sport.category %></td>
-        <td><%= user_sport.favourite %></td>
-        <td><%= user_sport.level %></td>
-        <td><input id="ex13" type="text" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["beginner", "getting there", "good", "confirmed", "ninja"]'/>
-      </td>
-      </tr>
+      <% @user_sports.each do |user_sport| %>
+
+       <%= simple_form_for user_sport, method: :patch, url: user_user_sport_path(@user, user_sport) do |f| %>
+          <%= f.input :sport, collection: Sport.all, label: "sport" %>
+          <%= f.input :favourite, label: "favourite" %>
+          <%= f.input :level, label: "What's your level ", as: :slider, min: 1, max: 5, step: 1, orientation: 'horizontal', ticks: [1, 3, 5], handle: :square, tooltip_position: :bottom, ticks_labels: ['beginner', 'good', 'ninja'] %>
+           <% end %>
       <% end %>
-    </tr>
+
+      </tr>
    </table>
   </div>
 </div>
@@ -69,7 +69,4 @@
 </div>
 
 <% end %>
-
-
-
 
