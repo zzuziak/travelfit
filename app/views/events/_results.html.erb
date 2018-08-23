@@ -4,20 +4,24 @@
     <% if events.include? event %>
       <% i += 1 %>
       <% if i == 1 %>
-        <div class="row">
+        <div class="row row-no-padding">
           <div class="col-xs-3">
             <!-- fixed sport's card -->
             <%= render 'shared/sport_card', sport: sport %>
           </div>
-          <div class="col-xs-9" style="padding: 0; ">
-            <div class="events-row">
+          <div class="col-xs-9">
+            <div class="events-row" id="sport-<%= sport.id %>">
               <!-- vertical scroll with events in the category -->
               <% sport.events.each do |event| %>
                 <%= render 'shared/event_card', event: event, events: events %>
               <% end %>
-              <div class="arrow">
-                <i class="fa fa-arrow-right arrow-center" aria-hidden="true"></i>
-              </div>
+              <!-- show the arrow only with 3+ events in the row -->
+              <% e = events.select { |event| event.sport == sport } %>
+              <% if e.count > 2 %>
+                <div class="arrow" id="arrow-<%= sport.id %>">
+                  <i class="fa fa-arrow-right arrow-center" aria-hidden="true"></i>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
