@@ -53,6 +53,16 @@ if (arrow) { arrow.addEventListener("click", event => {
   document.getElementById("sport-6").scrollBy(300,0);
 })};
 
+
+let btn = document.getElementById("btn-map");
+if (btn) {btn.addEventListener("click", event => {
+  document.querySelector('#map').scrollIntoView({
+    behavior: 'smooth'
+  });
+})};
+
+
+
 // document.querySelector("#search-text").addEventListener("blur", event => {
 //   console.log(document.getElementById("search-form"));
 //   document.getElementById("search-form").submit();
