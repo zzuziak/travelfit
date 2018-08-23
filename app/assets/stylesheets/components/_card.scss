@@ -2,6 +2,20 @@
   // margin-top: 100px;
 }
 
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.row-no-padding {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
 // sport specific
 .card-sport{
   margin: 0 -15px 0 0;
@@ -29,6 +43,9 @@
   height: 100%;
   position: absolute;
   top: 0;
+  &:hover{
+    opacity: 0;
+  }
 }
 
 .overlay-green {
@@ -38,6 +55,9 @@
   height: 100%;
   position: absolute;
   top: 0;
+  &:hover{
+    opacity: 0;
+  }
 }
 .overlay-blue {
   background-color: rgba(30,20,230,0.5);
@@ -46,6 +66,9 @@
   height: 100%;
   position: absolute;
   top: 0;
+  &:hover{
+    opacity: 0;
+  }
 }
 .overlay-yellow {
   background-color: rgba(231, 184, 17, 0.8);
@@ -54,6 +77,9 @@
   height: 100%;
   position: absolute;
   top: 0;
+  &:hover{
+    opacity: 0;
+  }
 }
 .overlay-purple {
   background-color: rgba(0, 0, 0, 0.5);
@@ -62,6 +88,9 @@
   height: 100%;
   position: absolute;
   top: 0;
+  &:hover{
+    opacity: 0;
+  }
 }
 .overlay-mint {
   background-color: rgba(21, 143, 128, 0.5);
@@ -70,6 +99,9 @@
   height: 100%;
   position: absolute;
   top: 0;
+  &:hover{
+    opacity: 0;
+  }
 }
 // event specific
 
