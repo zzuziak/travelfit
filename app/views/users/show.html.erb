@@ -95,6 +95,14 @@
 
        <div class="event-description">
          <p><%= participation.event.description %></p>
+         <div>
+          <p>
+              <%= form_for participation, method: :patch do |f| %>
+              <%= f.hidden_field :status, :value => 0 %>
+              <%= f.submit "GOING", class: "btn search-button" %>
+            <% end %>
+          </p>
+        </div>
        </div>
      </div>
 
