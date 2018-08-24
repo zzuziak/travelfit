@@ -33,6 +33,11 @@
   padding-top: 20px;
 }
 
+.show-event-title h1 {
+  padding-bottom: 30px;
+  font-size: 50px;
+}
+
 .show-desc-container {
   padding-left: 0px;
   padding-right: 0px;
@@ -52,6 +57,7 @@
   background-color: $orange;
   border: 0;
   opacity: 1;
+  font-weight: 700;
   &:hover {
     opacity: 0.8;
   }
@@ -65,6 +71,7 @@
   background-color: $green;
   border: 0;
   opacity: 1;
+  font-weight: 700;
   &:hover {
     opacity: 0.8;
   }
