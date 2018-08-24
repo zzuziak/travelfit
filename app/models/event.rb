@@ -28,4 +28,14 @@ class Event < ApplicationRecord
     tsearch: { prefix: true }
   }
 
+  def self.related_events
+    sql = <<-SQL
+        SELECT * FROM events
+        JOIN sports
+        ON events.sport_id = sports.id
+        LIMIT 3
+      SQL
+    events = find_by_sql(sql)
+  end
+
 end

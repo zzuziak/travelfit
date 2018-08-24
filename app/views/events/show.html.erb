@@ -130,7 +130,7 @@
     <div class="show-event-related-head text-center">
       <h2>Related Events</h2>
       <% @events.each do |event| %>
-        <%= render 'shared/related_events', event: event, events: @events %>
+        <%= render 'shared/related_events', event: event %>
       <% end %>
     </div>
   </div>
