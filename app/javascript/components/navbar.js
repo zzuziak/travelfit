@@ -1,4 +1,4 @@
-function initUpdateNavbarOnScroll() {
+  function initUpdateNavbarOnScroll() {
   const navbar = document.querySelector('.navbar-wagon');
   if (navbar) {
     window.addEventListener('scroll', () => {

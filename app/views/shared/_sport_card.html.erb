@@ -1,10 +1,10 @@
 <div class="card-sport" style="background-image: url(<%= sport.photo %>);">
   <div class="<% if sport.category == "fitness" %>
-                overlay-red
-              <% elsif sport.category == "running" %>
                 overlay-green
+              <% elsif sport.category == "running" %>
+                overlay-red
               <% elsif sport.category == "racket sports" %>
-                overlay-purple
+                overlay-grey
               <% elsif sport.category == "teamsports" %>
                 overlay-yellow
               <% elsif sport.category == "yoga" %>

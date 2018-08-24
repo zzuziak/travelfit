@@ -1,7 +1,8 @@
 //= require rails-ujs
 
-// = require simple_form_extension
+//= require jquery
+//= require simple_form_extension
+//= require bootstrap-slider
 
 //= require_tree .
 
-//= require jquery

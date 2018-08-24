@@ -175,6 +175,20 @@ local_adventure_events = Event.create!([{
   capacity: 15,
   user_id: 1,
   sport_id: local_adventure.id
+
+
+},
+{
+  title: "Swimming competition",
+  description: "5km swim race in open-waters across the Wannsee lake",
+  date: "28.08.2018",
+  intensity: 5,
+  remote_photo_url: "https://www.dctriclub.org/wp-content/uploads/2017/01/DCTri_2016TrainingTri.jpg",
+  price: 5,
+  address: "Wannsee, Berlin",
+  capacity: 200,
+  user_id: 1,
+  sport_id: local_adventure.id
 },
 {
   title: "Skiing down La Vallée Blanche",

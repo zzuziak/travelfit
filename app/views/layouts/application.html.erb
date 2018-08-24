@@ -6,20 +6,27 @@
     <title> <%= @title.nil? ? "Travelfit" : @title %></title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type => "image/x-icon" %>
     <%= stylesheet_link_tag 'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
+    <% if current_page?(root_path) %>
+      <%= render 'shared/navbar_home' %>
+    <% else %>
+      <%= render 'shared/navbar_all' %>
+      <div class="margin-nav"></div>
+    <% end %>
+
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
-    <%= javascript_pack_tag "map" %>
     <!-- update the map.js file for responsive markers (nothing there yet) -->
     <%= javascript_include_tag 'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js' %>
-    <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag "map" %>
 
   </body>
 </html>

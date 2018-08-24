@@ -6,6 +6,7 @@
 // External libraries
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-slider";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -14,4 +15,4 @@
 @import "components/index";
 @import "pages/index";
 
-// @import "simple_form_extension";
+@import "simple_form_extension";

@@ -1,5 +1,4 @@
 .sport-rows {
-  // margin-top: 100px;
 }
 
 .nopadding {
@@ -38,7 +37,7 @@
 
 .overlay-red {
   background-color: rgba(255,30,30,0.5);
-  mix-blend-mode: multiply;
+  mix-blend-mode:  color;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -49,8 +48,8 @@
 }
 
 .overlay-green {
-  background-color: rgba(30,230,30,0.5);
-  mix-blend-mode: multiply;
+  background-color: rgba(32, 99, 32, 0.5);
+  mix-blend-mode:  color;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -60,8 +59,8 @@
   }
 }
 .overlay-blue {
-  background-color: rgba(30,20,230,0.5);
-  mix-blend-mode: multiply;
+  background-color: rgba(67, 61, 180, 0.5);
+  mix-blend-mode:  color;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -71,8 +70,8 @@
   }
 }
 .overlay-yellow {
-  background-color: rgba(231, 184, 17, 0.8);
-  mix-blend-mode: multiply;
+  background-color: rgba(231, 184, 17, 0.4);
+  mix-blend-mode:  color;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -81,9 +80,9 @@
     opacity: 0;
   }
 }
-.overlay-purple {
+.overlay-grey {
   background-color: rgba(0, 0, 0, 0.5);
-  mix-blend-mode: multiply;
+  mix-blend-mode:  color;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -93,8 +92,8 @@
   }
 }
 .overlay-mint {
-  background-color: rgba(21, 143, 128, 0.5);
-  mix-blend-mode: multiply;
+  background-color: rgba(111, 52, 119, 0.5);
+  mix-blend-mode:  color;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -131,16 +130,21 @@
 .card-event-title{
   position: absolute;
   left: 20px;
-  bottom: 20px;
+  bottom: 10px;
   font-size: 24px;
   width: 90%;
   overflow-x: hidden;
-}
+    h2 {
+    font-family: "Roboto", "Helvetica", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+  };
+  }
 
 .card-event-intensity{
   position: absolute;
   left: 20px;
-  bottom: 60px;
+  bottom: 75px;
   font-size: 16px;
 }
 
