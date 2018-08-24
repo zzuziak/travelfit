@@ -7,8 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
-  transition: 0.8s opacity ease-out;
+  background-color: transparent
 }
 
 .navbar-wagon-white {
@@ -19,8 +18,16 @@
   height: 50px;
 }
 
+// fixed margin for fixed navbar
 
+.margin-nav {
+  margin-top: 70px;
+}
 
+.fix-flash{
+  position: fixed;
+  width: 100%;
+}
 
 /* User Avatar */
 .navbar-wagon .avatar {
@@ -43,12 +50,18 @@
 }
 
 /* Navbar link */
+
 .navbar-wagon-link {
-  color: #616668;
+  color: #595959;
+  font-size: 14px;
+}
+
+.navbar-wagon-link-home {
+  color: white;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $orange;
   text-decoration: none;
 }
 
