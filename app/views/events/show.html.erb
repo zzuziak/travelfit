@@ -16,9 +16,9 @@
           <% end %>
         </div>
         <div class="show-event-details">
-          <h3>Adress: <%= @event.address %></h3>
-          <h3>Date: <%= @event.date %></h3>
-          <h3>Capacity: <%= @event.participations.count %>/<%= @event.capacity %></h3>
+          <h3><strong>Adress:</strong> <%= @event.address %></h3>
+          <h3><strong>Date:</strong> <%= @event.date %></h3>
+          <h3><strong>Capacity: </strong><%= @event.participations.count %>/<%= @event.capacity %></h3>
         </div>
         <div class="show-event-title">
           <h1><%= @event.title %></h1>
