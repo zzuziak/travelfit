@@ -114,7 +114,7 @@ Event.create!([{
   sport_id: 1
 },
 {
-  title: "Swimming competition in Wannsee ",
+  title: "Swimming competition",
   description: "5km swim race in open-waters across the Wannsee lake",
   date: "28.08.2018",
   intensity: 5,
@@ -270,7 +270,7 @@ Event.create!([{
   sport_id: 6
 },
 {
-  title: "Swimming competition in Wannsee ",
+  title: "Swimming competition ",
   description: "5km swim race in open-waters across the Wannsee lake",
   date: "28.08.2018",
   intensity: 5,
