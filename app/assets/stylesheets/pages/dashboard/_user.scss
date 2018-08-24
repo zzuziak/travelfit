@@ -8,12 +8,16 @@
 
 .dashboard-top {
   background-color: white;
-  display:flex;
-  justify-elements: space-between;
+  display: flex;
+  justify-content: space-between;
+}
+
+.white-background {
+  background-color: white;
 }
 
 .user-picture {
-  display:flex;
+  display: flex;
   flex-direction: column;
   padding: 20px;
 }
@@ -22,13 +26,57 @@
   padding: 20px
 }
 
+.event-summary h3 {
+  font-size: 26px;
+}
+
 .user-event {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid white;
+  background-color: #F4F4F4;
+}
+
+.events-tabs{
+  display: flex;
+  padding: 10px 10px 0 10px;
+  background: #F4F4F4;
+}
+
+.event-tabs a {
+  color: white;
+}
+
+.events-tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.events-tabs h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.events-tab {
+  background: #F4F4F4;
+  flex: 0 0 25%;
+  text-align: center;
   padding: 20px 0;
-  border-bottom: 1px solid rgba(220,224,244,0.4);
-  background-color: white;
+}
+
+.events-tab:first-child {
+  border-radius: 10px 0 0 0;
+}
+.events-tab:last-child {
+  border-radius: 0 10px 0 0;
+}
+
+.events-tab.active {
+  background: #05A8AA;
+  color: white;
 }
 
 .event-details {
@@ -45,7 +93,7 @@
 .event-description {
   flex: 0 0 50%;
   padding: 10px;
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(0,0,0,0.7);
 }
 
@@ -55,7 +103,7 @@
 
 .event-cover {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
   background-position: center;
 }
