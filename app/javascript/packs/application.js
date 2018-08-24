@@ -1,14 +1,15 @@
-
 import "bootstrap";
 
 import "../plugins/flatpickr";
 
 import $ from 'jquery';
-
 global.$ = jQuery;
 global.jQuery = jQuery;
 
+import "bootstrap";
+
 import "../plugins/flatpickr";
+
 //
 // let i = 0;
 // for (i = 0; i < 100; i++) {
