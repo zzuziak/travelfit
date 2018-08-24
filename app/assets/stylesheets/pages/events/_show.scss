@@ -33,6 +33,11 @@
   padding-top: 20px;
 }
 
+.show-event-title h1 {
+  padding-bottom: 30px;
+  font-size: 50px;
+}
+
 .show-desc-container {
   padding-left: 0px;
   padding-right: 0px;
@@ -49,10 +54,33 @@
   height: 25%;
   line-height: 48px;
   border-radius: 0;
-  background-color: orange;
-  border-color: orange;
+  background-color: $orange;
+  border: 0;
+  opacity: 1;
+  font-weight: 700;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
+.btn-joined {
+  width: 100%;
+  height: 25%;
+  line-height: 48px;
+  border-radius: 0;
+  background-color: $green;
+  border: 0;
+  opacity: 1;
+  font-weight: 700;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.join-event {
+  color: white;
+
+}
 .show-discussion-container {
   padding: 30px;
   background-color: white;
@@ -137,10 +165,6 @@
   display: none;
 }
 
-.join-event {
-  color: black;
-
-}
 
 .posted-at {
   font-weight: 400i;
