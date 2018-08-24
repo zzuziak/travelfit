@@ -94,11 +94,7 @@ if (btn) {
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
-$(document).ready(function(){
-  $(".category-choice").click(function(){
-    $(this).toggleClass("active");
-  });
-});
+
 
 $(document).ready(function(){
   $(".category-choice").click(function(){
