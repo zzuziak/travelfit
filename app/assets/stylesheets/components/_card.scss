@@ -135,7 +135,12 @@
   font-size: 24px;
   width: 90%;
   overflow-x: hidden;
-}
+    h2 {
+    font-family: "Roboto", "Helvetica", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+  };
+  }
 
 .card-event-intensity{
   position: absolute;
