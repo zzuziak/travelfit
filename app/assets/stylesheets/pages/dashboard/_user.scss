@@ -40,7 +40,6 @@
 
 .events-tabs{
   display: flex;
-  padding: 10px 10px 0 10px;
   background: #F4F4F4;
 }
 
@@ -102,4 +101,12 @@
 
 .center-title {
   text-align: center;
+}
+
+.simple-form-field {
+  font-size: 14px;
+}
+
+.check_boxes_custom {
+  content: "\f004";
 }
