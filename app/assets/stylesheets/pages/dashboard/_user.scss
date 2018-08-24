@@ -83,6 +83,7 @@
   display: flex;
   align-items: center;
   padding-left: 10px;
+  width: 50%;
 }
 
 .event-summary {
@@ -98,6 +99,10 @@
 
 .event-summary {
   text-align: center;
+}
+
+.event-picture {
+  width: 100%;
 }
 
 .event-cover {
