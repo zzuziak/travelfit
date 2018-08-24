@@ -44,34 +44,26 @@
   background: #F4F4F4;
 }
 
-.event-tabs a {
-  color: white;
+.event-tab a {
+  color: #808080;
 }
 
-.events-tabs a:hover {
+.events-tab a:hover {
   cursor: pointer;
   text-decoration: none;
   opacity: 0.8;
 }
 
-.events-tabs h3 {
-  font-size: 17px;
-  font-weight: bold;
+.events-tab h3 {
+  font-size: 14px;
   margin-top: 0;
 }
 
 .events-tab {
   background: #F4F4F4;
-  flex: 0 0 25%;
+  flex: 0 0 50%;
   text-align: center;
   padding: 20px 0;
-}
-
-.events-tab:first-child {
-  border-radius: 10px 0 0 0;
-}
-.events-tab:last-child {
-  border-radius: 0 10px 0 0;
 }
 
 .events-tab.active {

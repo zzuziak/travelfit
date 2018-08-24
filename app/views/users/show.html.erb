@@ -13,8 +13,15 @@
 
     <div class="user-summary">
 
-      <p> <strong> Username </strong>  <%= @user.first_name %> <%= @user.last_name %></p>
+      <%= simple_form_for @user, method: :patch, url: user_registration_path(@user) do |f| %>
+      <%= f.input :first_name, label: "First name" %>
+      <%= f.input :last_name, label: "Last name" %>
+      <%= f.input :email, label: "Email" %>
+      <% end %>
+
+     <!--  <p> <strong> Username </strong>  <%= @user.first_name %> <%= @user.last_name %></p>
       <p> <strong> Email </strong> <%=@user.email %></p>
+ -->
       <p> <strong> Sports </strong> <% @user_sports.each do |user_sport| %> </p>
 
       <%= simple_form_for user_sport, method: :patch, url: user_user_sport_path(@user, user_sport) do |f| %>
@@ -31,7 +38,15 @@
   <h2 class="center-title">Your Events</h2>
 
   <div class="events-tabs">
-    <a class="events-tab active" href="#"> <h3>Upcoming events</h3> </a>
+    <div class="events-tab active">
+      <a href="#"> <h3>UPCOMING EVENTS</h3> </a>
+     </div>
+
+    <div class="events-tab">
+     <a href="#"> <h3>PAST EVENTS</h3></a>
+     </div>
+  </div>
+
 
     <% @user.participations.each do |participation| %>
 
@@ -64,8 +79,5 @@
    </div>
 
    <% end %>
- </div>
 
-
-     <a class="events-tab" href="#"> <h3>Past events</h3></a>
 </div>
