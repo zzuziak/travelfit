@@ -28,6 +28,7 @@ class EventsController < ApplicationController
     @reply = Reply.new
     authorize @reply
     @participation = Participation.new
+    @events = policy_scope(Event).limit(3)
     # authorize @participation
     @markers = [{
         lat: @event.latitude,

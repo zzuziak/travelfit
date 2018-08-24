@@ -1,0 +1,24 @@
+<%= link_to event_path(event) do %>
+  <% if events.include? event %>
+    <div class="card-related-event" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(<%= event.photo %>); background-position: center; background-size: cover;">
+      <div class="<% if event.sport.category == "fitness" %>
+                    overlay-green
+                  <% elsif event.sport.category == "running" %>
+                    overlay-red
+                  <% elsif event.sport.category == "racket sports" %>
+                    overlay-grey
+                  <% elsif event.sport.category == "teamsports" %>
+                    overlay-yellow
+                  <% elsif event.sport.category == "yoga" %>
+                    overlay-mint
+                  <% elsif event.sport.category == "local adventure" %>
+                    overlay-blue
+                  <% end %>">
+      </div>
+      <div class="card-related-event-title"><h2><%= event.title.upcase %></h2></div>
+      <div class="card-event-intensity"><%= render 'shared/intensity', event: event %></div>
+      <div class="card-event-address"><%= image_tag 'location.svg', width: 25  %><%= event.address %></div>
+      <div class="card-event-date"><%= event.date.to_time.strftime('%b %d, %Y') %></div>
+    </div>
+  <% end %>
+<% end %>
