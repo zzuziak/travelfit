@@ -166,7 +166,7 @@ Event.create!([{
   description: "42km through the capital of Germany. This year we're celebrating the 45th edition of the Berlin Marathon. Are you up for the challenge?",
   date: "16.09.2018",
   intensity: 4,
-  remote_photo_url: "https://scontent-amt2-1.xx.fbcdn.net/v/t34.0-12/22657256_711424852381247_1302883672_n.jpg?_nc_cat=0&oh=cde56c0d71643601bebf8514dbf41cb3&oe=5B7F9FD7",
+  remote_photo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Orlen_Warsaw_Marathon_2014_al._KEN.JPG/1200px-Orlen_Warsaw_Marathon_2014_al._KEN.JPG",
   price: 95,
   address: "Berlin, Germany",
   capacity: 10_000,
@@ -322,7 +322,7 @@ Event.create!([{
   description: "42km through the capital of Germany. This year we're celebrating the 45th edition of the Berlin Marathon. Are you up for the challenge?",
   date: "16.09.2018",
   intensity: 4,
-  remote_photo_url: "https://scontent-amt2-1.xx.fbcdn.net/v/t34.0-12/22657256_711424852381247_1302883672_n.jpg?_nc_cat=0&oh=cde56c0d71643601bebf8514dbf41cb3&oe=5B7F9FD7",
+  remote_photo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Orlen_Warsaw_Marathon_2014_al._KEN.JPG/1200px-Orlen_Warsaw_Marathon_2014_al._KEN.JPG",
   price: 95,
   address: "Berlin, Germany",
   capacity: 10_000,
@@ -477,12 +477,3 @@ Reply.create!([{
   content: "The information you're looking for is in the event details."
 }]
 )
-
-
-
-
-
-
-
-
-
