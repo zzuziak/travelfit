@@ -1,3 +1,4 @@
+<% @title="tbd" %>
 <div class="no-gutters">
 
   <div class="col-xs-12 col-md-6">
@@ -67,7 +68,9 @@
           <div class="show-post-head">
             <%= cl_image_tag post.user.photo, class: "avatar avatar-small" %>
             <div class="show-post-userinfo">
-              <%= post.created_at %>
+              <div class="posted-at">
+                <%= post.created_at %>
+              </div>
               <div class="show-post-username">
                 <%= post.user.first_name %>
                 <%= post.user.last_name %>
@@ -93,12 +96,14 @@
             <div class="show-post-head">
               <%= cl_image_tag reply.user.photo, class: "avatar avatar-small" %>
               <div class="show-post-userinfo">
-              <%= reply.created_at %>
-              <div class="show-post-username">
-                <%= reply.user.first_name %>
-                <%= reply.user.last_name %>
+                <div class="posted-at">
+                  <%= reply.created_at %>
+                </div>
+                <div class="show-post-username">
+                  <%= reply.user.first_name %>
+                  <%= reply.user.last_name %>
+                </div>
               </div>
-            </div>
             </div>
             <div class="show-reply-content">
               <%= reply.content %>

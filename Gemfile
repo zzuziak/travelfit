@@ -26,6 +26,8 @@ gem "geocoder"
 gem "coffee-rails"
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'jquery-rails'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
@@ -40,4 +42,5 @@ group :development, :test do
 end
 
 gem 'bootstrap-slider-rails'
+
 gem 'redactor-rails', github: 'glyph-fr/redactor-rails'

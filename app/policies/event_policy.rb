@@ -3,7 +3,9 @@ class EventPolicy < ApplicationPolicy
     return true
   end
 
-
+  def new?
+    return true
+  end
 
   class Scope < Scope
     def resolve

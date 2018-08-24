@@ -1,3 +1,7 @@
+import "bootstrap";
+
+import "../plugins/flatpickr";
+
 import $ from 'jquery';
 global.$ = jQuery;
 global.jQuery = jQuery;
@@ -62,6 +66,7 @@ if (btn) {btn.addEventListener("click", event => {
 
 
 
+
 // document.querySelector("#search-text").addEventListener("blur", event => {
 //   console.log(document.getElementById("search-form"));
 //   document.getElementById("search-form").submit();
@@ -84,3 +89,16 @@ if (btn) {
    });
   };
 };
+
+
+// navbar hide on scroll
+
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
+
+
+$(document).ready(function(){
+  $(".category-choice").click(function(){
+    $(this).toggleClass("active");
+  });
+});
