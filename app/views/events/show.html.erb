@@ -125,10 +125,14 @@
   </div>
 </div>
 
-<div class="col-xs-12 col-md-3 nopadding">
+
+<div class="col-xs-12 col-md-3" no-padding style="font-size: 0;">
   <div class="show-event-related">
     <div class="show-event-related-head text-center">
       <h2>Related Events</h2>
+      <% @events.each do |event| %>
+        <%= render 'shared/related_events', event: event %>
+      <% end %>
     </div>
   </div>
 </div>

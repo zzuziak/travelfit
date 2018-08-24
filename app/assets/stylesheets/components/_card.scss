@@ -127,6 +127,16 @@
   color: white;
 }
 
+.card-related-event {
+  display: inline-block;
+  margin: 0;
+  height: 200px;
+  width: 100%;
+  position: relative;
+  color: white;
+  padding: 0;
+}
+
 .card-event-title{
   position: absolute;
   left: 20px;
@@ -134,13 +144,29 @@
   font-size: 24px;
   width: 90%;
   overflow-x: hidden;
+  overflow-y: hidden;
     h2 {
     font-family: "Roboto", "Helvetica", sans-serif;
     font-weight: 700;
     font-size: 32px;
   };
-  }
+}
 
+
+.card-related-event-title{
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  font-size: 24px;
+  width: 90%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+    h2 {
+    font-family: "Roboto", "Helvetica", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+  };
+  }
 .card-event-intensity{
   position: absolute;
   left: 20px;
