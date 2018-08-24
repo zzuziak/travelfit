@@ -24,7 +24,7 @@ gem "faker"
 gem 'pg_search'
 gem "geocoder"
 gem "coffee-rails"
-gem 'dotenv-rails', groups: [:development, :test]
+# gem 'dotenv-rails', groups: [:development, :test]
 gem 'jquery-rails'
 
 group :development do
@@ -39,3 +39,5 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
+gem 'redactor-rails', github: 'glyph-fr/redactor-rails'
