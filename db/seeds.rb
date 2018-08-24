@@ -331,22 +331,22 @@ yoga_events = Event.create!([{
 
 
 Participation.create!([{
-  event_id: 14,
+  event_id: 15,
   user_id: 2,
   status: "going"
 },
 {
-  event_id: 14,
+  event_id: 15,
   user_id: 3,
   status: "going"
 },
 {
-  event_id: 14,
+  event_id: 15,
   user_id: 4,
   status: "going"
 },
 {
-  event_id: 14,
+  event_id: 15,
   user_id: 5,
   status: "going"
 }]
@@ -367,22 +367,22 @@ UserSport.create!([{
 )
 
 Post.create!([{
-  event_id: 14,
+  event_id: 15,
   user_id: 2,
   content: "THIS IS SPARTA!"
 },
 {
-  event_id: 14,
+  event_id: 15,
   user_id: 4,
   content: "Hey guys - where exactly will the race take place?"
 },
 {
-  event_id: 14,
+  event_id: 15,
   user_id: 3,
   content: "New Rules have been posted to the official website, everybody make sure you've read through them!"
 },
 {
-  event_id: 14,
+  event_id: 15,
   user_id: 5,
   content: "Should we bring our own equipment? Also, isn't the weather going to be an issue with all that forecasted rain?"
 }]
