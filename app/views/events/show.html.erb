@@ -40,12 +40,16 @@
         <div class="show-event-description">
           <p><%= @event.description %></p>
         </div>
-        <div class="btn btn-join btn-success text-center">
-          <%= simple_form_for [@event, @participation], method: :post do |f| %>
-            <%= f.hidden_field :status, value: 1 %>
-            <%= f.submit "JOIN THE EVENT", class: "join-event" %>
-          <% end %>
-        </div>
+        <% if current_user.participations.find {|p| p.event_id == @event.id } %>
+          <div class="join-event btn-joined text-center">GOING</div>
+        <% else %>
+          <div class="text-center">
+            <%= simple_form_for [@event, @participation], method: :post do |f| %>
+              <%= f.hidden_field :status, value: 1 %>
+              <%= f.submit "JOIN THE EVENT", class: "join-event btn-join" %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
 
