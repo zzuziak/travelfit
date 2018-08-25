@@ -1,7 +1,7 @@
 class ParticipationsController < ApplicationController
   before_action :set_user, only: [:new, :create, :index, :update, :requests]
   before_action :set_event, only: [:new, :create]
-  before_action :set_participation, only: [ :destroy ]
+  before_action :set_participation, only: [ :destroy, :update ]
 
 
   def index
@@ -29,7 +29,7 @@ class ParticipationsController < ApplicationController
   end
 
   def update
-    @participation = Participation.update(participation_params)
+    @participation.update(participation_params)
     authorize @participation
     redirect_to user_path(current_user)
   end

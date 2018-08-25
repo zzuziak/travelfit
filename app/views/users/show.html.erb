@@ -95,6 +95,7 @@
 
        <div class="event-description">
          <p><%= participation.event.description %></p>
+         <% if participation.status == 1 %>
          <div>
           <p>
               <%= form_for participation, method: :patch do |f| %>
@@ -103,6 +104,9 @@
             <% end %>
           </p>
         </div>
+        <% else %>
+        <div class="btn events-tab active">CANCELED</div>
+        <% end %>
        </div>
      </div>
 
