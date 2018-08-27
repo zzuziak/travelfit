@@ -47,30 +47,23 @@
 
 <!-- tabs -->
 
-<div class="events-tabs">
-  <!-- <div class="events-tab active"> -->
-    <a href="" id="tb_1" class="events-tab active"><h3>DESCRIPTION</h3></a>
-   <!-- </div> -->
+<ul class="events-tabs" role="tablist">
+ <li role="presentation" class="events-tab active"><a href="#description" data-toggle="tab">
+   <h3>DESCRIPTION</h3>
+ </a></li>
+ <li role="presentation" class="events-tab"><a  href="#discussion" data-toggle="tab">
+   <h3>DISCUSSION</h3>
+ </a></li>
+</ul>
 
-  <!-- <div > -->
-   <a href="" id="tb_2" class="events-tab" > <h3>DISCUSSION</h3></a>
-   <!-- </div> -->
+<div class="tab-content">
+  <div class="tab-pane active" id="description" role="tabpanel">
+    <%= render 'description', event: @event, markers: @markers %>
+  </div>
+  <div class="tab-pane" id="discussion" role="tabpanel">
+    <%= render 'discussion', event: @event, reply: @reply, post: @post %>
+  </div>
+
 </div>
 
-<!-- description -->
-<!-- <div id="description" class="tabcontent">
-  <%= render 'description', event: @event, markers: @markers %>
-</div> -->
-  <!-- discussion -->
-
-<div id="discussion" class="tabcontent">
-  <%= render 'discussion', event: @event, reply: @reply, post: @post %>
-</div>
-<!-- </div> -->
 <!-- related events -->
-
-
-<script>
-
-
-</script>
