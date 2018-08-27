@@ -12,15 +12,16 @@ before_action :set_user, only: [:show, :create, :update]
     @sports = policy_scope(Sport)
     @user_sport.user = @user
     @user_sport.sport = Sport.find(params[:user_sport][:sport])
-
     @user_sport.save!
+    redirect_to user_path(@user)
   end
 
   def update
-    @user_sport = UserSport.new(user_sport_params)
+    @user_sport = UserSport.find(params[:id])
     @user_sport.sport = Sport.find(params[:user_sport][:sport])
     authorize @user_sport
     @user_sport.update(user_sport_params)
+    redirect_to user_path(@user)
   end
 
   private

@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_event, only: [:new, :create]
 
+
   def new
     @post = Post.new
     authorize @post
@@ -13,9 +14,17 @@ class PostsController < ApplicationController
     @post.user = @user
     @post.event = @event
     if @post.save!
-      redirect_to event_path(@event)
+      respond_to do |format|
+        format.html { redirect_to event_path(@event) }
+        format.js
+        # raise
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'events/show' }
+        format.js
+        # raise
+      end
     end
   end
 

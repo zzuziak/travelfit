@@ -3,7 +3,7 @@ class RepliesController < ApplicationController
   before_action :set_post, only: [:new, :create]
 
   def new
-    @reply = reply.new
+    @reply = Reply.new
     authorize @reply
   end
 

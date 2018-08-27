@@ -1,0 +1,40 @@
+<div class="show-post">
+  <div class="show-post-head">
+    <%= cl_image_tag post.user.photo, class: "avatar avatar-small" %>
+    <div class="show-post-userinfo">
+      <div class="posted-at">
+        <%= post.created_at %>
+      </div>
+      <div class="show-post-username">
+        <%= post.user.first_name %>
+        <%= post.user.last_name %>
+      </div>
+    </div>
+
+    <div class="reply-link">
+      <button class="btn btn-success" id="btn<%= post.id %>">Reply</button>
+    </div>
+  </div>
+  <div class="show-post-content">
+    <%= post.content %>
+  </div>
+</div>
+<% post.replies.order(created_at: :desc).each do |reply| %>
+  <div class="show-reply">
+    <div class="show-post-head">
+      <%= cl_image_tag reply.user.photo, class: "avatar avatar-small" %>
+      <div class="show-post-userinfo">
+        <div class="posted-at">
+          <%= reply.created_at %>
+        </div>
+        <div class="show-post-username">
+          <%= reply.user.first_name %>
+          <%= reply.user.last_name %>
+        </div>
+      </div>
+    </div>
+    <div class="show-reply-content">
+      <%= reply.content %>
+    </div>
+  </div>
+<% end %>
