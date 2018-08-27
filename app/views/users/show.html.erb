@@ -99,7 +99,7 @@
               <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Sports" %>
             </div>
             <div class="col-xs-4">
-              <%= f.input :level, collection:["Beginner", "Confirmed", "Ninja"] %>
+              <%= f.input :level, collection: UserSport::LEVELS %>
             </div>
             <div class="col-xs-4">
               <div class="heart-selector">
@@ -120,7 +120,7 @@
               <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Sports", selected: user_sport.sport.id %>
             </div>
             <div class="col-xs-4">
-              <%= f.input :level, collection:["Beginner", "Confirmed", "Ninja"], selected: user_sport.level %>
+              <%= f.input :level, collection: UserSport::LEVELS, selected: user_sport.level %>
             </div>
             <div class="col-xs-4">
               <div class="heart-selector">
