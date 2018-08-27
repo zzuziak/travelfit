@@ -1,12 +1,11 @@
 class ParticipationsController < ApplicationController
-  before_action :set_user, only: [:new, :create, :index, :update, :requests]
+  before_action :set_user, only: [:new, :create, :index, :update, :requests, :destroy]
   before_action :set_event, only: [:new, :create]
-  before_action :set_participation, only: [ :update, :destroy ]
+  before_action :set_participation, only: [ :destroy, :update ]
 
 
   def index
     @participations = policy_scope(Participation).where(user_id: current_user.id)
-    authorize @participations
   end
 
   def new
@@ -29,15 +28,15 @@ class ParticipationsController < ApplicationController
   end
 
   def update
-    @Participation.update(participation_params)
-    authorize @Participation
-    redirect_to requests_path
+    @participation.update(participation_params)
+    authorize @participation
+    redirect_to user_path(current_user)
   end
 
   def destroy
     @participation.destroy
     authorize @participation
-    redirect_to participations_path
+    redirect_to user_path(current_user)
   end
 
   private

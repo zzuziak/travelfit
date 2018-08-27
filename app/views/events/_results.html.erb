@@ -13,7 +13,7 @@
             <div class="events-row" id="sport-<%= sport.id %>">
               <!-- vertical scroll with events in the category -->
               <% sport.events.each do |event| %>
-                <%= render 'shared/event_card', event: event, events: events %>
+                <%= render 'shared/event_card', event: event, events: events, class: "nopadding" %>
               <% end %>
               <!-- show the arrow only with 3+ events in the row -->
               <% e = events.select { |event| event.sport == sport } %>

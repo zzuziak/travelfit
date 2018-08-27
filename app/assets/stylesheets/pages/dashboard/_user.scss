@@ -38,6 +38,27 @@
   background-color: #F4F4F4;
 }
 
+.cancelled-button {
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+  background-color: $green;
+  color: white;
+  height: 30px;
+  // border-radius: 5px;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 15px;
+}
+
+.going-button {
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+  background-color: $orange;
+  color: white;
+  height: 30px;
+  // border-radius: 5px;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 15px;
+}
 .profile-picture-button {
   background-color: $orange;
   color: white;
@@ -122,4 +143,10 @@
 
 .check_boxes_custom {
   content: "\f004";
+}
+
+.update-participation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

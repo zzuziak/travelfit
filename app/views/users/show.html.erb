@@ -95,6 +95,16 @@
 
        <div class="event-description">
          <p><%= participation.event.description %></p>
+        <div class="update-participation">
+           <div class="btn going-button">GOING</div>
+           <div>
+            <p>
+                <%= form_for participation, method: :delete do |f| %>
+                <%= f.submit "LEAVE EVENT", class: "btn cancelled-button" %>
+              <% end %>
+            </p>
+          </div>
+         </div>
        </div>
      </div>
 
