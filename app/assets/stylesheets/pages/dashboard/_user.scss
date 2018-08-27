@@ -67,15 +67,25 @@
   display: flex;
   background: #F4F4F4;
   align-items: center;
+  text-decoration: none;
 }
 
 .events-tab a {
   color: #808080;
 }
 
+.events-tabs li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.white-background ul {
+  -webkit-padding-start: 0px !important;
+  text-decoration: none !important;
+}
+
 .events-tab a:hover {
   cursor: pointer;
-  text-decoration: none;
   opacity: 0.8;
 }
 
@@ -86,9 +96,10 @@
 
 .events-tab {
   background: #F4F4F4;
-  flex: 0 0 50%;
+  flex: 0 0 33.33%;
   text-align: center;
   padding: 10px 0;
+  text-decoration: none;
 }
 
 .events-tab.active {
@@ -150,3 +161,27 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.heart-selector {
+  input[type=checkbox] ~ label {
+    color: black;
+    &::before {
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f004";
+      padding: 10px;
+    }
+  }
+  input[type=checkbox]:checked ~ label {
+    color: red;
+  }
+}
+
+.heart-selector:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+

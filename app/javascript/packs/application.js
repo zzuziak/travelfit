@@ -90,7 +90,6 @@ if (btn) {
   };
 };
 
-
 // navbar hide on scroll
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
@@ -102,3 +101,5 @@ $(document).ready(function(){
     $(this).toggleClass("active");
   });
 });
+
+// tabs for dashboard
