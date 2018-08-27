@@ -2,117 +2,117 @@
 <% @title="Your Dashboard" %>
 <div class="white-background">
 
-<h1 class="center-title">Your Dashboard</h1>
+ <ul class="events-tabs" role="tablist">
+  <li role="presentation" class="events-tab active"><a href="#upcoming" data-toggle="tab">
+    <h3>UPCOMING EVENTS</h3>
+  </a></li>
+  <li role="presentation" class="events-tab"><a  href="#past" data-toggle="tab">
+    <h3>PAST EVENTS</h3>
+  </a></li>
+    <li role="presentation" class="events-tab"><a href="#profile" data-toggle="tab">
+    <h3>PROFILE</h3>
+  </a></li>
+</ul>
 
-<div class="container dashboard-top">
+  <div class="events-tab-content tab-content">
+    <div id="upcoming" class="tab-pane active" role="tabpanel">
+      <% @user.participations.each do |participation| %>
 
-    <div class="user-picture">
-      <%= cl_image_tag @user.photo, class: "avatar avatar-medium avatar-margin" %>
-      <div class="btn profile-picture-button">Change profile picture</div>
-    </div>
+      <div class="user-event">
 
-    <div class="user-summary container">
+        <div class="event-details">
+          <div class="event-summary">
+           <h3><%= participation.event.title %></h3>
+           <p><i class="fas fa-calendar-alt"></i><%= participation.event.date %></p>
 
-    <%= simple_form_for @user, method: :patch, url: user_registration_path(@user), :html=> { class: 'simple-form-field' } do |f| %>
-        <div class="row">
-          <div class="col-xs-6">
-          <%= f.input :first_name, label: "First name" %>
-          </div>
-          <div class="col-xs-6">
-          <%= f.input :last_name, label: "Last name" %>
-          </div>
-        </div>
-      <% end %>
-
-     <!--  <p> <strong> Username </strong>  <%= @user.first_name %> <%= @user.last_name %></p>
-      <p> <strong> Email </strong> <%=@user.email %></p>
- -->
-      <p> <strong> Your Sports </strong> <% @user_sports.each do |user_sport| %> </p>
-
-      <%= simple_form_for user_sport, method: :patch, url: user_user_sport_path(@user, user_sport), :html=> { class: 'simple-form-field' }  do |f| %>
-       <div class="row">
-        <div class="col-xs-4">
-          <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Sports" %>
-        </div>
-        <div class="col-xs-4">
-        <%= f.input :level, collection:["Beginner", "Confirmed", "Ninja"] %>
-       </div>
-        <div class="col-xs-4">
-          <%= f.label "Add To Favorite" %>
-          <div>
-          <%# link_to do  // http request to path to update favourite %>
-           <% if user_sport.favourite? %>
-           <i class="fas fa-heart"></i>
-          <% else %>
-          <i class="far fa-heart"></i>
-          <% end %>
-        </div>
-        </div>
-      </div>
-      <%= f.submit %>
-     <%# f.collection_radio_buttons(
-      :level, [[1,’Beginner’],[2,’Confirmed’],[3,’Ninja’]], :first, :last, { item_wrapper_tag: false }) %>
-      <% end %>
-     <% end %>
-    </div>
-  </div>
-
-
-  <h2 class="center-title">Your Events</h2>
-
-  <div class="events-tabs">
-    <div class="events-tab active">
-      <a href="#"> <h3>UPCOMING EVENTS</h3> </a>
-     </div>
-
-    <div class="events-tab">
-     <a href="#"> <h3>PAST EVENTS</h3></a>
-     </div>
-  </div>
-
-
-    <% @user.participations.each do |participation| %>
-
-    <div class="user-event">
-
-      <div class="event-details">
-        <div class="event-summary">
-         <h3><%= participation.event.title %></h3>
-         <p><i class="fas fa-calendar-alt"></i><%= participation.event.date %></p>
-
-         <div class="show-event-intensity">
-           <% participation.event.intensity.times do %>
-           <%= image_tag("flame.svg", width: "20px", alt: "flame", class: "img-intensity") %>
-           <% end %>
-           <% (5 - participation.event.intensity).times do %>
-           <%= image_tag("flame_alt.svg", width: "20px", alt: "flame", class: "img-intensity") %>
-           <% end %>
-           <p><i class="fas fa-map-marker-alt"></i><%= participation.event.address %></p>
+           <div class="show-event-intensity">
+             <% participation.event.intensity.times do %>
+             <%= image_tag("flame.svg", width: "20px", alt: "flame", class: "img-intensity") %>
+             <% end %>
+             <% (5 - participation.event.intensity).times do %>
+             <%= image_tag("flame_alt.svg", width: "20px", alt: "flame", class: "img-intensity") %>
+             <% end %>
+             <p><i class="fas fa-map-marker-alt"></i><%= participation.event.address %></p>
+           </div>
          </div>
 
-
-       </div>
-
-       <div class="event-description">
-         <p><%= participation.event.description %></p>
-        <div class="update-participation">
-           <div class="btn going-button">GOING</div>
-           <div>
-            <p>
+         <div class="event-description">
+           <p><%= participation.event.description %></p>
+           <div class="update-participation">
+             <div><i class="fas fa-check"> Going </i></div>
+             <div>
+              <p>
                 <%= form_for participation, method: :delete do |f| %>
                 <%= f.submit "LEAVE EVENT", class: "btn cancelled-button" %>
-              <% end %>
-            </p>
+                <% end %>
+              </p>
+            </div>
           </div>
-         </div>
-       </div>
-     </div>
+        </div>
+      </div>
 
-     <div class="event-picture">
+      <div class="event-picture">
        <%= cl_image_tag participation.event.photo, crop: :crop, class:"event-cover" %>
      </div>
    </div>
-
    <% end %>
+  </div>
 
+  <div id="past" class="tab-pane" role="tabpanel">
+    <p>Your past events (test)</p>
+  </div>
+
+  <div id="profile" class="tab-pane" role="tabpanel">
+
+    <div class="container dashboard-top">
+
+      <div class="user-picture">
+        <%= cl_image_tag @user.photo, class: "avatar avatar-medium avatar-margin" %>
+        <div class="btn profile-picture-button">Change profile picture</div>
+      </div>
+
+      <div class="user-summary container">
+
+        <%= simple_form_for @user, method: :patch, url: user_registration_path(@user), :html=> { class: 'simple-form-field' } do |f| %>
+        <div class="row">
+          <div class="col-xs-6">
+            <%= f.input :first_name, label: "First name" %>
+          </div>
+          <div class="col-xs-6">
+            <%= f.input :last_name, label: "Last name" %>
+          </div>
+        </div>
+        <% end %>
+
+       <!--  <p> <strong> Username </strong>  <%= @user.first_name %> <%= @user.last_name %></p>
+        <p> <strong> Email </strong> <%=@user.email %></p>
+      -->
+      <p> <strong> Your Sports </strong></p>
+
+      <% @user_sports.each do |user_sport| %>
+        <%= simple_form_for user_sport, method: :patch, url: user_user_sport_path(@user, user_sport), html: { class: 'simple-form-field' }  do |f| %>
+          <div class="row">
+            <div class="col-xs-4">
+              <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Sports" %>
+            </div>
+            <div class="col-xs-4">
+              <%= f.input :level, collection:["Beginner", "Confirmed", "Ninja"] %>
+            </div>
+            <div class="col-xs-4">
+              <%#= f.label "Add To Favorite" %>
+              <div class="heart-selector">
+                <%= f.input_field :favourite, class: "hidden", id: "user_favourite_sport_#{user_sport.id}" %>
+                <%= f.label :favourite, label: "", for: "user_favourite_sport_#{user_sport.id}" %>
+              </div>
+            </div>
+          </div>
+          <%= f.submit "Update"%>
+         <%# f.collection_radio_buttons(
+         :level, [[1,’Beginner’],[2,’Confirmed’],[3,’Ninja’]], :first, :last, { item_wrapper_tag: false }) %>
+         <% end %>
+       <% end %>
+     </div>
+   </div>
+  </div>
+  </div>
 </div>
