@@ -68,6 +68,9 @@
   background: #F4F4F4;
   align-items: center;
   text-decoration: none;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
 }
 
 .events-tab a {
@@ -90,16 +93,24 @@
 }
 
 .events-tab h3 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
+  margin: 10px 0;
 }
 
 .events-tab {
-  background: #F4F4F4;
-  flex: 0 0 33.33%;
+  background-color: #F4F4F4;
+  width: 100%;
   text-align: center;
   padding: 10px 0;
-  text-decoration: none;
+  text-decoration: none !important;
+  transition: all 0.4s;
+  &:hover {
+    background-color: #e4e4e4;
+  }
+  a:hover {
+    text-decoration: none !important;
+  }
 }
 
 .events-tab.active {
@@ -107,6 +118,10 @@
   color: white;
   a {
     color: white;
+    text-decoration: none !important;
+  }
+  a:hover {
+    text-decoration: none;
   }
 }
 
@@ -184,4 +199,3 @@
   cursor: pointer;
   opacity: 0.7;
 }
-

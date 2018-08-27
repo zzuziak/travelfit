@@ -1,0 +1,17 @@
+function refreshForm(content) {
+  const newPostForm = document.getElementById('new-post');
+  newPostForm.innerHTML = content;
+}
+
+function addPost(postHTML) {
+  const posts = document.getElementById('posts');
+  posts.insertAdjacentHTML('beforeend', postHTML);
+}
+
+<% if @post.errors.any? %>
+  refreshForm('<%= j render "posts/form_post", post: @post, event: @event %>');
+<% else %>
+  addPost('<%= j render "posts/show", post: @post, event: @event, reply: @reply %>');
+  refreshForm('<%= j render "posts/form_post", event: @event, post: Post.new %>');
+  console.log("hello")
+<% end %>
