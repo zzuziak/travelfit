@@ -5,7 +5,7 @@ function refreshForm(content) {
 
 function addPost(postHTML) {
   const posts = document.getElementById('posts');
-  posts.insertAdjacentHTML('beforeend', postHTML);
+  posts.insertAdjacentHTML('beforebegin', postHTML);
 }
 
 <% if @post.errors.any? %>

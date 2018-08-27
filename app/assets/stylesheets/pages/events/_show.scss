@@ -41,6 +41,9 @@
   left: 50px;
 }
 
+.event-icon {
+  margin: 5px 10px;
+}
 
 .show-event-title {
   position: absolute;
@@ -165,8 +168,13 @@
   flex-direction: column;
 }
 
+.show-post-username {
+  font-weight: 700;
+}
 .show-post-content {
-  margin-top: 20px;
+  margin: 0px 80px 0 80px;
+  border-top: 1px solid lightgrey;
+  padding-top: 20px;
 }
 
 .show-reply {
@@ -206,6 +214,10 @@
 
 
 .posted-at {
-  font-weight: 400i;
-  margin: 0 0 0px;
+  font-weight: 400;
+  margin: 0 0 0 0;
+}
+
+.userpost {
+  margin-bottom: 20px;
 }
