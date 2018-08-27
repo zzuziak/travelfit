@@ -22,9 +22,9 @@
           <% end %>
         </div>
         <div class="show-event-details">
-          <h3><strong>Adress:</strong> <%= @event.address %></h3>
-          <h3><strong>Date:</strong> <%= @event.date %></h3>
-          <h3><strong>Capacity: </strong><%= @event.participations.count %>/<%= @event.capacity %></h3>
+          <h3><i class="fas fa-map-marker-alt"></i> <%= @event.address %></h3>
+          <h3><i class="fas fa-calendar-alt"></i><%= @event.date %></h3>
+          <h3><%= image_tag 'capacity.svg', width: 25, class:"event-icon" %><%= @event.participations.count %>/<%= @event.capacity %></h3>
           <div class="show-event-intensity">
             <%= render 'shared/intensity', event: @event %>
             <% (5 - @event.intensity).times do %>

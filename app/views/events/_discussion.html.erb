@@ -2,8 +2,8 @@
   <div>
     <div class="col-xs-12 col-md-10 col-md-offset-1">
       <div class="show-discussion-container">
-        <div id="posts">
           <%= render 'posts/form_post', post: post, event: event %>
+          <div id="posts">
           <% event.posts.order(created_at: :desc).each do |post| %>
             <%= render 'posts/show', post: post, event: event, reply: reply %>
           <% end %>

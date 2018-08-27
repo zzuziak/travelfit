@@ -2,12 +2,12 @@
   <div class="show-post-head">
     <%= cl_image_tag post.user.photo, class: "avatar avatar-small" %>
     <div class="show-post-userinfo">
-      <div class="posted-at">
-        <%= post.created_at %>
-      </div>
       <div class="show-post-username">
         <%= post.user.first_name %>
         <%= post.user.last_name %>
+      </div>
+      <div class="posted-at">
+        <%= post.created_at %>
       </div>
     </div>
 
