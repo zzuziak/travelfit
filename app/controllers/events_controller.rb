@@ -8,17 +8,12 @@ class EventsController < ApplicationController
     if params[:address].present? #all events displayed if searched with no input
       @events = policy_scope(Event).search_address(params[:address])
       set_search_params
+      set_markers
     else
       @events = policy_scope(Event)
       set_search_params
+      set_markers
     end
-    set_markers
-    #
-    # respond_to do |format|
-    #   format.html { render 'events/index' }
-    #   format.js
-    # end
-
   end
 
   def show
@@ -86,7 +81,7 @@ class EventsController < ApplicationController
       {
         lat: event.latitude,
         lng: event.longitude,
-        infoWindow: { content: render_to_string(partial: "/shared/map_box", locals: { event: event }) },
+        infoWindow: { content: render_to_string(partial: "/shared/map_box", locals: { event: event }) }
       }
     end
   end
