@@ -1,5 +1,5 @@
 <% @title = @event.title  %>
-<div class="no-gutters">
+<div class="row row-no-padding">
 
   <div class="col-xs-12 col-md-6 nopadding">
     <div class="show-event-info-container">
@@ -9,16 +9,28 @@
           <%= @event.user.first_name %>
           <%= @event.user.last_name %>
         </div>
-        <div class="show-event-intensity">
-          <%= render 'shared/intensity', event: @event %>
-          <% (5 - @event.intensity).times do %>
-            <%= image_tag("flame_alt.svg", width: "20px", alt: "flame_off", class: "img-intensity img-inline") %>
+        <div class="join-event">
+          <% if current_user.participations.find {|p| p.event_id == @event.id } %>
+            <div class="btn-joined text-center">GOING</div>
+          <% else %>
+            <div class="text-center">
+              <%= simple_form_for [@event, @participation], method: :post do |f| %>
+                <%= f.hidden_field :status, value: 1 %>
+                <%= f.submit "JOIN THE EVENT", class: "btn-join" %>
+              <% end %>
+            </div>
           <% end %>
         </div>
         <div class="show-event-details">
           <h3><strong>Adress:</strong> <%= @event.address %></h3>
           <h3><strong>Date:</strong> <%= @event.date %></h3>
           <h3><strong>Capacity: </strong><%= @event.participations.count %>/<%= @event.capacity %></h3>
+          <div class="show-event-intensity">
+            <%= render 'shared/intensity', event: @event %>
+            <% (5 - @event.intensity).times do %>
+              <%= image_tag("flame_alt.svg", width: "20px", alt: "flame_off", class: "img-intensity img-inline") %>
+            <% end %>
+          </div>
         </div>
         <div class="show-event-title">
           <h1><%= @event.title %></h1>
@@ -33,106 +45,32 @@
   </div>
 </div>
 
-<div class="row row-no-padding">
-  <div class="desc-map-row">
-    <div class="col-xs-12 col-md-6 nopadding">
-      <div class="show-desc-container">
-        <div class="show-event-description">
-          <p><%= @event.description %></p>
-        </div>
-        <% if current_user.participations.find {|p| p.event_id == @event.id } %>
-          <div class="join-event btn-joined text-center">GOING</div>
-        <% else %>
-          <div class="text-center">
-            <%= simple_form_for [@event, @participation], method: :post do |f| %>
-              <%= f.hidden_field :status, value: 1 %>
-              <%= f.submit "JOIN THE EVENT", class: "join-event btn-join" %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+<!-- tabs -->
 
-    <div class="col-xs-12 col-md-6 nopadding">
-      <div class="show-event-map">
-        <div id="map" data-markers="<%= @markers.to_json %>" style="height: 100%"></div>
-      </div>
-    </div>
-  </div>
+<div class="events-tabs">
+  <!-- <div class="events-tab active"> -->
+    <a href="" id="tb_1" class="events-tab active"><h3>DESCRIPTION</h3></a>
+   <!-- </div> -->
+
+  <!-- <div > -->
+   <a href="" id="tb_2" class="events-tab" > <h3>DISCUSSION</h3></a>
+   <!-- </div> -->
 </div>
 
-<div class="col-xs-12 col-md-9 nopadding">
-  <div class="show-event-discussion">
-    <div class="show-event-discussion-head text-center">
-      <h2>Discussion</h2>
-    </div>
-    <div class="show-discussion-container">
-      <% @event.posts.order(created_at: :desc).each do |post| %>
-        <div class="show-post">
-          <div class="show-post-head">
-            <%= cl_image_tag post.user.photo, class: "avatar avatar-small" %>
-            <div class="show-post-userinfo">
-              <div class="posted-at">
-                <%= post.created_at %>
-              </div>
-              <div class="show-post-username">
-                <%= post.user.first_name %>
-                <%= post.user.last_name %>
-              </div>
-            </div>
-
-            <div class="reply-link">
-              <button class="btn btn-success" id="btn<%= post.id %>">Reply</button>
-            </div>
-          </div>
-          <div class="show-post-content">
-            <%= post.content %>
-          </div>
-        </div>
-        <div class="show-reply visible">
-          <%= simple_form_for [@event, Post.find(post.id), @reply], method: :post do |f| %>
-            <%= f.input :content, label: "Reply to this post!" %>
-            <%= f.submit "Reply!", class: "btn btn-success" %>
-          <% end %>
-        </div>
-        <% post.replies.order(created_at: :desc).each do |reply| %>
-          <div class="show-reply">
-            <div class="show-post-head">
-              <%= cl_image_tag reply.user.photo, class: "avatar avatar-small" %>
-              <div class="show-post-userinfo">
-                <div class="posted-at">
-                  <%= reply.created_at %>
-                </div>
-                <div class="show-post-username">
-                  <%= reply.user.first_name %>
-                  <%= reply.user.last_name %>
-                </div>
-              </div>
-            </div>
-            <div class="show-reply-content">
-              <%= reply.content %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-      <div class="userpost">
-        <%= simple_form_for [@event, @post], method: :post do |f| %>
-          <%= f.input :content, label: "Post something to the event!" %>
-          <%= f.submit "Post!", class: "btn btn-success" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+<!-- description -->
+<div id="description" class="tabcontent">
+  <%= render 'description', event: @event, markers: @markers %>
 </div>
+  <!-- discussion -->
+
+<!-- <div id="discussion" class="tabcontent">
+  <%= render 'discussion', event: @event, reply: @reply, post: @post %>
+</div> -->
+<!-- </div> -->
+<!-- related events -->
 
 
-<div class="col-xs-12 col-md-3" no-padding style="font-size: 0;">
-  <div class="show-event-related">
-    <div class="show-event-related-head text-center">
-      <h2>Related Events</h2>
-      <% @events.each do |event| %>
-        <%= render 'shared/related_events', event: event %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<script>
+
+
+</script>
