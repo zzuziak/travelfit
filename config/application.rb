@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+config.assets.initialize_on_precompile = false
+
+
 module Travelfit
   class Application < Rails::Application
     config.action_view.embed_authenticity_token_in_remote_forms = true
