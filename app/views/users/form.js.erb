@@ -1,0 +1,17 @@
+function refreshForm(innerHTML) {
+  const newUpdateForm = document.queryselector('.user-summary');
+  newUpdateForm.innerHTML = innerHTML;
+}
+
+function updateSport(sportHTML) {
+  const sports = document.queryselector('.user-summary');
+  sports.insserAdjacentHTML('beforeend', sportHTML);
+}
+
+
+<% if @user_sport.errors.any? %>
+  refreshForm('<%= j render "users/update", user_sport: @user_sport, current_user: current_user%>');
+<% else %>
+  updateSport('<%= j render "users/profile", user_sport: @user_sport, current_user: current_user %>');
+  refreshForm('<%= j render "users/update", user_sport: @user_sport, current_user: current_user%>');
+<% end %>

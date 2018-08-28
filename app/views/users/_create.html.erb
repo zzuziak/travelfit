@@ -1,0 +1,23 @@
+<% counter = 0 %>
+<%= simple_form_for [current_user, @user_sport], method: :post, url: user_user_sports_path(current_user) do |f| %>
+              <% counter = counter + 1 %>
+
+              <div class="row">
+                <div class="col-xs-3">
+                  <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Add new sport" %>
+                </div>
+                <div class="col-xs-3">
+                  <%= f.input :level, collection: UserSport::LEVELS %>
+                </div>
+                <div class="col-xs-3">
+                  <div class="heart-selector">
+                    <%= f.input_field :favourite, class: "hidden", id: "user_favourite_sport_#{counter}" %>
+                    <%= f.label :favourite, label: "", for: "user_favourite_sport_#{counter}" %>
+                  </div>
+                </div>
+                <div class="col-xs-3 margin-top">
+                  <%= f.submit "Add sport"%>
+                </div>
+              </div>
+   <% end %>
+
