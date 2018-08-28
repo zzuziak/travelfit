@@ -25,7 +25,7 @@ class Event < ApplicationRecord
   pg_search_scope :search_address,
   against: [ :title, :description, :address ],
   using: {
-    tsearch: { prefix: true }
+    tsearch: { any_word: true }
   }
 
   def self.related_events

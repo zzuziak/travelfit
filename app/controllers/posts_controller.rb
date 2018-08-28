@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     authorize @post
     @post.user = @user
     @post.event = @event
+    @reply = Reply.new
     if @post.save!
       respond_to do |format|
         format.html { redirect_to event_path(@event) }
