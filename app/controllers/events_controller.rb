@@ -61,6 +61,10 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :description, :date, :intensity, :price, :address, :photo, :capacity)
   end
 
+  def reply_params
+    params.require(:reply).permit(:content)
+  end
+
   def set_search_params
     if params[:date_from].present?
       d = params[:date_from].split(" ")[0].split("-").map {|x| x.to_i}

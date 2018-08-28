@@ -17,7 +17,7 @@
       </div>
       <div class="card-event-title"><h2><%= event.title.upcase %></h2></div>
       <div class="card-event-intensity"><%= render 'shared/intensity', event: event %></div>
-      <div class="card-event-address"><%= image_tag 'location.svg', width: 25  %><%= event.address %></div>
+      <div class="card-event-address"><%= event.address %></div>
       <div class="card-event-date"><%= event.date.to_time.strftime('%b %d, %Y') %></div>
     </div>
   <% end %>
