@@ -1,31 +1,35 @@
 class UserSportsController < ApplicationController
-before_action :set_user, only: [:new, :create]
-
+before_action :set_user, only: [:show, :create, :update]
 
   def show
-    @user_sport = User_sport.new
+    @user_sport = UserSport.new
     authorize @user_sport
   end
 
   def create
-    @user = current_user
-    @user_sport = User_sport.new(user_sport_params)
+    @user_sport = UserSport.new(user_sport_params)
     authorize @user_sport
+    @sports = policy_scope(Sport)
     @user_sport.user = @user
-    @user_sport.sport = @sport
+    @user_sport.sport = Sport.find(params[:user_sport][:sport])
     @user_sport.save!
+    redirect_to user_path(@user)
   end
 
   def update
-    @user_sport.update(user_sport_params)
+    @user_sport = UserSport.find(params[:id])
+    @user_sport.sport = Sport.find(params[:user_sport][:sport])
     authorize @user_sport
+    @user_sport.update(user_sport_params)
+    redirect_to user_path(@user)
   end
 
   private
 
   def set_user
-    @job = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
   end
+
 
   def user_sport_params
     params.require(:user_sport).permit(:level, :favourite)

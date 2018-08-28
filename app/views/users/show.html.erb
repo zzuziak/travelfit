@@ -88,18 +88,41 @@
         <p> <strong> Email </strong> <%=@user.email %></p>
       -->
       <p> <strong> Your Sports </strong></p>
-
-      <% @user_sports.each do |user_sport| %>
-        <%= simple_form_for user_sport, method: :patch, url: user_user_sport_path(@user, user_sport), html: { class: 'simple-form-field' }  do |f| %>
-          <div class="row">
+      <%#  if user sport is empty, then display form without prepopulated fields, else %>
+      <% if @user_sports.empty? %>
+         <p>Add sports</p>
+         <% count = 0 %>
+         <%= simple_form_for [current_user, @user_sport], method: :post, url: user_user_sports_path(current_user) do |f| %>
+           <% count = count + 1 %>
+           <div class="row">
             <div class="col-xs-4">
               <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Sports" %>
             </div>
             <div class="col-xs-4">
-              <%= f.input :level, collection:["Beginner", "Confirmed", "Ninja"] %>
+              <%= f.input :level, collection: UserSport::LEVELS %>
             </div>
             <div class="col-xs-4">
-              <%#= f.label "Add To Favorite" %>
+              <div class="heart-selector">
+                <%= f.input_field :favourite, class: "hidden", id: "user_favourite_sport_#{count}" %>
+                <%= f.label :favourite, label: "", for: "user_favourite_sport_#{count}" %>
+              </div>
+            </div>
+
+          </div>
+          <%= f.submit "Create"%>
+         <% end %>
+
+
+      <% else @user_sports.each do |user_sport| %>
+        <%= simple_form_for [current_user, user_sport], html: { class: 'simple-form-field' } do |f| %>
+          <div class="row">
+            <div class="col-xs-4">
+              <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Sports", selected: user_sport.sport.id %>
+            </div>
+            <div class="col-xs-4">
+              <%= f.input :level, collection: UserSport::LEVELS, selected: user_sport.level %>
+            </div>
+            <div class="col-xs-4">
               <div class="heart-selector">
                 <%= f.input_field :favourite, class: "hidden", id: "user_favourite_sport_#{user_sport.id}" %>
                 <%= f.label :favourite, label: "", for: "user_favourite_sport_#{user_sport.id}" %>
@@ -110,6 +133,7 @@
          <%# f.collection_radio_buttons(
          :level, [[1,’Beginner’],[2,’Confirmed’],[3,’Ninja’]], :first, :last, { item_wrapper_tag: false }) %>
          <% end %>
+        <% end %>
        <% end %>
      </div>
    </div>
