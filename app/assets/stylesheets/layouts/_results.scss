@@ -7,8 +7,8 @@
   h2 {
     margin: 0;
     padding: 0;
-    font-family: 'Bebas Neue Regular';
-    font-size: 40px;
+    font-size: 32px;
+    color: #595959;
   }
 }
 
@@ -26,10 +26,4 @@
   &:hover {
     opacity: 0.8;
   }
-}
-
-.btn-map {
-  background-color: $orange;
-  color: white;
-  margin-left: 40px;
 }
