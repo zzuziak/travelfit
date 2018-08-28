@@ -2,96 +2,26 @@
 <% @title="Your Dashboard" %>
 <div class="white-background">
 
- <ul class="events-tabs" role="tablist">
-  <li role="presentation" class="events-tab active"><a href="#upcoming" data-toggle="tab">
-    <h3>UPCOMING EVENTS</h3>
-  </a></li>
-  <li role="presentation" class="events-tab"><a  href="#past" data-toggle="tab">
-    <h3>PAST EVENTS</h3>
-  </a></li>
-    <li role="presentation" class="events-tab"><a href="#profile" data-toggle="tab">
-    <h3>PROFILE</h3>
-  </a></li>
-</ul>
+  <ul class="events-tabs" role="tablist">
+    <li role="presentation" class="events-tab active">
+      <a href="#upcoming" data-toggle="tab">
+        <h3>UPCOMING EVENTS</h3>
+      </a>
+    </li>
+    <li role="presentation" class="events-tab">
+      <a  href="#past" data-toggle="tab">
+      <h3>PAST EVENTS</h3>
+     </a>
+    </li>
+    <li role="presentation" class="events-tab">
+      <a href="#profile" data-toggle="tab">
+      <h3>PROFILE</h3>
+      </a>
+    </li>
+  </ul>
 
-<%= render 'upcoming', user: @user %>
-<%= render 'past', user: @user %>
+  <%= render 'upcoming', user: @user %>
+  <%= render 'past', user: @user %>
+  <%= render 'profile', user: @user %>
 
-  <div id="profile" class="tab-pane" role="tabpanel">
-
-    <div class="container dashboard-top">
-
-      <div class="user-picture">
-        <%= cl_image_tag @user.photo, class: "avatar avatar-medium avatar-margin" %>
-        <div class="btn profile-picture-button">Change profile picture</div>
-      </div>
-
-      <div class="user-summary container">
-
-        <%= simple_form_for @user, method: :patch, url: user_registration_path(@user), :html=> { class: 'simple-form-field' } do |f| %>
-        <div class="row">
-          <div class="col-xs-6">
-            <%= f.input :first_name, label: "First name" %>
-          </div>
-          <div class="col-xs-6">
-            <%= f.input :last_name, label: "Last name" %>
-          </div>
-        </div>
-        <% end %>
-
-       <!--  <p> <strong> Username </strong>  <%= @user.first_name %> <%= @user.last_name %></p>
-        <p> <strong> Email </strong> <%=@user.email %></p>
-      -->
-      <p> <strong> Your Sports </strong></p>
-      <%#  if user sport is empty, then display form without prepopulated fields, else %>
-      <% if @user_sports.empty? %>
-         <p>Add sports</p>
-         <% count = 0 %>
-         <%= simple_form_for [current_user, @user_sport], method: :post, url: user_user_sports_path(current_user) do |f| %>
-           <% count = count + 1 %>
-           <div class="row">
-            <div class="col-xs-4">
-              <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Sports" %>
-            </div>
-            <div class="col-xs-4">
-              <%= f.input :level, collection: UserSport::LEVELS %>
-            </div>
-            <div class="col-xs-4">
-              <div class="heart-selector">
-                <%= f.input_field :favourite, class: "hidden", id: "user_favourite_sport_#{count}" %>
-                <%= f.label :favourite, label: "", for: "user_favourite_sport_#{count}" %>
-              </div>
-            </div>
-
-          </div>
-          <%= f.submit "Create"%>
-         <% end %>
-
-
-      <% else @user_sports.each do |user_sport| %>
-        <%= simple_form_for [current_user, user_sport], html: { class: 'simple-form-field' } do |f| %>
-          <div class="row">
-            <div class="col-xs-4">
-              <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Sports", selected: user_sport.sport.id %>
-            </div>
-            <div class="col-xs-4">
-              <%= f.input :level, collection: UserSport::LEVELS, selected: user_sport.level %>
-            </div>
-            <div class="col-xs-4">
-              <div class="heart-selector">
-                <%= f.input_field :favourite, class: "hidden", id: "user_favourite_sport_#{user_sport.id}" %>
-                <%= f.label :favourite, label: "", for: "user_favourite_sport_#{user_sport.id}" %>
-              </div>
-            </div>
-          </div>
-          <%= f.submit "Update"%>
-         <%# f.collection_radio_buttons(
-         :level, [[1,’Beginner’],[2,’Confirmed’],[3,’Ninja’]], :first, :last, { item_wrapper_tag: false }) %>
-         <% end %>
-        <% end %>
-       <% end %>
-     </div>
-   </div>
-  </div>
-  </div>
 </div>
