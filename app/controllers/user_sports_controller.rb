@@ -20,8 +20,17 @@ before_action :set_user, only: [:show, :create, :update]
     @user_sport = UserSport.find(params[:id])
     @user_sport.sport = Sport.find(params[:user_sport][:sport])
     authorize @user_sport
-    @user_sport.update(user_sport_params)
-    redirect_to user_path(@user)
+    if @user_sport.update(user_sport_params)
+      respond_to do |format|
+        format.html {redirect_to user_path(@user)}
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html {render :show}
+        format.js
+      end
+    end
   end
 
   private

@@ -1,0 +1,22 @@
+<% @user_sports.each do |user_sport| %>
+  <%= simple_form_for([current_user, user_sport], remote: true, html: { class: 'simple-form-field' }) do |f| %>
+          <div class="row">
+            <div class="col-xs-3">
+              <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Your sports", selected: user_sport.sport.id %>
+            </div>
+            <div class="col-xs-3">
+              <%= f.input :level, collection: UserSport::LEVELS, selected: user_sport.level %>
+            </div>
+            <div class="col-xs-3">
+              <div class="heart-selector">
+                <%= f.input_field :favourite, class: "hidden", id: "user_favourite_sport_#{user_sport.id}" %>
+                <%= f.label :favourite, label: "", for: "user_favourite_sport_#{user_sport.id}" %>
+              </div>
+            </div>
+            <div class="col-xs-3 margin-top">
+              <%= f.submit "Update sport"%>
+            </div>
+          </div>
+       <% end %>
+    <% end %>
+

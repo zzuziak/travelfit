@@ -1,10 +1,11 @@
 
+
 <% @title="Your Dashboard" %>
 <div class="white-background">
 
   <ul class="events-tabs" role="tablist">
     <li role="presentation" class="events-tab active">
-      <a href="#upcoming" data-toggle="tab">
+      <a href="#upcoming" data-toggle="tab" id="upcoming-tab">
         <h3>UPCOMING EVENTS</h3>
       </a>
     </li>
@@ -14,7 +15,7 @@
      </a>
     </li>
     <li role="presentation" class="events-tab">
-      <a href="#profile" data-toggle="tab">
+      <a href="#userprofile" data-toggle="tab">
       <h3>PROFILE</h3>
       </a>
     </li>
@@ -23,5 +24,9 @@
   <%= render 'upcoming', user: @user %>
   <%= render 'past', user: @user %>
   <%= render 'profile', user: @user %>
-
 </div>
+
+<script>
+
+
+</script>
