@@ -19,22 +19,9 @@
     <p><%= post.content %></p>
   </div>
 </div>
-<% post.replies.order(created_at: :desc).each do |reply| %>
-  <div class="show-reply">
-    <div class="show-post-head">
-      <%= cl_image_tag reply.user.photo, class: "avatar avatar-small" %>
-      <div class="show-post-userinfo">
-        <div class="posted-at">
-          <%= reply.created_at %>
-        </div>
-        <div class="show-post-username">
-          <%= reply.user.first_name %>
-          <%= reply.user.last_name %>
-        </div>
-      </div>
-    </div>
-    <div class="show-reply-content">
-      <%= reply.content %>
-    </div>
-  </div>
-<% end %>
+
+<div id="replies">
+  <%= render 'replies/show', post: post %>
+</div>
+
+<%= render 'replies/new', event: event, post: post %>

@@ -10,15 +10,6 @@ import "bootstrap";
 
 import "../plugins/flatpickr";
 
-//
-// let i = 0;
-// for (i = 0; i < 100; i++) {
-//
-//   let arrow = document.getElementById(`arrow-${i}`);
-//   if (arrow) { arrow.addEventListener("click", event => {
-//   document.getElementById(`sport-${i}`).scrollBy(200,0);
-// })};
-// }
 
 let arrow = document.getElementById("arrow-1");
 
@@ -56,6 +47,7 @@ if (arrow) { arrow.addEventListener("click", event => {
   document.getElementById("sport-6").scrollBy(300,0);
 })};
 
+// map scroll down
 
 let btn = document.getElementById("btn-map");
 if (btn) {btn.addEventListener("click", event => {
@@ -64,19 +56,7 @@ if (btn) {btn.addEventListener("click", event => {
   });
 })};
 
-
-
-
-// document.querySelector("#search-text").addEventListener("blur", event => {
-//   console.log(document.getElementById("search-form"));
-//   document.getElementById("search-form").submit();
-// });
-// document.querySelector("#date-from").addEventListener("blur", event => {
-//   document.getElementById("search-form").submit();
-// });
-// document.querySelector("#date-to").addEventListener("blur", event => {
-//   document.getElementById("search-form").submit();
-// });
+// show reply form
 
 let i = 1;
 for (i = 1; i < 1000; i++) {
@@ -101,5 +81,3 @@ $(document).ready(function(){
     $(this).toggleClass("active");
   });
 });
-
-// tabs for dashboard

@@ -7,7 +7,7 @@
         </div>
         <div id="posts">
           <% event.posts.order(created_at: :desc).each do |post| %>
-            <%= render 'posts/show', post: post, event: event, reply: reply %>
+            <%= render 'posts/show', post: post, event: event, reply: @reply %>
           <% end %>
         </div>
       </div>

@@ -1,0 +1,32 @@
+<div class="events-tab-content tab-content">
+  <div id="upcoming" class="tab-pane active" role="tabpanel">
+    <% @events.each do |event| %>
+    <div class="user-event">
+
+      <div class="event-details">
+        <div class="event-summary">
+         <h3><%= link_to event.title, event_path(event) %></h3>
+         <p><i class="fas fa-calendar-alt"></i><%= event.date %></p>
+
+         <div class="show-event-intensity">
+           <% event.intensity.times do %>
+           <%= image_tag("flame.svg", width: "20px", alt: "flame", class: "img-intensity") %>
+           <% end %>
+           <% (5 - event.intensity).times do %>
+           <%= image_tag("flame_alt.svg", width: "20px", alt: "flame", class: "img-intensity") %>
+           <% end %>
+           <p><i class="fas fa-map-marker-alt"></i><%= event.address %></p>
+         </div>
+       </div>
+
+       <div class="event-description">
+         <p><%= event.description[0, 200] %></p>
+        </div>
+    </div>
+
+    <div class="event-picture">
+     <%= cl_image_tag event.photo, crop: :crop, class:"event-cover" %>
+   </div>
+ </div>
+ <% end %>
+</div>

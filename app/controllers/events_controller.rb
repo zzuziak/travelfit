@@ -18,12 +18,13 @@ class EventsController < ApplicationController
 
   def show
     authorize @event
+    sport = @event.sport
     @post = Post.new
     authorize @post
     @reply = Reply.new
     authorize @reply
     @participation = Participation.new
-    @events = policy_scope(Event).limit(3)
+    @events = sport.events.limit(3)
     # authorize @participation
     @markers = [{
         lat: @event.latitude,
@@ -59,6 +60,10 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :description, :date, :intensity, :price, :address, :photo, :capacity)
+  end
+
+  def reply_params
+    params.require(:reply).permit(:content)
   end
 
   def set_search_params

@@ -1,0 +1,18 @@
+console.log("HELP")
+function refreshForm(content) {
+  const newReplyForm = document.getElementById('new-reply');
+  newReplyForm.innerHTML = content;
+}
+
+function addReply(replyHTML) {
+  const replies = document.getElementById('replies');
+  replies.insertAdjacentHTML('beforebegin', replyHTML);
+}
+
+<% if @reply.errors.any? %>
+  refreshForm('<%= j render "replies/form", reply: @reply, event: @event, post: @post %>');
+<% else %>
+  addReply('<%= j render "replies/show", post: @post, event: @event, reply: @reply %>');
+  refreshForm('<%= j render "replies/form", event: @event, reply: Reply.new, post: @post %>');
+  console.log("hello")
+<% end %>
