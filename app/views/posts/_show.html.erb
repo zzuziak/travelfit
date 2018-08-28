@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="show-post-content">
-    <%= post.content %>
+    <p><%= post.content %></p>
   </div>
 </div>
 <% post.replies.order(created_at: :desc).each do |reply| %>

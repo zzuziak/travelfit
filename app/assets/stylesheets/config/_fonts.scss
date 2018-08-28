@@ -3,7 +3,34 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700,900");
 // Define fonts for body and headers
 
-$body-font: "Roboto", "Helvetica", "sans-serif";
+@font-face {
+  font-family: "Bebas Neue Regular";
+  src: url(/assets/BebasNeue-Regular.otf) format("truetype");
+};
+
+@font-face {
+  font-family: "Lemon Milk bold";
+  src: url(/assets/LemonMilkbold.otf) format("truetype");
+};
+
+@font-face {
+  font-family: "Modern Sans Light";
+  src: url(/assets/Modern_Sans_Light.otf) format("truetype");
+};
+
+@font-face {
+  font-family: "Geosans Light";
+  src: url(/assets/GeosansLight-Oblique.ttf) format("truetype");
+};
+
+@font-face {
+  font-family: "Gravity Light";
+  src: url(/assets/Gravity-Book.otf) format("truetype");
+};
+
+
+
+$body-font: "Gravity Light", "Helvetica", "sans-serif";
 $headers-font: "Roboto", "Helvetica", "sans-serif";
 // To use a font file (.woff) uncomment following lines
 // @font-face {
