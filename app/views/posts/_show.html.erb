@@ -1,27 +1,27 @@
-<div class="show-post">
-  <div class="show-post-head">
-    <%= cl_image_tag post.user.photo, class: "avatar avatar-small" %>
-    <div class="show-post-userinfo">
-      <div class="show-post-username">
-        <%= post.user.first_name %>
-        <%= post.user.last_name %>
+<div class="post-with-reply">
+  <div class="show-post">
+    <div class="show-post-head">
+      <%= cl_image_tag post.user.photo, class: "avatar avatar-small" %>
+      <div class="show-post-userinfo">
+        <div class="show-post-username">
+          <%= post.user.first_name %>
+          <%= post.user.last_name %>
+        </div>
+        <div class="posted-at">
+          <%= post.created_at %>
+        </div>
       </div>
-      <div class="posted-at">
-        <%= post.created_at %>
+
+      <div class="reply-link">
+        <button class="btn btn-success reply-btn" id="btn<%= post.id %>">Reply</button>
       </div>
     </div>
-
-    <div class="reply-link">
-      <button class="btn btn-success" id="btn<%= post.id %>">Reply</button>
+    <div class="show-post-content">
+      <p><%= post.content %></p>
     </div>
   </div>
-  <div class="show-post-content">
-    <p><%= post.content %></p>
+  <div class="replies">
+    <%= render 'replies/show', post: post %>
+    <%= render 'replies/new', event: event, post: post, reply: reply %>
   </div>
 </div>
-
-<div id="replies">
-  <%= render 'replies/show', post: post %>
-</div>
-
-<%= render 'replies/new', event: event, post: post %>
