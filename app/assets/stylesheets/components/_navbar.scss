@@ -52,16 +52,22 @@
 
 .navbar-wagon-link {
   color: #595959;
-  font-size: 14px;
+  font-size: 16px;
+  font-family: 'Lemon Milk light';
+  &:hover {
+    color: $orange;
+    text-decoration: none;
+  }
 }
 
 .navbar-wagon-link-home {
   color: white;
-  font-size: 14px;
-}
-.navbar-wagon-link:hover {
-  color: $orange;
-  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Lemon Milk light';
+  &:hover {
+    color: $orange;
+    text-decoration: none;
+  }
 }
 
 /* Dropdown menu */

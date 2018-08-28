@@ -12,6 +12,7 @@
 
 .show-event-info {
   padding: 30px;
+  color: #595959;
   // position: relative;
 }
 
@@ -32,6 +33,7 @@
 
 .show-event-intensity {
   display: inline-block;
+  padding-left: 5px;
 }
 
 .show-event-details {
@@ -52,7 +54,7 @@
 }
 .show-event-title h1 {
   padding-bottom: 30px;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .show-desc-container {
@@ -75,43 +77,6 @@
 }
 
 
-//btns for joining
-
-.btn-join {
-  width: 150px;
-  height: 25%;
-  line-height: 48px;
-  border-radius: 0;
-  background-color: $orange;
-  border: 0;
-  opacity: 1;
-  font-weight: 700;
-  transition: all 0.4s ease;
-  &:hover {
-    transform: scale(1.1)
-  }
-}
-
-.btn-joined {
-  width: 150px;
-  height: 25%;
-  line-height: 48px;
-  border-radius: 0;
-  background-color: $green;
-  border: 0;
-  opacity: 1;
-  font-weight: 700;
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
-.join-event {
-  color: white;
-  position: absolute;
-  right: 50px;
-  top: 50px;
-}
 
 //DISCUSSION
 .show-discussion-container {

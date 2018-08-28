@@ -1,0 +1,45 @@
+<div class="row row-no-padding">
+
+  <div class="col-xs-12 col-md-6 nopadding">
+    <div class="show-event-info-container">
+      <div class="show-event-info">
+        <div class="show-event-creator">
+          <%= cl_image_tag event.user.photo, class: "avatar avatar-small" %>
+          <%= event.user.first_name %>
+          <%= event.user.last_name %>
+        </div>
+        <div class="join-event">
+          <% if current_user.participations.find {|p| p.event_id == event.id } %>
+            <div class="btn-joined text-center">GOING</div>
+          <% else %>
+            <div class="text-center">
+              <%= simple_form_for [event, participation], method: :post do |f| %>
+                <%= f.hidden_field :status, value: 1 %>
+                <%= f.submit "JOIN THE EVENT", class: "btn-join" %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="show-event-details">
+          <h3><i class="fas fa-map-marker-alt"></i> <%= event.address %></h3>
+          <h3><i class="fas fa-calendar-alt"></i><%= event.date %></h3>
+          <h3><%= image_tag 'capacity.svg', width: 25, class:"event-icon" %><%= event.participations.count %>/<%= event.capacity %></h3>
+          <div class="show-event-intensity">
+            <%= render 'shared/intensity', event: event %>
+            <% (5 - event.intensity).times do %>
+              <%= image_tag("flame_alt.svg", width: "20px", alt: "flame_off", class: "img-intensity img-inline") %>
+            <% end %>
+          </div>
+        </div>
+        <div class="show-event-title">
+          <h1><%= event.title %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-md-6 nopadding">
+    <div class="show-event-photo" style="background-image: url('<%= cl_image_path(event.photo) %>');">
+    </div>
+  </div>
+</div>

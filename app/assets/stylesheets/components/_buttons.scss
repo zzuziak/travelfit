@@ -1,0 +1,163 @@
+//events status
+.going-button {
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+  background-color: $orange;
+  color: white;
+  height: 30px;
+  // border-radius: 5px;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 15px;
+}
+
+//dashboard user
+.profile-picture-button {
+  background-color: $orange;
+  color: white;
+}
+
+//tabs buttons
+.events-tabs{
+  display: flex;
+  background: #F4F4F4;
+  align-items: center;
+  text-decoration: none;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+.events-tab a {
+  color: #808080;
+}
+
+.events-tabs li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.white-background ul {
+  -webkit-padding-start: 0px !important;
+  text-decoration: none !important;
+}
+
+.events-tab a:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.events-tab h3 {
+  font-weight: 400;
+  margin: 10px 0;
+  font-size: 24px;
+  letter-spacing: 1.5px;
+}
+
+.events-tab {
+  background-color: #F4F4F4;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none !important;
+  transition: all 0.4s;
+  border: 2px solid white;
+  &:hover {
+    background-color: #e4e4e4;
+  }
+  a:hover {
+    text-decoration: none !important;
+  }
+}
+
+.events-tab.active {
+  background: #05A8AA;
+  color: white;
+  a {
+    color: white;
+    text-decoration: none !important;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+//leave event button
+.cancelled-button {
+  background-color: $green;
+  color: white;
+  height: 30px;
+  // border-radius: 5px;
+  font-size: 15px;
+  font-family: 'Gravity Light', sans-serif;
+  line-height: 15px;
+  transition: all 0.2s ease;
+  &:hover {
+    color: white;
+    transform: scale(1.1);
+  }
+}
+
+
+//btns for joining
+
+.btn-join {
+  width: 150px;
+  height: 25%;
+  line-height: 48px;
+  border-radius: 0;
+  background-color: $orange;
+  border: 0;
+  opacity: 1;
+  font-weight: 700;
+  transition: all 0.4s ease;
+  &:hover {
+    transform: scale(1.1)
+  }
+}
+
+.btn-joined {
+  width: 150px;
+  height: 25%;
+  line-height: 48px;
+  border-radius: 0;
+  background-color: $green;
+  border: 0;
+  opacity: 1;
+  font-weight: 700;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.join-event {
+  color: white;
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+
+//search
+
+.search-button {
+  // box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+  background-color: $orange;
+  color: white;
+  height: 50px;
+  // border-radius: 5px;
+  font-size: 20px;
+  font-family: 'Gravity Light', sans-serif;
+  &:hover {
+    color: grey;
+    text-decoration: none;
+  }
+}
+
+.btn-map {
+  background-color: $orange;
+  color: white;
+  margin-left: 40px;
+  &:hover {
+    color: grey;
+    text-decoration: none;
+  }
+}
