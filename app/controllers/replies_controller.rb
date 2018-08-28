@@ -5,6 +5,7 @@ class RepliesController < ApplicationController
   def new
     @reply = Reply.new
     authorize @reply
+    raise
   end
 
   def create
@@ -15,9 +16,17 @@ class RepliesController < ApplicationController
     @reply.user = @user
     @reply.post = @post
     if @reply.save!
-      redirect_to event_path(@event)
+      respond_to do |format|
+        format.html { redirect_to event_path(@event) }
+        format.js
+        # raise
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'events/show' }
+        format.js
+        # raise
+      end
     end
   end
 

@@ -21,8 +21,11 @@
 
 // sport specific
 .card-sport{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 6px 0 0;
-  height: 200px;
+  height: 250px;
   position: relative;
   background-position: center;
   background-size: cover;
@@ -30,7 +33,6 @@
     margin: 0;
     color: white;
     text-align: center;
-    padding-top: 10px;
     left: 0;
     z-index: 10;
     mix-blend-mode: screen;
@@ -126,7 +128,7 @@
 .card-event {
   display: inline-block;
   margin: 0;
-  height: 200px;
+  height: 250px;
   width: 30vw;
   position: relative;
   color: white;
@@ -145,7 +147,7 @@
 .card-event-title{
   position: absolute;
   left: 20px;
-  bottom: 10px;
+  bottom: 30px;
   font-size: 24px;
   width: 90%;
   overflow-x: hidden;
@@ -172,8 +174,8 @@
   }
 .card-event-intensity{
   position: absolute;
-  left: 20px;
-  bottom: 75px;
+  left: 16px;
+  bottom: 85px;
   font-size: 16px;
 }
 
@@ -188,8 +190,8 @@
 
 .card-event-address{
   position: absolute;
-  right: 20px;
-  top: 20px;
+  left: 20px;
+  bottom: 20px;
   font-size: 16px;
   overflow-x: hidden;
 }
