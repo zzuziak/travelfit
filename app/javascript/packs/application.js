@@ -65,7 +65,7 @@ function listenReplyButton() {
     button.addEventListener("click", (event) => {
       console.log(event.currentTarget);
       console.log(post)
-      const form = post.querySelector(".replies .show-reply")
+      const form = post.querySelector(".show-reply")
       form.classList.toggle("visible")
       // event.currentTarget.parentNode.parentNode.parentElement.nextElementSibling.classList.toggle("visible");
     });

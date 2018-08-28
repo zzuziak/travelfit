@@ -20,8 +20,8 @@
       <p><%= post.content %></p>
     </div>
   </div>
+  <%= render 'replies/new', event: event, post: post, reply: reply %>
   <div class="replies">
     <%= render 'replies/show', post: post %>
-    <%= render 'replies/new', event: event, post: post, reply: reply %>
   </div>
 </div>
