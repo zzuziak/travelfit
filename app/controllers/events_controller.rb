@@ -18,12 +18,13 @@ class EventsController < ApplicationController
 
   def show
     authorize @event
+    sport = @event.sport
     @post = Post.new
     authorize @post
     @reply = Reply.new
     authorize @reply
     @participation = Participation.new
-    @events = policy_scope(Event).limit(3)
+    @events = sport.events.limit(3)
     # authorize @participation
     @markers = [{
         lat: @event.latitude,

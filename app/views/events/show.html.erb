@@ -10,6 +10,9 @@
  <li role="presentation" class="events-tab"><a  href="#discussion" data-toggle="tab">
    <h3>DISCUSSION</h3>
  </a></li>
+ <li role="presentation" class="events-tab"><a  href="#related" data-toggle="tab">
+   <h3>RELATED EVENTS</h3>
+ </a></li>
 </ul>
 
 <div class="tab-content">
@@ -19,7 +22,9 @@
   <div class="tab-pane" id="discussion" role="tabpanel">
     <%= render 'discussion', event: @event, reply: @reply, post: @post %>
   </div>
-
+  <div class="tab-pane" id="related" role="tabpanel">
+    <%= render 'related', event: @event, reply: @reply, post: @post %>
+  </div>
 </div>
 
 <!-- related events -->
