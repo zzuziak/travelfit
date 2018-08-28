@@ -58,17 +58,21 @@ if (btn) {btn.addEventListener("click", event => {
 
 // show reply form
 
-let i = 1;
-for (i = 1; i < 1000; i++) {
-let btn = document.getElementById(`btn${i}`);
-if (btn) {
-  btn.addEventListener("click", (event) => {
-  console.log(event.currentTarget);
-  console.log(`step ${i}`);
-  event.currentTarget.parentNode.parentNode.parentElement.nextElementSibling.classList.toggle("visible");
-   });
-  };
-};
+function listenReplyButton() {
+  const posts = document.querySelectorAll('.post-with-reply')
+  posts.forEach((post) => {
+    const button = post.querySelector('button.reply-btn')
+    button.addEventListener("click", (event) => {
+      console.log(event.currentTarget);
+      console.log(post)
+      const form = post.querySelector(".show-reply")
+      form.classList.toggle("visible")
+      // event.currentTarget.parentNode.parentNode.parentElement.nextElementSibling.classList.toggle("visible");
+    });
+  });
+}
+
+listenReplyButton();
 
 // navbar hide on scroll
 

@@ -44,12 +44,12 @@ User.create!([{
   remote_photo_url: "https://www.xing.com/image/5_0_6_be2064c23_19552288_2/simon-berg-foto.1024x1024.jpg"
 }])
 
-local_adventure = Sport.create!(category: "local adventure", photo: "http://molescreenpdt.com.au/wp-content/uploads/2015/12/Outdoor-Sports-1440-900-widescreen-56450.jpg")
-running = Sport.create!(category: "running", photo: "https://cdn10.phillymag.com/wp-content/uploads/sites/3/2017/03/running-group-istock-940x540.jpg")
-teamsports = Sport.create!(category: "teamsports", photo: "https://thegamehaus.com/wp-content/uploads/2016/12/team-sports.jpg")
-fitness = Sport.create!(category: "fitness", photo: "https://landerapp.com/blog/wp-content/uploads/2018/07/6f66fc0ee89eac4cb13eceae9bf66242.jpeg")
-yoga = Sport.create!(category: "yoga", photo: "http://whitneypeakhotel.com/wp-content/uploads/2016/11/AdobeStock_107892322-800x533.jpeg")
-racket_sport = Sport.create!(category: "racket sports", photo: "https://well.pk/blog/wp-content/uploads/2015/09/Navarino-Racquet-Academy-1-1200x703.jpg")
+local_adventure = Sport.create!(category: "Local adventure", photo: "http://molescreenpdt.com.au/wp-content/uploads/2015/12/Outdoor-Sports-1440-900-widescreen-56450.jpg")
+running = Sport.create!(category: "Running", photo: "https://cdn10.phillymag.com/wp-content/uploads/sites/3/2017/03/running-group-istock-940x540.jpg")
+teamsports = Sport.create!(category: "Teamsports", photo: "https://thegamehaus.com/wp-content/uploads/2016/12/team-sports.jpg")
+fitness = Sport.create!(category: "Fitness", photo: "https://landerapp.com/blog/wp-content/uploads/2018/07/6f66fc0ee89eac4cb13eceae9bf66242.jpeg")
+yoga = Sport.create!(category: "Yoga", photo: "http://whitneypeakhotel.com/wp-content/uploads/2016/11/AdobeStock_107892322-800x533.jpeg")
+racket_sport = Sport.create!(category: "Racket sports", photo: "https://well.pk/blog/wp-content/uploads/2015/09/Navarino-Racquet-Academy-1-1200x703.jpg")
 
 running_events = Event.create!([{
 
@@ -67,7 +67,7 @@ running_events = Event.create!([{
 {
   title: "Nordic Walking at Tierpark",
   description: "Join our 3km walk at Tierpark, Berlin. The intensity won't be high! That said, you don't need to be in good shape to join this event. Grannies Welcome!",
-  date: "20.11.2018",
+  date: "20.01.2018",
   intensity: 1,
   remote_photo_url: "https://www.kaltern.com/media/titelbilder/nordic-walking-in-kaltern.jpg",
   price: 0,
@@ -332,6 +332,11 @@ yoga_events = Event.create!([{
 
 Participation.create!([{
   event_id: 15,
+  user_id: 2,
+  status: "going"
+},
+{
+  event_id: 2,
   user_id: 2,
   status: "going"
 },

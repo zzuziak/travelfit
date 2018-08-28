@@ -3,7 +3,7 @@
   <div class="row row-no-padding">
     <div class="col-xs-8 col-xs-offset-2">
       <div class="form-inline search-flex">
-        <%= text_field_tag :address, params[:address], value: params[:address], placeholder: "Location", id:"search-text", class:"form-control search-stretch input-field" %>
+        <%= text_field_tag :address, params[:address], value: params[:address], placeholder: "Location", id:"event_address", class:"form-control search-stretch input-field" %>
         <%= date_field_tag :date_from, params[:date_from], value: params[:date_from], placeholder: "When?", id:"date-from", id:"range_start", class: "form-control input-field date-field datepicker" %>
         <!-- <%= date_field_tag :date_to, params[:date_to], value: params[:date_to], placeholder: "TO", id:"date-to", id:"range_end", class: "form-control input-field date-field datepicker" %> -->
         <% if params[:free].present? %>
