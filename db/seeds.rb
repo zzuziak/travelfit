@@ -355,13 +355,13 @@ Participation.create!([{
 UserSport.create!([{
   user_id: 1,
   sport_id: 2,
-  level: 5,
+  level: "Beginner",
   favourite: true
 },
 {
   user_id: 1,
   sport_id: 1,
-  level: 1,
+  level: "Beginner",
   favourite: false
 }]
 )
