@@ -14,53 +14,8 @@
   </a></li>
 </ul>
 
-  <div class="events-tab-content tab-content">
-    <div id="upcoming" class="tab-pane active" role="tabpanel">
-      <% @user.participations.each do |participation| %>
-
-      <div class="user-event">
-
-        <div class="event-details">
-          <div class="event-summary">
-           <h3><%= link_to participation.event.title, event_path(participation.event) %></h3>
-           <p><i class="fas fa-calendar-alt"></i><%= participation.event.date %></p>
-
-           <div class="show-event-intensity">
-             <% participation.event.intensity.times do %>
-             <%= image_tag("flame.svg", width: "20px", alt: "flame", class: "img-intensity") %>
-             <% end %>
-             <% (5 - participation.event.intensity).times do %>
-             <%= image_tag("flame_alt.svg", width: "20px", alt: "flame", class: "img-intensity") %>
-             <% end %>
-             <p><i class="fas fa-map-marker-alt"></i><%= participation.event.address %></p>
-           </div>
-         </div>
-
-         <div class="event-description">
-           <p><%= participation.event.description[0, 200] %></p>
-           <div class="update-participation">
-             <div><h4><i class="fas fa-check"></i>Going</h4></div>
-             <div>
-              <p>
-                <%= form_for participation, method: :delete, data: {confirm: "Are you sure"} do |f| %>
-                <%= f.submit "LEAVE EVENT", class: "btn cancelled-button" %>
-                <% end %>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-picture">
-       <%= cl_image_tag participation.event.photo, crop: :crop, class:"event-cover" %>
-     </div>
-   </div>
-   <% end %>
-  </div>
-
-  <div id="past" class="tab-pane" role="tabpanel">
-    <p>Your past events (test)</p>
-  </div>
+<%= render 'upcoming', user: @user %>
+<%= render 'past', user: @user %>
 
   <div id="profile" class="tab-pane" role="tabpanel">
 
