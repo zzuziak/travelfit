@@ -1,11 +1,10 @@
-console.log("HELP")
 function refreshForm(content) {
-  const newReplyForm = document.querySelectorAll('.show-reply');
-  newReplyForm.innerHTML = content;
+  const newReplyForm = document.getElementById('reply-form-<%= @post.id %>');
+  newReplyForm.classList.toggle("visible");
 }
 
 function addReply(replyHTML) {
-  const replies = document.querySelector('.replies');
+  const replies = document.getElementById("replies-<%= @post.id %>");
   replies.insertAdjacentHTML('beforebegin', replyHTML);
 }
 
@@ -13,6 +12,6 @@ function addReply(replyHTML) {
   refreshForm('<%= j render "replies/new", reply: @reply, event: @event, post: @post %>');
 <% else %>
   addReply('<%= j render "replies/show", post: @post, event: @event, reply: @reply %>');
-  refreshForm('<%= j render "replies/new", event: @event, reply: Reply.new, post: @post %>');
+  refreshForm('<%= j render "replies/new", event: @event, reply: @reply, post: @post %>');
   console.log("hello")
 <% end %>

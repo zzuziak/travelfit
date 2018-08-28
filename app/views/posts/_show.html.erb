@@ -21,7 +21,7 @@
     </div>
   </div>
   <%= render 'replies/new', event: event, post: post, reply: reply %>
-  <div class="replies">
+  <div id="replies-<%= post.id %>">
     <%= render 'replies/show', post: post %>
   </div>
 </div>
