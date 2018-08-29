@@ -69,7 +69,7 @@ running_events = Event.create!([{
   description: "Join our 3km walk at Tierpark, Berlin. The intensity won't be high! That said, you don't need to be in good shape to join this event. Grannies Welcome!",
   date: "20.01.2018",
   intensity: 1,
-  remote_photo_url: "https://www.kaltern.com/media/titelbilder/nordic-walking-in-kaltern.jpg",
+  remote_photo_url: "https://www.bythelake.ch/en/wp-content/uploads/sites/2/2016/10/Marche-nordique-article-21.jpg",
   price: 0,
   address: "Tierpark, Berlin",
   capacity: 20,
@@ -145,7 +145,7 @@ local_adventure_events = Event.create!([{
   description: "5km swim race in open-waters across the Wannsee lake",
   date: "28.08.2018",
   intensity: 5,
-  remote_photo_url: "https://www.dctriclub.org/wp-content/uploads/2017/01/DCTri_2016TrainingTri.jpg",
+  remote_photo_url: "https://images.unsplash.com/photo-1530138948699-6a75eebc9d9b?ixlib=rb-0.3.5&s=13d449cf21080629af3584c66193eb2c&auto=format&fit=crop&w=1649&q=80",
   price: 5,
   address: "Wannsee, Berlin",
   capacity: 200,
@@ -169,7 +169,7 @@ local_adventure_events = Event.create!([{
   description: "The spree river and its numerous canals run through many famous sights in Berlin such as the TV-tower, the Molecule Men or the Oberbaum-Bridge. Paddle with us through Berlin and be surprised by the wonderful scene!",
   date: "08.09.2018",
   intensity: 2,
-  remote_photo_url: "https://berlinonbike.de/wp-content/gallery/canoe/berlin-boat-tour-canoe-alex-tv-tower.jpg",
+  remote_photo_url: "https://images.unsplash.com/photo-1532528791647-87400fc51288?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5676f38161ec1c86f4882cdc4357b87c&auto=format&fit=crop&w=967&q=80",
   price: 0,
   address: "Leipzigerstrasse, Berlin",
   capacity: 15,
@@ -179,11 +179,11 @@ local_adventure_events = Event.create!([{
 
 },
 {
-  title: "Swimming competition",
-  description: "5km swim race in open-waters across the Wannsee lake",
-  date: "28.08.2018",
-  intensity: 5,
-  remote_photo_url: "https://www.dctriclub.org/wp-content/uploads/2017/01/DCTri_2016TrainingTri.jpg",
+  title: "Swimming class",
+  description: "We will work on the foundations of basic styles in swimming at one of the best Berlin spots.",
+  date: "28.09.2018",
+  intensity: 2,
+  remote_photo_url: "https://images.unsplash.com/photo-1504309092620-4d0ec726efa4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f38e067fcad97bc3b247b3db0859af1c&auto=format&fit=crop&w=1050&q=80",
   price: 5,
   address: "Wannsee, Berlin",
   capacity: 200,
@@ -223,7 +223,7 @@ fitness_events = Event.create!([{
   intensity: 3,
   remote_photo_url: "https://drummondeducation.com/wp-content/uploads/2015/07/715-outdoor-fitness-copy-.jpg",
   price: 0,
-  address: "Alfords Point, Sydney",
+  address: "Yoyogi, Tokyo",
   capacity: 12,
   user_id: 3,
   sport_id: fitness.id
@@ -238,7 +238,7 @@ fitness_events = Event.create!([{
   address: "Ukima Park, Tokyo",
   capacity: 10_000,
   user_id: 3,
-  sport_id: fitness.id
+  sport_id: running.id
 }])
 
 racket_sport_events = Event.create!([{

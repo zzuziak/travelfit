@@ -1,15 +1,15 @@
 <div class="card-sport" style="background-color: rgb(38, 38, 38);">
-  <div class="<% if sport.category == "fitness" %>
+  <div class="<% if sport.category == "Fitness" %>
                 overlay-green
-              <% elsif sport.category == "running" %>
+              <% elsif sport.category == "Running" %>
                 overlay-red
-              <% elsif sport.category == "racket sports" %>
+              <% elsif sport.category == "Racket sports" %>
                 overlay-grey
-              <% elsif sport.category == "teamsports" %>
+              <% elsif sport.category == "Teamsports" %>
                 overlay-yellow
-              <% elsif sport.category == "yoga" %>
+              <% elsif sport.category == "Yoga" %>
                 overlay-mint
-              <% elsif sport.category == "local adventure" %>
+              <% elsif sport.category == "Local adventure" %>
                 overlay-blue
               <% end %>"></div>
   <h1><%= sport.category %></h1>
