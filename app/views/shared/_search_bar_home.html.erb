@@ -2,8 +2,8 @@
   <div class="form-inline search-flex">
     <div class="row">
       <div class="col-xs-12">
-        <%= text_field_tag :address, params[:address], placeholder: "Barcelona", class:"form-control search-stretch input-field " %>
-        <%= date_field_tag :date_from, params[:date_from], placeholder: "22-12-2018", id:"range_start", class: "datepicker form-control input-field date-field datepicker" %>
+        <%= text_field_tag :address, params[:address], id:"event_address", placeholder: "Barcelona", class:"form-control search-stretch input-field " %>
+        <%= date_field_tag :date_from, params[:date_from], placeholder: "18 to August 22, 2018", id:"range_start", class: "datepicker form-control input-field date-field datepicker" %>
         <!-- <%= date_field_tag :date_to, params[:date_to], placeholder: "TO", id:"range_end", class: "datepicker form-control input-field date-field" %> -->
       </div>
     </div>

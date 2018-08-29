@@ -166,3 +166,33 @@
     text-decoration: none;
   }
 }
+
+/* Basic navbar item */
+.navbar-wagon-item {
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+//Landing Page Discover All Button
+
+.testA {
+  color: #595959;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-family: 'Lemon Milk light';
+  &:hover {
+    color: $orange;
+    text-decoration: none;
+  }
+}
+
+.testB {
+  letter-spacing: 1px;
+  color: white;
+  font-size: 16px;
+  font-family: 'Lemon Milk light';
+  &:hover {
+    color: $orange;
+    text-decoration: none;
+  }
+}
