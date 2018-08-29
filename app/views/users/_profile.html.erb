@@ -10,10 +10,10 @@
         <%= simple_form_for @user, method: :patch, url: user_registration_path(@user), html: { class: 'simple-form-field' } do |f| %>
         <div class="row">
           <div class="col-xs-6">
-            <%= f.input :first_name, label: "First name" %>
+            <%= f.input :first_name, disabled: true, readonly: true, label: "First name" %>
           </div>
           <div class="col-xs-6">
-            <%= f.input :last_name, label: "Last name" %>
+            <%= f.input :last_name, disabled: true, label: "Last name" %>
           </div>
         </div>
         <% end %>
