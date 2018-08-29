@@ -49,6 +49,10 @@
   border-bottom: 2px solid white;
   background-color: #F4F4F4;
   height: 280px;
+  &:hover {
+    background-color: #e4e4e4;
+    cursor: pointer;
+  }
 }
 
 
