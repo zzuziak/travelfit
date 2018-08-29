@@ -10,6 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+      <%= link_to "Explore All Events", events_path, class: "navbar-wagon-item navbar-wagon-link-home navbar-all-events-link" %>
       <%= link_to "Add event", new_event_path, class: "navbar-wagon-item navbar-wagon-link-home" %>
       <%= link_to "Dashboard", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link-home" %>
       <!-- Avatar with dropdown menu -->
@@ -37,7 +38,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link-home" %>
+      <%= link_to "Explore All Events", events_path, class: "navbar-wagon-item navbar-wagon-link-home navbar-all-events-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link-home" %>
     <% end %>
   </div>
