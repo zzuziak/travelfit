@@ -51,6 +51,18 @@ fitness = Sport.create!(category: "Fitness", photo: "https://landerapp.com/blog/
 yoga = Sport.create!(category: "Yoga", photo: "http://whitneypeakhotel.com/wp-content/uploads/2016/11/AdobeStock_107892322-800x533.jpeg")
 racket_sport = Sport.create!(category: "Racket sports", photo: "https://well.pk/blog/wp-content/uploads/2015/09/Navarino-Racquet-Academy-1-1200x703.jpg")
 
+
+spartan = Event.create!(title: "Spartan Race Tokyo",
+  description: "Obstacle Course Race comes to Tokyo again! Pick between Sprint, Super and Beast - all do them all! ",
+  date: "15.03.2019",
+  intensity: 5,
+  remote_photo_url: "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/37407117_1779824532101894_2518401911355342848_n.jpg?_nc_cat=0&oh=7fc78f0c9dcfa1e234b1cca9e02b933c&oe=5C38D942",
+  price: 40,
+  address: "Ukima Park, Tokyo",
+  capacity: 10_000,
+  user_id: 3,
+  sport_id: running.id)
+
 running_events = Event.create!([{
 
   title: "Berlin Marathon 2018",
@@ -264,18 +276,6 @@ sport_id: fitness.id
   capacity: 12,
   user_id: 3,
   sport_id: fitness.id
-},
-{
-  title: "Spartan Race Tokyo",
-  description: "Obstacle Course Race comes to Tokyo again! Pick between Sprint, Super and Beast - all do them all! ",
-  date: "15.03.2019",
-  intensity: 5,
-  remote_photo_url: "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/37407117_1779824532101894_2518401911355342848_n.jpg?_nc_cat=0&oh=7fc78f0c9dcfa1e234b1cca9e02b933c&oe=5C38D942",
-  price: 40,
-  address: "Ukima Park, Tokyo",
-  capacity: 10_000,
-  user_id: 3,
-  sport_id: running.id
 }])
 
 racket_sport_events = Event.create!([{
@@ -422,22 +422,22 @@ UserSport.create!([{
 )
 
 Post.create!([{
-  event_id: 15,
+  event_id: spartan.id,
   user_id: 2,
   content: "THIS IS SPARTA!"
 },
 {
-  event_id: 15,
+  event_id: spartan.id,
   user_id: 4,
   content: "Hey guys - where exactly will the race take place?"
 },
 {
-  event_id: 15,
+  event_id: spartan.id,
   user_id: 3,
   content: "New Rules have been posted to the official website, everybody make sure you've read through them!"
 },
 {
-  event_id: 15,
+  event_id: spartan.id,
   user_id: 5,
   content: "Should we bring our own equipment? Also, isn't the weather going to be an issue with all that forecasted rain?"
 }]
