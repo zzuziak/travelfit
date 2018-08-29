@@ -3,23 +3,42 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> <%= @title.nil? ? "Travelfit" : @title %></title>
+    <title> <%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type => "image/x-icon" %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     <%= stylesheet_link_tag 'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
   </head>
   <body>
     <% if current_page?(root_path) %>
       <%= render 'shared/navbar_home' %>
+      <!-- <%= render 'shared/flashes' %> -->
     <% else %>
       <%= render 'shared/navbar_all' %>
       <div class="margin-nav"></div>
+      <!-- <%= render 'shared/flashes' %> -->
     <% end %>
 
-    <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <!-- update the map.js file for responsive markers (nothing there yet) -->

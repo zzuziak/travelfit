@@ -1,4 +1,7 @@
-<% @title = @event.title  %>
+<% @title = @event.title + '- Travelfit' %>
+<% content_for :meta_description, @event.description %>
+<% content_for :meta_image, cl_image_path(@event.photo) %>
+
 <%= render 'header', event: @event, participation: @participation %>
 
 <!-- tabs -->
@@ -26,5 +29,3 @@
     <%= render 'related', event: @event, reply: @reply, post: @post %>
   </div>
 </div>
-
-<!-- related events -->

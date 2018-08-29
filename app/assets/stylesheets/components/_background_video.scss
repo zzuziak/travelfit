@@ -1,0 +1,79 @@
+.video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -20;
+}
+
+.margin-top {
+  margin-top: 30vh;
+}
+
+.call-to-action {
+  z-index: 20;
+  h1 {
+    color: white;
+  }
+}
+
+.mission {
+  height: 100vh;
+  margin-top: 50vh;
+  background: rgba(black, 0.66);
+  color: white;
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    max-width: 800px;
+    margin: 1rem auto;
+    font-size: 80px;
+    line-height: 100px;
+    letter-spacing: 4px;
+  }
+}
+
+.information {
+  height: 50vh;
+  background: rgba(white, 0.5);
+  color: black;
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-text {
+  width: 80vw;
+  padding: 30px;
+}
+
+.team {
+  height: 100vh;
+  background: rgba(black, 0.66);
+  color: white;
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.teamheadline {
+  padding-bottom: 30px;
+}
+
+.team-desc {
+  margin-top: 30px;
+  margin-right: 20px;
+  h3 {
+    font-size: 20px;
+  }
+}

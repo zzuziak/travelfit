@@ -1,9 +1,12 @@
+import "../plugins/flatpickr";
 import $ from 'jquery';
 global.$ = jQuery;
 global.jQuery = jQuery;
 import "bootstrap";
+
 import "../components/form"
 import "../plugins/flatpickr";
+
 import { tabs } from  "../components/tab";
 tabs();
 

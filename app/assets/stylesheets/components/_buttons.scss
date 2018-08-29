@@ -100,7 +100,7 @@
 //btns for joining
 
 .btn-join {
-  width: 170px;
+  width: 200px;
   height: 25%;
   line-height: 48px;
   border-radius: 0;
@@ -153,6 +153,16 @@
   }
 }
 
+.search-button-home {
+  padding: 6px 50px !important;
+}
+
+.search-button-home:hover {
+  background-color: #EA9800;
+  color: #EFEFEF;
+}
+
+
 .btn-map {
   background-color: $orange;
   color: white;
@@ -161,4 +171,10 @@
     color: grey;
     text-decoration: none;
   }
+}
+
+/* Basic navbar item */
+.navbar-wagon-item {
+  cursor: pointer;
+  padding: 0 20px;
 }
