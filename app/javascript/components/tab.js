@@ -19,6 +19,14 @@ function tabs() {
   })
   var hash = window.location.hash;
   $('a[href="' + hash + '"]').tab('show');
+
+  // document.querySelectorAll('.events-tab').forEach( tab =>{
+  //   tab.addEventListener('click', e => {
+  //     e.stopPropagation();
+  //     e.tab('show')
+
+  //   })
+  // })
 }
 
 export { tabs };
