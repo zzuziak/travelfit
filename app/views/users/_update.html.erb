@@ -2,7 +2,7 @@
   <%= simple_form_for([current_user, user_sport], remote: true, html: { class: 'simple-form-field' }) do |f| %>
           <div class="row">
             <div class="col-xs-3">
-              <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Your sports", selected: user_sport.sport.id %>
+              <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Your sports",  html: { id: 'sports_fields' }, readonly: true, selected: user_sport.sport.id %>
             </div>
             <div class="col-xs-3">
               <%= f.input :level, collection: UserSport::LEVELS, selected: user_sport.level %>
@@ -14,7 +14,10 @@
               </div>
             </div>
             <div class="col-xs-3 margin-top">
-              <%= f.submit "Update sport"%>
+              <i id="update-pen" class="fas fa-pencil-alt"></i>
+              <div class="update-btn hidden">
+                <%= f.submit "Update sport"%>
+              </div>
             </div>
           </div>
        <% end %>
