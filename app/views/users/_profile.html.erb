@@ -1,4 +1,4 @@
-<div id="profile" class="tab-pane" role="tabpanel">
+<div id="userprofile" class="tab-pane" role="tabpanel">
     <div class="container dashboard-top">
       <div class="user-picture">
         <%= cl_image_tag @user.photo, class: "avatar avatar-medium avatar-margin" %>
@@ -7,7 +7,7 @@
 
       <div class="user-summary container">
 
-        <%= simple_form_for @user, method: :patch, url: user_registration_path(@user), :html=> { class: 'simple-form-field' } do |f| %>
+        <%= simple_form_for @user, method: :patch, url: user_registration_path(@user), html: { class: 'simple-form-field' } do |f| %>
         <div class="row">
           <div class="col-xs-6">
             <%= f.input :first_name, label: "First name" %>
@@ -18,78 +18,15 @@
         </div>
         <% end %>
 
-      <%#= raise %>
       <% if @user_sports.count <= 3 %>
-         <% counter = 0 %>
         <% (3 - @user_sports.count).times do %>
-          <%= simple_form_for [current_user, @user_sport], method: :post, url: user_user_sports_path(current_user) do |f| %>
-              <% counter = counter + 1 %>
-              <div class="row">
-                <div class="col-xs-3">
-                  <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Add new sport" %>
-                </div>
-                <div class="col-xs-3">
-                  <%= f.input :level, collection: UserSport::LEVELS %>
-                </div>
-                <div class="col-xs-3">
-                  <div class="heart-selector">
-                    <%= f.input_field :favourite, class: "hidden", id: "user_favourite_sport_#{counter}" %>
-                    <%= f.label :favourite, label: "", for: "user_favourite_sport_#{counter}" %>
-                  </div>
-                </div>
-                <div class="col-xs-3 margin-top">
-                  <%= f.submit "Add sport"%>
-                </div>
-              </div>
-          <% end %>
-       <% end %>
-
-      <% else %>
-        <% @user_sports.each do |user_sport| %>
-        <%= simple_form_for [current_user, user_sport], html: { class: 'simple-form-field' } do |f| %>
-          <div class="row">
-            <div class="col-xs-3">
-              <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Your sports", selected: user_sport.sport.id %>
-            </div>
-            <div class="col-xs-3">
-              <%= f.input :level, collection: UserSport::LEVELS, selected: user_sport.level %>
-            </div>
-            <div class="col-xs-3">
-              <div class="heart-selector">
-                <%= f.input_field :favourite, class: "hidden", id: "user_favourite_sport_#{user_sport.id}" %>
-                <%= f.label :favourite, label: "", for: "user_favourite_sport_#{user_sport.id}" %>
-              </div>
-            </div>
-            <div class="col-xs-3 margin-top">
-              <%= f.submit "Update sport"%>
-            </div>
-          </div>
-          <% end %>
+        <%= render 'create', user: @user %>
         <% end %>
-
+      <% else %>
+            <%= render 'update', user: @user %>
       <% end %>
 
-      <% @user_sports.each do |user_sport| %>
-        <%= simple_form_for [current_user, user_sport], html: { class: 'simple-form-field' } do |f| %>
-          <div class="row">
-            <div class="col-xs-3">
-              <%= f.input :sport, label_method: :category, collection: Sport.all, label: "Your sports", selected: user_sport.sport.id %>
-            </div>
-            <div class="col-xs-3">
-              <%= f.input :level, collection: UserSport::LEVELS, selected: user_sport.level %>
-            </div>
-            <div class="col-xs-3">
-              <div class="heart-selector">
-                <%= f.input_field :favourite, class: "hidden", id: "user_favourite_sport_#{user_sport.id}" %>
-                <%= f.label :favourite, label: "", for: "user_favourite_sport_#{user_sport.id}" %>
-              </div>
-            </div>
-            <div class="col-xs-3 margin-top">
-              <%= f.submit "Update sport"%>
-            </div>
-          </div>
-          <% end %>
-        <% end %>
+        <%= render 'update', user: @user %>
 
      </div>
    </div>

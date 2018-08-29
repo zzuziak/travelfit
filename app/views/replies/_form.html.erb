@@ -1,4 +1,4 @@
-<div class="show-reply visible">
+<div class="show-reply visible" id="reply-form-<%= post.id %>">
   <%= simple_form_for([ event, post, reply ], remote: true) do |f| %>
     <%= f.input :content, label: "Reply to this post!" %>
     <%= f.submit "Reply!", class: "btn btn-success" %>

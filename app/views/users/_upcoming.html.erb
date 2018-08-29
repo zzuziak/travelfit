@@ -40,7 +40,7 @@
                <div>
                 <p>
                   <%= form_for participation, method: :delete, data: {confirm: "Are you sure"} do |f| %>
-                  <%= f.submit "LEAVE EVENT", class: "btn cancelled-button" %>
+                  <%= f.submit "LEAVE EVENT", class: "btn btn-grey" %>
                   <% end %>
                 </p>
               </div>
@@ -50,13 +50,11 @@
 
         <div class="event-picture">
          <%= cl_image_tag participation.event.photo, crop: :crop, class:"event-cover" %>
-       </div>
+        </div>
       </div>
       <% else %>
          <p>No upcoming events to show</p>
       <% end %>
    <% end %>
-      <% end %>
-
-
+  <% end %>
 </div>

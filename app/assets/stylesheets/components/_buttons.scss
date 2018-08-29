@@ -82,13 +82,11 @@
 }
 
 //leave event button
-.cancelled-button {
-  background-color: $green;
+.btn-grey {
   color: white;
   height: 30px;
-  // border-radius: 5px;
   font-size: 15px;
-  font-family: 'Gravity Light', sans-serif;
+  font-family: 'Gravity Light', 'sans-serif';
   line-height: 15px;
   transition: all 0.2s ease;
   &:hover {
@@ -101,7 +99,7 @@
 //btns for joining
 
 .btn-join {
-  width: 150px;
+  width: 170px;
   height: 25%;
   line-height: 48px;
   border-radius: 0;
@@ -110,6 +108,7 @@
   opacity: 1;
   font-weight: 700;
   transition: all 0.4s ease;
+  letter-spacing: 1px;
   &:hover {
     transform: scale(1.1)
   }
@@ -124,6 +123,7 @@
   border: 0;
   opacity: 1;
   font-weight: 700;
+  letter-spacing: 1px;
   &:hover {
     opacity: 0.8;
   }
