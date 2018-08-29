@@ -1,17 +1,17 @@
 <%= link_to event_path(event) do %>
   <% if events.include? event %>
     <div class="card-event" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(<%= event.photo %>); background-position: center; background-size: cover;">
-      <div class="<% if event.sport.category == "fitness" %>
+      <div class="<% if event.sport.category == "Fitness" %>
                     overlay-green
-                  <% elsif event.sport.category == "running" %>
+                  <% elsif event.sport.category == "Running" %>
                     overlay-red
-                  <% elsif event.sport.category == "racket sports" %>
+                  <% elsif event.sport.category == "Racket sports" %>
                     overlay-grey
-                  <% elsif event.sport.category == "teamsports" %>
+                  <% elsif event.sport.category == "Teamsports" %>
                     overlay-yellow
-                  <% elsif event.sport.category == "yoga" %>
+                  <% elsif event.sport.category == "Yoga" %>
                     overlay-mint
-                  <% elsif event.sport.category == "local adventure" %>
+                  <% elsif event.sport.category == "Local adventure" %>
                     overlay-blue
                   <% end %>">
       </div>
