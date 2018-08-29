@@ -9,7 +9,7 @@
         <% if params[:free].present? %>
         <div class="switch">
           <%= check_box_tag :free, params[:free], value: params[:free] %>
-          <span id="free" class="slider round"></span>
+          <span id="free" class="slider round"> </span>
         </div>
           <label class="switch-label">Only free</label>
         <% else %>

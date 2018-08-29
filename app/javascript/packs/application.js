@@ -84,3 +84,6 @@ $(document).ready(function(){
     $(this).toggleClass("active");
   });
 });
+
+import { toggle } from "../components/toggle";
+toggle();
