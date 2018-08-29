@@ -72,6 +72,16 @@
   }
 }
 
+.navbar-all-events-link {
+   border: 1px solid white;
+   padding: 3px 15px !important;
+}
+
+.navbar-all-events-link:hover {
+    border-color: $orange;
+    text-decoration: none;
+}
+
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
@@ -102,3 +112,4 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
