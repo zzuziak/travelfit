@@ -1,6 +1,19 @@
 .sport-rows {
 }
 
+.team-card {
+  height: 500px;
+  width: 375px;
+  &:hover {
+    opacity: 0;
+  }
+}
+
+.team-card-sport {
+  height: 500px;
+  width: 375px;
+}
+
 .nopadding {
    padding: 0 !important;
    margin: 0 !important;
