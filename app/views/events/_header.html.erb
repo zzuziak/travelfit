@@ -10,7 +10,7 @@
         </div>
         <div class="join-event">
           <% if current_user.participations.find {|p| p.event_id == event.id } %>
-            <div class="btn-joined text-center">GOING</div>
+            <i class="fas fa-check going-check"></i><p class="joined">Attending</p>
           <% else %>
             <div class="text-center">
               <%= simple_form_for [event, participation], method: :post do |f| %>
