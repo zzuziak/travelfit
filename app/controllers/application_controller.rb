@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
    end
 
+   def default_url_options
+     { host: ENV["www.travelfit.club"] || "localhost:3000" }
+   end
+
   private
 
   def skip_pundit?

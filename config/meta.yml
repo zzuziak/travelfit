@@ -1,0 +1,5 @@
+meta_product_name: "Travelfit"
+meta_title: "Travelfit - explore sports anywhere you go"
+meta_description: "Travelfit lets travellers find sport events all over the world"
+meta_image: "background.jpg"                       # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
