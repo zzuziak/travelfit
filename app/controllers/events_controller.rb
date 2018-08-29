@@ -67,6 +67,7 @@ class EventsController < ApplicationController
   end
 
   def set_search_params
+    @events = @events.select{ |event| event.date >= Date.today }
     if params[:date_from].present?
       d = params[:date_from].split(" ")[0].split("-").map {|x| x.to_i}
       @events = @events.select{ |event| event.date >= Date.new(d[0], d[1], d[2]) }

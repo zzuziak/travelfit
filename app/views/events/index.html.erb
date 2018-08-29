@@ -9,7 +9,7 @@
         <% if params[:free].present? %>
         <div class="switch">
           <%= check_box_tag :free, params[:free], value: params[:free] %>
-          <span id="free" class="slider round"></span>
+          <span id="free" class="slider round"> </span>
         </div>
           <label class="switch-label">Only free</label>
         <% else %>
@@ -19,7 +19,7 @@
           </label>
           <label class="switch-label off">Only free</label>
         <% end %>
-        <%= submit_tag 'Search', name: nil, class:"btn search-button", id:"submit" %>
+        <%= submit_tag 'Search', name: nil, class:"btn search-button search-button-home", id:"submit" %>
       </div>
     </div>
   </div>

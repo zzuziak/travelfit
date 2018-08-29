@@ -2,17 +2,14 @@
 }
 
 .team-card {
-  height: 500px;
-  width: 375px;
+  height: 400px;
   &:hover {
     opacity: 0;
   }
 }
 
 .team-card-sport {
-  height: 500px;
-  width: 375px;
-  margin-right: 0;
+  height: 400px;
 }
 
 .nopadding {
@@ -50,7 +47,8 @@
     left: 0;
     z-index: 10;
     mix-blend-mode: screen;
-    font-size: 32px;
+    font-size: 28px;
+    letter-spacing: 2px;
     overflow: hidden;
   }
 }
@@ -170,7 +168,7 @@
     h2 {
     font-weight: 400;
     font-size: 26px;
-  };
+  }
 }
 
 
