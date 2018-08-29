@@ -1,3 +1,14 @@
 .devise-form {
   margin-top: 200px;
 }
+
+.signin-links {
+  color: #595959;
+  text-decoration: none;
+  font-family: 'Gravity Light', "sans-serif";
+  transition: 0.2s all ease;
+  padding: 5px 0;
+  &:hover {
+    color: $orange;
+  }
+}

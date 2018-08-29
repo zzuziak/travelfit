@@ -9,6 +9,14 @@
   flex: 1 0 auto;
 }
 
+.search-stretch-home {
+  flex: 0 0 40%;
+}
+
+.search-stretch-date {
+  flex: 0 0 60%;
+}
+
 .input-field {
   background-color: #eee;
   border: 1px solid rgba(0, 0, 0, 0.3);
