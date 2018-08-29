@@ -71,9 +71,9 @@ class EventsController < ApplicationController
       d = params[:date_from].split(" ")[0].split("-").map {|x| x.to_i}
       @events = @events.select{ |event| event.date >= Date.new(d[0], d[1], d[2]) }
     end
-    if params[:date_to].present?
-      d = params[:date_from].split(" ")[2].split("-").map {|x| x.to_i}
-      @events = @events.select{ |event| event.date <= Date.new(d[0], d[1], d[2]) }
+    if params[:date_from].present?
+      dd = params[:date_from].split(" ")[2].split("-").map {|x| x.to_i}
+      @events = @events.select{ |event| event.date <= Date.new(dd[0], dd[1], dd[2]) }
     end
     if params[:free].present?
       @events = @events.select{ |event| event.price == 0 }

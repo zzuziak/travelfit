@@ -31,12 +31,13 @@
   <body>
     <% if current_page?(root_path) %>
       <%= render 'shared/navbar_home' %>
+      <!-- <%= render 'shared/flashes' %> -->
     <% else %>
       <%= render 'shared/navbar_all' %>
       <div class="margin-nav"></div>
+      <!-- <%= render 'shared/flashes' %> -->
     <% end %>
 
-    <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <!-- update the map.js file for responsive markers (nothing there yet) -->
