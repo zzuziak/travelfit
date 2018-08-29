@@ -99,6 +99,20 @@ running_events = Event.create!([{
   capacity: 10,
   user_id: 3,
   sport_id: running.id
+},
+{
+  title: "Tokyo Marathon 2019",
+  description: "The races will be conducted in accordance with the rules and regulations of the IAAF, JAAF and the Race Organizer.
+IAAF Road Race Label Regulations also applies to the Tokyo Marathon 2019, which has been certified by the IAAF as a Gold Label road race. Doping control is conducted under IAAF Anti-Doping Regulations and/or Japan Anti-Doping Regulations.
+World Para Athletics Rules and Regulations and the competition rules of the Tokyo Marathon applies to the wheelchair marathon. Doping control is conducted under World Para Athletics Anti-Doping Regulations and/or Japan Anti-Doping Regulations.",
+  date: "16.02.2019",
+  intensity: 3,
+  remote_photo_url: "https://images.unsplash.com/photo-1494091778978-0711d4e36991?ixlib=rb-0.3.5&s=c9aabe286d620c9b103f5ca9745347e3&auto=format&fit=crop&w=1050&q=80",
+  price: 0,
+  address: "Tokyo",
+  capacity: 10,
+  user_id: 3,
+  sport_id: running.id
 }])
 
 teamsports_events = Event.create!([{
@@ -165,46 +179,69 @@ local_adventure_events = Event.create!([{
   sport_id: local_adventure.id
 },
 {
+  title: "Karate - intro",
+  description: "Beginner class for all who want to get acquianted with basics of Karate",
+  date: "10.02.2019",
+  intensity: 3,
+  remote_photo_url: "https://images.unsplash.com/photo-1529630218527-7df22fc2d4ee?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b55429a19dbc270c01c89f369927ec63&auto=format&fit=crop&w=1052&q=80",
+  price: 5,
+  address: "Omotesanto, Tokyo",
+  capacity: 15,
+  user_id: 2,
+  sport_id: local_adventure.id
+},
+{
   title: "Canoeing tour",
-  description: "The spree river and its numerous canals run through many famous sights in Berlin such as the TV-tower, the Molecule Men or the Oberbaum-Bridge. Paddle with us through Berlin and be surprised by the wonderful scene!",
+  description: "The lakes and its numerous canals run through many famous sights in Berlin such as the TV-tower, the Molecule Men or the Oberbaum-Bridge. Paddle with us through Berlin and be surprised by the wonderful scene!",
   date: "08.09.2018",
   intensity: 2,
   remote_photo_url: "https://images.unsplash.com/photo-1532528791647-87400fc51288?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5676f38161ec1c86f4882cdc4357b87c&auto=format&fit=crop&w=967&q=80",
   price: 0,
-  address: "Leipzigerstrasse, Berlin",
+  address: "Mazury, Polska",
   capacity: 15,
   user_id: 1,
   sport_id: local_adventure.id
-
-
 },
 {
   title: "Swimming class",
-  description: "We will work on the foundations of basic styles in swimming at one of the best Berlin spots.",
-  date: "28.09.2018",
+  description: "We will work on the foundations of basic styles in swimming at one of the best Tokyo spots.",
+  date: "28.03.2019",
   intensity: 2,
   remote_photo_url: "https://images.unsplash.com/photo-1504309092620-4d0ec726efa4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f38e067fcad97bc3b247b3db0859af1c&auto=format&fit=crop&w=1050&q=80",
   price: 5,
-  address: "Wannsee, Berlin",
+  address: "Ueno, Tokyo",
   capacity: 200,
   user_id: 1,
   sport_id: local_adventure.id
 },
 {
-  title: "Skiing down La Vallée Blanche",
-  description: "20km offpiste on the longest glacier in Europe - with a professionnal mountain guide from the valley",
-  date: "20.12.2018",
+  title: "Skiing down Fiji",
+  description: "20km offpiste on the most famous japanese mountain - with a professionnal mountain guide from the valley",
+  date: "20.02.2019",
   intensity: 4,
   remote_photo_url: "https://www.wantedinrome.com/i/preview/storage/uploads/2015/02/skiing-86491418.jpg",
   price: 5,
-  address: "Grandes Jorasses, Chamonix",
+  address: "Fiji, Japan",
   capacity: 6,
   user_id: 2,
   sport_id: local_adventure.id
 }])
 
-fitness_events = Event.create!([{
-
+fitness_events = Event.create!([
+{
+title: "Weekly calisthenics",
+description: "Weekly workout in Tokyo, suitable for beginners and advanced street workout freaks. We will work on strenght, mobility and balance. Extension bands provided!",
+date: "12.02.2019",
+intensity: 4,
+remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5PW52EmBoJUmQWDqrj9jLBVrk6cHzW67mZ2in1JUc06xAc1fr9w
+",
+price: 0,
+address: "Harajuku, Tokyo, Japan",
+capacity: 20,
+user_id: 3,
+sport_id: fitness.id
+},
+  {
   title: "Crossfit WOD",
   description: "Weekly workout in Lisboa. All equipment provided on site!",
   date: "12.09.2018",
@@ -219,7 +256,7 @@ fitness_events = Event.create!([{
 {
   title: "Functional training",
   description: "Let's get together for a functional workout! No equipment needed, we will work with our own bodyweight. Appropriate for begginers and advanced people!",
-  date: "21.09.2018",
+  date: "21.03.2019",
   intensity: 3,
   remote_photo_url: "https://drummondeducation.com/wp-content/uploads/2015/07/715-outdoor-fitness-copy-.jpg",
   price: 0,
@@ -291,8 +328,21 @@ racket_sport_events = Event.create!([{
   sport_id: racket_sport.id
 }])
 
+
 yoga_events = Event.create!([{
 
+  title: "Yoga & Meditation",
+  description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
+  date: "10.03.2019",
+  intensity: 1,
+  remote_photo_url: "https://images.unsplash.com/photo-1513221323698-800407ce0781?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a752a5417d689bb6e938b2f90c96f9be&auto=format&fit=crop&w=1050&q=80",
+  price: 0,
+  address: ", Bamboo Forest, Kyoto",
+  capacity: 10,
+  user_id: 3,
+  sport_id: yoga.id
+},
+{
   title: "Chakras Yoga",
   description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
   date: "24.03.2019",
