@@ -8,7 +8,7 @@
   z-index: -20;
 }
 
-.home-content {
+.margin-top {
   margin-top: 30vh;
 }
 
@@ -52,4 +52,28 @@
 .info-text {
   width: 80vw;
   padding: 30px;
+}
+
+.team {
+  height: 100vh;
+  background: rgba(black, 0.66);
+  color: white;
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.teamheadline {
+  padding-bottom: 30px;
+}
+
+.team-desc {
+  margin-top: 30px;
+  margin-right: 20px;
+  h3 {
+    font-size: 20px;
+  }
 }

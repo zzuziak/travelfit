@@ -3,10 +3,12 @@
 <%= video_tag "TravelFit_Video.mp4", autoplay: true, loop: true, mute: :mute, class: "video" %>
 
 <div class="home-content">
-  <div class="container">
+  <div class="margin-top">
+    <div class="container">
 
-  <%= render 'shared/search_bar_home' %>
+    <%= render 'shared/search_bar_home' %>
 
+    </div>
   </div>
 </div>
 
@@ -25,21 +27,21 @@
   <div class="row">
     <div class="info-text">
       <div class="col-xs-12 col-md-4">
-        <div class="text-center">
+        <div class="text-center add-info">
           <%= image_tag("calendar2.svg", width: "30%", alt: "Scale", class: "img-responsive center-block") %>
           <h3>Explore Events</h3>
           <p>Search and find events and meetups in your location! Or the location you will be at in a week's time.</p>
         </div>
       </div>
       <div class="col-xs-12 col-md-4">
-        <div class="text-center">
+        <div class="text-center add-info2">
           <%= image_tag("setting.svg", width: "30%", alt: "Scale", class: "img-responsive center-block") %>
           <h3>Share your Event</h3>
           <p>Create an event if you find nothing to your liking and share your passion with others.</p>
         </div>
       </div>
       <div class="col-xs-12 col-md-4">
-        <div class="text-center">
+        <div class="text-center add-info3">
           <%= image_tag("conversation.svg", width: "30%", alt: "Scale", class: "img-responsive center-block") %>
           <h3>Become part of the club</h3>
           <p>Each event has it's own community to coordinate and gather feedback, you can be a part of it, too!</p>
@@ -52,27 +54,71 @@
 
 <div class="team">
   <div class="row">
-    <div class="team">
-      <div class="col-xs-12 col-md-3">
-        <div class="text-center">
+    <h2 class="teamheadline">THE TEAM</h2>
+    <div class="col-xs-12 col-md-3">
+      <div class="add-info text-center">
 
+        <div class="team-card-sport" style="background-image: url('<%= image_path('F2.jpg') %>'); background-position: center; background-size: cover;">
+          <div class="team-card" style="background-image: url('<%= image_path('F1.jpg') %>'); background-position: center; background-size: cover;">
+          </div>
         </div>
+        <div class="team-desc">
+          <h3>Fabian</h3>
+          <h3>Business-Genius and Flexboxer</h3>
+        </div>
+
       </div>
-      <div class="col-xs-12 col-md-3">
-        <div class="text-center">
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <div class="add-info2 text-center">
 
+        <div class="team-card-sport" style="background-image: url('<%= image_path('J2.jpg') %>'); background-position: center; background-size: cover;">
+          <div class="team-card" style="background-image: url('<%= image_path('J1.jpg') %>'); background-position: center; background-size: cover;">
+          </div>
         </div>
+        <div class="team-desc">
+          <h3>Julian</h3>
+          <h3>Chief Design Officer and Snuff Tobacco Minister</h3>
+        </div>
+
       </div>
-      <div class="col-xs-12 col-md-3">
-        <div class="text-center">
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <div class="add-info3 text-center">
 
+        <div class="team-card-sport" style="background-image: url('<%= image_path('I2.jpg') %>'); background-position: center; background-size: cover;">
+          <div class="team-card" style="background-image: url('<%= image_path('I1.jpg') %>'); background-position: center; background-size: cover;">
+          </div>
         </div>
+        <div class="team-desc">
+          <h3>Ileana</h3>
+          <h3>Jewelry-Consultant and Master of Sliders</h3>
+        </div>
+
       </div>
-      <div class="col-xs-12 col-md-3">
-        <div class="text-center">
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <div class="add-info4 text-center">
 
+        <div class="team-card-sport" style="background-image: url('<%= image_path('Z2.jpg') %>'); background-position: center; background-size: cover;">
+          <div class="team-card" style="background-image: url('<%= image_path('Z1.jpg') %>'); background-position: center; background-size: cover;">
+          </div>
         </div>
+        <div class="team-desc">
+          <h3>Zuza</h3>
+          <h3>Teamleader and Coding-prodigy</h3>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
+
+<script>
+    ScrollReveal().reveal('.add-info', { delay: 600, origin: 'bottom', distance: '50px', easing: 'ease-in' });
+    ScrollReveal().reveal('.add-info2', { delay: 900, origin: 'bottom', distance: '50px', easing: 'ease-in' });
+    ScrollReveal().reveal('.add-info3', { delay: 1200, origin: 'bottom', distance: '50px', easing: 'ease-in' });
+    ScrollReveal().reveal('.add-info4', { delay: 1500, origin: 'bottom', distance: '50px', easing: 'ease-in' });
+</script>
+
+
