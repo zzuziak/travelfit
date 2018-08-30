@@ -91,16 +91,16 @@ spartan = Event.create!(title: "Spartan Race Tokyo",
   description: "Obstacle Course Race comes to Tokyo again! \n Pick between Sprint, Super and Beast - all do them all! ",
   date: "15.03.2019",
   intensity: 5,
-  remote_photo_url: "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/37407117_1779824532101894_2518401911355342848_n.jpg?_nc_cat=0&oh=7fc78f0c9dcfa1e234b1cca9e02b933c&oe=5C38D942",
+  remote_photo_url: "https://images.unsplash.com/photo-1534125641411-7b585a870768?ixlib=rb-0.3.5&s=42c13eb73987d4f04220dad90de07b35&auto=format&fit=crop&w=1184&q=80",
   price: 40,
   address: "Ukima Park, Tokyo",
   capacity: 10_000,
   user_id: 3,
   sport_id: running.id)
 
-callisthenics = Event.create!(
+calisthenics = Event.create!(
 title: "Weekly calisthenics",
-description: "Weekly workout in Tokyo, suitable for beginners and advanced street workout freaks. We will work on strenght, mobility and balance. \n\n First part of the workout will focus on preparation for a handstand and muscle up. Afterwards we will continue with HIIT exercises to work on stamina and endurance. \n\n Feel free to bring friends, pets and positive attitude!",
+description: "Weekly workout in Tokyo, suitable for <strong>beginnersand advanced street workout freaks.</strong>  We will work on strenght 💪💪💪, mobility and balance. \n\n First part of the workout will focus on preparation for a handstand and muscle up. Afterwards we will continue with HIIT exercises to work on stamina and endurance. \n\n Feel free to bring <strong>friends, pets and positive attitude!</strong> \n\nAfterwards we plan to grab something to eat and drink, then head towards the heart of Harajuku to enjoy the evening.",
 date: "12.02.2019",
 intensity: 4,
 remote_photo_url: "https://images.unsplash.com/photo-1480264104733-84fb0b925be3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0f7dc071673a7213b24926db00cda2d7&auto=format&fit=crop&w=1050&q=80",
@@ -467,7 +467,6 @@ Participation.create!([{
   user_id: 6,
   status: "going"
 },
-,
 {
   event_id: calisthenics.id,
   user_id: 7,
@@ -521,9 +520,14 @@ Post.create!([{
   content: "New Rules have been posted to the official website, everybody make sure you've read through them!"
 },
 {
-  event_id: spartan.id,
+  event_id: calisthenics.id,
   user_id: 5,
   content: "Should we bring our own equipment? Also, isn't the weather going to be an issue with all that forecasted rain?"
+},
+{
+  event_id: calisthenics.id,
+  user_id: 9,
+  content: "So happy the weekly workout is back! Gotta build those muscles and work on my freestyle skills."
 }]
 )
 
