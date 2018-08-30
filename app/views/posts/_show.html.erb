@@ -10,7 +10,9 @@
           </p>
           <div class="posted-at">
             <% time_diff = (Time.current - post.created_at) / 1.minute  %>
-            <% if time_diff < 60 %>
+            <% if time_diff < 1 %>
+              (just now)
+            <% elsif time_diff < 60 %>
               (<%=  ((Time.current - post.created_at) / 1.minute ).floor %> minutes ago)
             <% elsif time_diff < (60 * 24) %>
               (<%=  ((Time.current - post.created_at) / 1.hour ).floor %> hours ago)
