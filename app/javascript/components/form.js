@@ -1,7 +1,6 @@
 pens = document.querySelectorAll("#update-pen")
-sports_fields = document.querySelectorAll("#sports_fields")
+sports_fields = document.querySelectorAll("#sports")
 
-console.log(pens)
 console.log(sports_fields)
 
 pens.forEach((pen) => {

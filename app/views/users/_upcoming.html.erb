@@ -34,7 +34,7 @@
            </div>
 
            <div class="event-description">
-             <p><%= participation.event.description[0, 200] %></p>
+             <p><%= simple_format(participation.event.description[0, 200])  %></p>
              <div class="update-participation">
                <div><h4><i class="fas fa-check"></i>Going</h4></div>
                <div>

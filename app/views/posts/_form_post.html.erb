@@ -3,7 +3,7 @@
     <div class="userpost" id="new-post">
       <%= simple_form_for([ event, post ], remote: true) do |f| %>
       <%= f.input :content, label: "Post something to the event!" %>
-      <%= f.button :submit, class: "btn btn-success" %>
+      <%= f.button :submit, "Post!", class: "btn btn-success" %>
       <% end %>
     </div>
   </div>
