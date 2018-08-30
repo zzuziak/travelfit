@@ -12,8 +12,8 @@ function tabs() {
 //     var $nav = $('ul.nav a[href="' + hash + '"]');
 //     hash && $nav.trigger('click');
 // });
-let tabs = document.getElementById("append");
-if (tabs){
+let tab = document.getElementById("append");
+if (tab){
   $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     const hash = e.target.getAttribute('href')
     window.location = hash
@@ -29,6 +29,6 @@ if (tabs){
 
   //   })
   // })
-}
+}};
 
 export { tabs };
