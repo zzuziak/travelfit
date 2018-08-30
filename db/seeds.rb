@@ -101,7 +101,7 @@ spartan = Event.create!(title: "Spartan Race Tokyo",
 calisthenics = Event.create!(
 title: "Weekly calisthenics",
 description: "Weekly workout in Tokyo, suitable for <strong>beginners and advanced street workout freaks.</strong>  We will work on strenght 💪💪💪 mobility and balance. \n\n First part of the workout will focus on preparation for a handstand and muscle up. Afterwards we will continue with HIIT exercises to work on stamina and endurance. \n\n Feel free to bring <strong>friends, pets and positive attitude!</strong> \n\nAfterwards we plan to grab something to eat and drink, then head towards the heart of Harajuku to enjoy the evening.",
-date: "12.02.2019",
+date: "12.10.2018",
 intensity: 4,
 remote_photo_url: "https://images.unsplash.com/photo-1480264104733-84fb0b925be3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0f7dc071673a7213b24926db00cda2d7&auto=format&fit=crop&w=1050&q=80",
 price: 0,
@@ -138,7 +138,7 @@ running_events = Event.create!([{
 {
   title: "Stair Climb Competition",
   description: "The climb includes 61 floors and 1200 stairs and hundreds of people will be participating.",
-  date: "16.02.2018",
+  date: "17.10.2018",
   intensity: 5,
   remote_photo_url: "https://img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/106/142/466290308.jpg",
   price: 0,
@@ -280,7 +280,7 @@ local_adventure_events = Event.create!([{
   intensity: 4,
   remote_photo_url: "https://www.wantedinrome.com/i/preview/storage/uploads/2015/02/skiing-86491418.jpg",
   price: 25,
-  address: "Fiji, Japan",
+  address: "Mount Takao, Japan",
   capacity: 6,
   user_id: 2,
   sport_id: local_adventure.id
@@ -288,7 +288,7 @@ local_adventure_events = Event.create!([{
 {
   title: "Biking through Tokyo",
   description: "20km through the streets of Tokyo",
-  date: "13.03.2019",
+  date: "07.10.2018",
   intensity: 4,
   remote_photo_url: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b104c850fee7b7c4035e1477b1c13704&auto=format&fit=crop&w=1050&q=80",
   price: 0,
@@ -302,7 +302,7 @@ local_adventure_events = Event.create!([{
 fitness_events = Event.create!([{
   title: "Crossfit WOD",
   description: "Weekly workout in Lisboa. All equipment provided on site!",
-  date: "12.03.2019",
+  date: "22.10.2018",
   intensity: 4,
   remote_photo_url: "https://customersuccessbox.com/blog/wp-content/uploads/2017/05/Customer-Success-by-building-Product-Stickiness.jpg",
   price: 0,
@@ -326,7 +326,7 @@ fitness_events = Event.create!([{
 {
   title: "HIIT Training",
   description: "Let's get together for a high intensity interval training!! No equipment needed, we will work with our own bodyweight. Appropriate for begginers and advanced people!",
-  date: "27.03.2019",
+  date: "09.10.2018",
   intensity: 3,
   remote_photo_url: "https://images.unsplash.com/photo-1434596922112-19c563067271?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e0f576d343645015367510d3829a582e&auto=format&fit=crop&w=1050&q=80",
   price: 0,
@@ -340,7 +340,7 @@ racket_sport_events = Event.create!([{
 
   title: "Pingpong tournament",
   description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
-  date: "20.02.2019",
+  date: "19.10.2018",
   intensity: 2,
   remote_photo_url: "https://cdn.funcheap.com/wp-content/uploads/2013/01/old-school-tiger_grande.jpg",
   price: 0,
@@ -364,7 +364,7 @@ racket_sport_events = Event.create!([{
 {
   title: "Tennis in the backyard",
   description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
-  date: "20.02.2019",
+  date: "19.10.2018",
   intensity: 2,
   remote_photo_url: "http://www.courtofsport.com/websites/courtofsport/photogallery/5573747/backyard-tennis-court-house.jpg",
   price: 0,
@@ -391,7 +391,7 @@ yoga_events = Event.create!([{
 
   title: "Yoga & Meditation",
   description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
-  date: "10.03.2019",
+  date: "24.10.2018",
   intensity: 1,
   remote_photo_url: "https://images.unsplash.com/photo-1513221323698-800407ce0781?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a752a5417d689bb6e938b2f90c96f9be&auto=format&fit=crop&w=1050&q=80",
   price: 0,
@@ -427,7 +427,7 @@ yoga_events = Event.create!([{
 {
   title: "Recovery stretch",
   description: "Relax and chill with us in the beautiful area of Sasazuka.",
-  date: "13.02.2019",
+  date: "01.10.2018",
   intensity: 2,
   remote_photo_url: "https://img.gtvcdn.com/cdn/farfuture/aDE1dPYX_0JPWreUCsPoL7RUehzaAxvqJL7VfLAAXS4/mtime%3A0/sites/default/files/imagecache/keyart_820x461/article_main_image/what-is-restorative-yoga-647x300.png",
   price: 22,
