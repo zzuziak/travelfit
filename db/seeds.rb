@@ -100,7 +100,7 @@ spartan = Event.create!(title: "Spartan Race Tokyo",
 
 calisthenics = Event.create!(
 title: "Weekly calisthenics",
-description: "Weekly workout in Tokyo, suitable for <strong>beginnersand advanced street workout freaks.</strong>  We will work on strenght 💪💪💪, mobility and balance. \n\n First part of the workout will focus on preparation for a handstand and muscle up. Afterwards we will continue with HIIT exercises to work on stamina and endurance. \n\n Feel free to bring <strong>friends, pets and positive attitude!</strong> \n\nAfterwards we plan to grab something to eat and drink, then head towards the heart of Harajuku to enjoy the evening.",
+description: "Weekly workout in Tokyo, suitable for <strong>beginners and advanced street workout freaks.</strong>  We will work on strenght 💪💪💪 mobility and balance. \n\n First part of the workout will focus on preparation for a handstand and muscle up. Afterwards we will continue with HIIT exercises to work on stamina and endurance. \n\n Feel free to bring <strong>friends, pets and positive attitude!</strong> \n\nAfterwards we plan to grab something to eat and drink, then head towards the heart of Harajuku to enjoy the evening.",
 date: "12.02.2019",
 intensity: 4,
 remote_photo_url: "https://images.unsplash.com/photo-1480264104733-84fb0b925be3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0f7dc071673a7213b24926db00cda2d7&auto=format&fit=crop&w=1050&q=80",
