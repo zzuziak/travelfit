@@ -39,11 +39,12 @@
 }
 
 .information {
-  height: 50vh;
+  height: 150%;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background: rgba(white, 1);
   color: black;
   position: relative;
-  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,13 +56,14 @@
 }
 
 .team {
-  height: 230vh;
+  height: 100%;
   background: rgba(black, 0.66);
   color: white;
   position: relative;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 50px;
 }
 
 .teamheadline {
