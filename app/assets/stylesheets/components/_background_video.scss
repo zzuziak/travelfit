@@ -20,7 +20,7 @@
 }
 
 .mission {
-  height: 100vh;
+  height: 150%;
   margin-top: 50vh;
   background: rgba(black, 0.66);
   color: white;
@@ -36,6 +36,11 @@
     line-height: 100px;
     letter-spacing: 4px;
   }
+}
+
+.mission-text {
+  padding-top: 20vh;
+  padding-bottom: 20vh;
 }
 
 .information {
