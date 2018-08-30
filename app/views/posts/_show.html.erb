@@ -1,34 +1,36 @@
 <div class="post-with-reply">
   <div class="show-post">
     <div class="show-post-head">
-      <%= cl_image_tag post.user.photo, class: "avatar avatar-small" %>
+      <%= cl_image_tag post.user.photo, class: "avatar-small avatar-with-margin" %>
       <div class="show-post-userinfo">
         <div class="show-post-username">
-          <%= post.user.first_name %>
-          <%= post.user.last_name %>
+          <p>
+            <%= post.user.first_name %>
+            <%= post.user.last_name %>
+          </p>
         </div>
         <div class="posted-at">
           <% time_diff = (Time.current - post.created_at) / 1.minute  %>
           <% if time_diff < 60 %>
-            <%=  ((Time.current - post.created_at) / 1.minute ).floor %> minutes ago
+          <p> <%=  ((Time.current - post.created_at) / 1.minute ).floor %> minutes ago</p>
           <% elsif time_diff < (60 * 24) %>
-            <%=  ((Time.current - post.created_at) / 1.hour ).floor %> hours ago
+          <p> <%=  ((Time.current - post.created_at) / 1.hour ).floor %> hours ago</p>
           <% else %>
-            <%=  ((Time.current - post.created_at) / 1.day ).floor %> days ago
+          <p> <%=  ((Time.current - post.created_at) / 1.day ).floor %> days ago</p>
           <% end %>
         </div>
       </div>
 
+    </div>
+    <div class="show-post-content">
+      <p><%= post.content %></p>
       <div class="reply-link">
         <button class="btn btn-success reply-btn" id="btn<%= post.id %>">Reply</button>
       </div>
     </div>
-    <div class="show-post-content">
-      <p><%= post.content %></p>
-    </div>
   </div>
   <%= render 'replies/new', event: event, post: post, reply: reply %>
-  <div id="replies-<%= post.id %>">
+  <div id="replies-<%= post.id %>" class="replies">
     <%= render 'replies/show', post: post %>
   </div>
 </div>

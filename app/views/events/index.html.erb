@@ -11,13 +11,13 @@
           <%= check_box_tag :free, params[:free], value: params[:free] %>
           <span id="free" class="slider round"> </span>
         </div>
-          <label class="switch-label">Only free</label>
+          <label class="switch-label orange">Only free</label>
         <% else %>
           <label class="switch">
             <%= check_box_tag :free, params[:free] %>
             <span id="free" class="slider round"></span>
           </label>
-          <label class="switch-label off">Only free</label>
+          <label class="switch-label">Only free</label>
         <% end %>
         <%= submit_tag 'Search', name: nil, class:"btn search-button search-button-home", id:"submit" %>
       </div>
