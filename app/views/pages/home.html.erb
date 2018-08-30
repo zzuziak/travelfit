@@ -1,15 +1,14 @@
 <% @title= "Travelfit" %>
 
-<%= video_tag "TravelFit_Video.mp4", autoplay: true, loop: true, mute: :mute, class: "video" %>
+<%= video_tag "TravelFit_Video.mp4", autoplay: true, loop: true, mute: :mute, class: "video row-no-padding" %>
 
-<div class="home-content">
-  <div class="home-margin-top">
-    <div class="container">
-
-    <%= render 'shared/search_bar_home' %>
-
+<div class="home-margin-top">
+  <div class="row row-no-padding">
+    <div class="call-to-action text-center hidden-xs hidden-sm discover-all-button">
+      <h1>Explore sports <span style="color: #bbbbbb">anywhere</span> you go.</h1>
     </div>
   </div>
+  <%= render 'shared/search_bar_home' %>
 </div>
 
 <div class="mission">
@@ -23,8 +22,8 @@
   </div>
 </div>
 
-<div class="information row-no-padding">
-  <div class="row">
+<div class="information">
+  <div class="row row-no-padding">
     <div class="info-text">
       <div class="col-xs-12 col-md-4">
         <div class="text-center add-info2">
@@ -57,7 +56,7 @@
     <h2 class="teamheadline text-center">THE TEAM</h2>
     <div class="row row-no-padding">
       <div class="add-info">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-6 nopadding">
           <div class="border-left">
           </div>
           <div class="team-card-sport" style="background-image: url('<%= image_path('F2.jpg') %>'); background-position: center; background-size: cover;">
@@ -65,7 +64,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-md-5">
+        <div class="col-xs-12 col-md-5 nopadding">
           <div class="team-member">
             <h3>Fabian</h3>
             <h4>Business-Genius and Flexboxer</h4>
@@ -77,14 +76,14 @@
 
     <div class="row row-no-padding">
       <div class="add-info">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-6 nopadding">
           <div class="team-member">
             <h3>Julian</h3>
             <h4>Chief Design Officer and Snuff Tobacco Minister</h4>
             <p class="member-desc">This is an example text, please write something about yourself, keeping in mind how much content we can display without exceeding the height of the image.</p>
           </div>
         </div>
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-6 nopadding">
           <div class="border-right">
           </div>
           <div class="team-card-sport" style="background-image: url('<%= image_path('J2.jpg') %>'); background-position: center; background-size: cover;">
@@ -97,7 +96,7 @@
 
     <div class="row row-no-padding">
       <div class="add-info">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-6 nopadding">
           <div class="border-left">
           </div>
           <div class="team-card-sport" style="background-image: url('<%= image_path('I2.jpg') %>'); background-position: center; background-size: cover;">
@@ -105,7 +104,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-md-5">
+        <div class="col-xs-12 col-md-5 nopadding">
           <div class="team-member">
             <h3>Ileana</h3>
             <h4>Jewelry-Consultant and Master of Sliders</h4>
@@ -117,14 +116,14 @@
 
     <div class="row row-no-padding">
       <div class="add-info">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-6 nopadding">
           <div class="team-member">
             <h3>Zuza</h3>
             <h4>Teamleader and Coding-prodigy</h4>
             <p class="member-desc">This is an example text, please write something about yourself, keeping in mind how much content we can display without exceeding the height of the image.</p>
           </div>
         </div>
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-6 nopadding">
           <div class="border-right">
           </div>
           <div class="team-card-sport" style="background-image: url('<%= image_path('Z2.jpg') %>'); background-position: center; background-size: cover;">

@@ -35,9 +35,36 @@
 .date-field {
   flex: 0 0 30%;
 }
+.input-field-home {
+  background-color: #eee;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  height: 50px;
+  color: rgb(20, 20, 20);
+  margin-right: 10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  flex: 0 0 50%;
+}
 
+.input-field-home::placeholder {
+  color: rgba(1, 1, 1, 0.4);
+}
 
+.date-field-home {
+  flex: 0 0 50%;
+}
 
+.search-home-width {
+  width: 60%;
+  margin: auto;
+}
+
+.search-flex-button {
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
+}
 // index page positioning
 
 .search-index-box {
