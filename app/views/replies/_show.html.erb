@@ -8,17 +8,17 @@
             <%= reply.user.first_name %>
             <%= reply.user.last_name %>
           </p>
-        </div>
         <div class="posted-at">
           <% time_diff = (Time.current - reply.created_at) / 1.minute  %>
           <% if time_diff < 60 %>
-          <p>  <%=  ((Time.current - reply.created_at) / 1.minute ).floor %> minutes ago</p>
+          (<%=  ((Time.current - reply.created_at) / 1.minute ).floor %> minutes ago)
           <% elsif time_diff < (60 * 24) %>
-          <p>  <%=  ((Time.current - reply.created_at) / 1.hour ).floor %> hours ago</p>
+          (<%=  ((Time.current - reply.created_at) / 1.hour ).floor %> hours ago)
           <% else %>
-          <p>  <%=  ((Time.current - reply.created_at) / 1.day ).floor %> days ago</p>
+          (<%=  ((Time.current - reply.created_at) / 1.day ).floor %> days ago)
           <% end %>
         </div>
+      </div>
       </div>
     </div>
     <div class="show-reply-content">

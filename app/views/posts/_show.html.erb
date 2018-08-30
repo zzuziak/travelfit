@@ -8,16 +8,16 @@
             <%= post.user.first_name %>
             <%= post.user.last_name %>
           </p>
-        </div>
-        <div class="posted-at">
-          <% time_diff = (Time.current - post.created_at) / 1.minute  %>
-          <% if time_diff < 60 %>
-          <p> <%=  ((Time.current - post.created_at) / 1.minute ).floor %> minutes ago</p>
-          <% elsif time_diff < (60 * 24) %>
-          <p> <%=  ((Time.current - post.created_at) / 1.hour ).floor %> hours ago</p>
-          <% else %>
-          <p> <%=  ((Time.current - post.created_at) / 1.day ).floor %> days ago</p>
-          <% end %>
+          <div class="posted-at">
+            <% time_diff = (Time.current - post.created_at) / 1.minute  %>
+            <% if time_diff < 60 %>
+              (<%=  ((Time.current - post.created_at) / 1.minute ).floor %> minutes ago)
+            <% elsif time_diff < (60 * 24) %>
+              (<%=  ((Time.current - post.created_at) / 1.hour ).floor %> hours ago)
+            <% else %>
+              (<%=  ((Time.current - post.created_at) / 1.day ).floor %> days ago)
+            <% end %>
+          </div>
         </div>
       </div>
 
@@ -25,7 +25,7 @@
     <div class="show-post-content">
       <p><%= post.content %></p>
       <div class="reply-link">
-        <button class="btn btn-success reply-btn" id="btn<%= post.id %>">Reply</button>
+        <button class="btn-link reply-link reply-btn" id="btn<%= post.id %>">Reply</button>
       </div>
     </div>
   </div>

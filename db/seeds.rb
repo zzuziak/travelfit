@@ -42,6 +42,41 @@ User.create!([{
   first_name: "Simon",
   last_name: "Constalones",
   remote_photo_url: "https://www.xing.com/image/5_0_6_be2064c23_19552288_2/simon-berg-foto.1024x1024.jpg"
+},
+{
+  email: "test6@example.com",
+  password: "123456",
+  first_name: "Max",
+  last_name: "Longory",
+  remote_photo_url: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/NafSadh_Profile.jpg/768px-NafSadh_Profile.jpg"
+},
+{
+  email: "test7@example.com",
+  password: "123456",
+  first_name: "Karl",
+  last_name: "Moore",
+  remote_photo_url: "https://img.freepik.com/free-photo/happy-young-man-smiley-profile-face_6602-285.jpg?size=338&ext=jpg"
+},
+{
+  email: "test8@example.com",
+  password: "123456",
+  first_name: "Edith",
+  last_name: "Smith",
+  remote_photo_url: "https://d2ai51kpatikht.cloudfront.net/wp-content/uploads/2014/01/Belotero.jpg"
+},
+{
+  email: "test9@example.com",
+  password: "123456",
+  first_name: "Alice",
+  last_name: "Bradford",
+  remote_photo_url: "http://studiaorontica.org/img/pics-for-profile-2.jpg"
+},
+{
+  email: "test10@example.com",
+  password: "123456",
+  first_name: "Lilliana",
+  last_name: "McMurphy",
+  remote_photo_url: "https://i.dailymail.co.uk/i/pix/2016/05/23/22/348B850600000578-3605456-image-m-32_1464040491071.jpg"
 }])
 
 local_adventure = Sport.create!(category: "Local adventure", photo: "http://molescreenpdt.com.au/wp-content/uploads/2015/12/Outdoor-Sports-1440-900-widescreen-56450.jpg")
@@ -53,7 +88,7 @@ racket_sport = Sport.create!(category: "Racket sports", photo: "https://well.pk/
 
 
 spartan = Event.create!(title: "Spartan Race Tokyo",
-  description: "Obstacle Course Race comes to Tokyo again! Pick between Sprint, Super and Beast - all do them all! ",
+  description: "Obstacle Course Race comes to Tokyo again! \n Pick between Sprint, Super and Beast - all do them all! ",
   date: "15.03.2019",
   intensity: 5,
   remote_photo_url: "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/37407117_1779824532101894_2518401911355342848_n.jpg?_nc_cat=0&oh=7fc78f0c9dcfa1e234b1cca9e02b933c&oe=5C38D942",
@@ -62,6 +97,18 @@ spartan = Event.create!(title: "Spartan Race Tokyo",
   capacity: 10_000,
   user_id: 3,
   sport_id: running.id)
+
+callisthenics = Event.create!(
+title: "Weekly calisthenics",
+description: "Weekly workout in Tokyo, suitable for beginners and advanced street workout freaks. We will work on strenght, mobility and balance. \n\n First part of the workout will focus on preparation for a handstand and muscle up. Afterwards we will continue with HIIT exercises to work on stamina and endurance. \n\n Feel free to bring friends, pets and positive attitude!",
+date: "12.02.2019",
+intensity: 4,
+remote_photo_url: "https://images.unsplash.com/photo-1480264104733-84fb0b925be3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0f7dc071673a7213b24926db00cda2d7&auto=format&fit=crop&w=1050&q=80",
+price: 0,
+address: "Harajuku, Tokyo, Japan",
+capacity: 20,
+user_id: 7,
+sport_id: fitness.id)
 
 running_events = Event.create!([{
 
@@ -91,13 +138,13 @@ running_events = Event.create!([{
 {
   title: "Stair Climb Competition",
   description: "The climb includes 61 floors and 1200 stairs and hundreds of people will be participating.",
-  date: "16.12.2018",
+  date: "16.02.2018",
   intensity: 5,
   remote_photo_url: "https://img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/106/142/466290308.jpg",
-  price: 37,
-  address: "200 Clarendon Tower, Boston",
+  price: 0,
+  address: "Tokyo Tower, Tokyo",
   capacity: 900,
-  user_id: 1,
+  user_id: 9,
   sport_id: running.id
 },
 {
@@ -120,7 +167,7 @@ World Para Athletics Rules and Regulations and the competition rules of the Toky
   date: "16.02.2019",
   intensity: 3,
   remote_photo_url: "https://images.unsplash.com/photo-1494091778978-0711d4e36991?ixlib=rb-0.3.5&s=c9aabe286d620c9b103f5ca9745347e3&auto=format&fit=crop&w=1050&q=80",
-  price: 0,
+  price: 100,
   address: "Tokyo",
   capacity: 10,
   user_id: 3,
@@ -131,10 +178,10 @@ teamsports_events = Event.create!([{
 
   title: "3vs3 Rooftop Basketball",
   description: "The rooftop court at Kasumigaseki Building is the best place to ball in Tokyo! Join us for a 3on3 - semipro level skills required.",
-  date: "01.06.2019",
+  date: "01.03.2019",
   intensity: 4,
   remote_photo_url: "https://c1.staticflickr.com/3/2387/2224459077_20f0603f8b_b.jpg",
-  price: 15,
+  price: 0,
   address: "Kasumigaseki Building, Tokyo",
   capacity: 6,
   user_id: 5,
@@ -155,7 +202,7 @@ teamsports_events = Event.create!([{
 {
   title: "Spring Soccer Tournament",
   description: "3rd Annual Spring Shootout Soccer Tournament - come celebrate Cedar Point's 2019 opening weekend in Sandusky, Ohio! Last year's tournament had more than 70 teams and we expect 2019 to be even bigger!",
-  date: "03.05.2018",
+  date: "03.02.2018",
   intensity: 2,
   remote_photo_url: "https://cdn.primedia.co.za/primedia-broadcasting/image/upload/c_fill,h_289,q_70,w_463/euyjbw0hvcvlkf1va0ty",
   price: 35,
@@ -172,7 +219,7 @@ local_adventure_events = Event.create!([{
   date: "28.08.2018",
   intensity: 5,
   remote_photo_url: "https://images.unsplash.com/photo-1530138948699-6a75eebc9d9b?ixlib=rb-0.3.5&s=13d449cf21080629af3584c66193eb2c&auto=format&fit=crop&w=1649&q=80",
-  price: 5,
+  price: 0,
   address: "Wannsee, Berlin",
   capacity: 200,
   user_id: 1,
@@ -196,7 +243,7 @@ local_adventure_events = Event.create!([{
   date: "10.02.2019",
   intensity: 3,
   remote_photo_url: "https://images.unsplash.com/photo-1529630218527-7df22fc2d4ee?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b55429a19dbc270c01c89f369927ec63&auto=format&fit=crop&w=1052&q=80",
-  price: 5,
+  price: 0,
   address: "Omotesanto, Tokyo",
   capacity: 15,
   user_id: 2,
@@ -208,10 +255,10 @@ local_adventure_events = Event.create!([{
   date: "08.09.2018",
   intensity: 2,
   remote_photo_url: "https://images.unsplash.com/photo-1532528791647-87400fc51288?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5676f38161ec1c86f4882cdc4357b87c&auto=format&fit=crop&w=967&q=80",
-  price: 0,
+  price: 50,
   address: "Mazury, Polska",
   capacity: 15,
-  user_id: 1,
+  user_id: 4,
   sport_id: local_adventure.id
 },
 {
@@ -223,7 +270,7 @@ local_adventure_events = Event.create!([{
   price: 5,
   address: "Ueno, Tokyo",
   capacity: 200,
-  user_id: 1,
+  user_id: 6,
   sport_id: local_adventure.id
 },
 {
@@ -232,35 +279,33 @@ local_adventure_events = Event.create!([{
   date: "20.02.2019",
   intensity: 4,
   remote_photo_url: "https://www.wantedinrome.com/i/preview/storage/uploads/2015/02/skiing-86491418.jpg",
-  price: 5,
+  price: 25,
   address: "Fiji, Japan",
+  capacity: 6,
+  user_id: 2,
+  sport_id: local_adventure.id
+},
+{
+  title: "Biking through Tokyo",
+  description: "20km through the streets of Tokyo",
+  date: "13.03.2019",
+  intensity: 4,
+  remote_photo_url: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b104c850fee7b7c4035e1477b1c13704&auto=format&fit=crop&w=1050&q=80",
+  price: 0,
+  address: "Tokyo, Japan",
   capacity: 6,
   user_id: 2,
   sport_id: local_adventure.id
 }])
 
-fitness_events = Event.create!([
-{
-title: "Weekly calisthenics",
-description: "Weekly workout in Tokyo, suitable for beginners and advanced street workout freaks. We will work on strenght, mobility and balance. Extension bands provided!",
-date: "12.02.2019",
-intensity: 4,
-remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5PW52EmBoJUmQWDqrj9jLBVrk6cHzW67mZ2in1JUc06xAc1fr9w
-",
-price: 0,
-address: "Harajuku, Tokyo, Japan",
-capacity: 20,
-user_id: 3,
-sport_id: fitness.id
-},
-  {
+fitness_events = Event.create!([{
   title: "Crossfit WOD",
   description: "Weekly workout in Lisboa. All equipment provided on site!",
-  date: "12.09.2018",
+  date: "12.03.2019",
   intensity: 4,
   remote_photo_url: "https://customersuccessbox.com/blog/wp-content/uploads/2017/05/Customer-Success-by-building-Product-Stickiness.jpg",
-  price: 95,
-  address: "Garden Beau-Sejour Palace, Lisboa",
+  price: 0,
+  address: "Shinjuku, Tokyo",
   capacity: 30,
   user_id: 4,
   sport_id: fitness.id
@@ -272,6 +317,18 @@ sport_id: fitness.id
   intensity: 3,
   remote_photo_url: "https://drummondeducation.com/wp-content/uploads/2015/07/715-outdoor-fitness-copy-.jpg",
   price: 0,
+  address: "Shibadaimon 10, Tokyo",
+  capacity: 12,
+  user_id: 3,
+  sport_id: fitness.id
+},
+{
+  title: "HIIT Training",
+  description: "Let's get together for a high intensity interval training!! No equipment needed, we will work with our own bodyweight. Appropriate for begginers and advanced people!",
+  date: "27.03.2019",
+  intensity: 3,
+  remote_photo_url: "https://images.unsplash.com/photo-1434596922112-19c563067271?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e0f576d343645015367510d3829a582e&auto=format&fit=crop&w=1050&q=80",
+  price: 0,
   address: "Yoyogi, Tokyo",
   capacity: 12,
   user_id: 3,
@@ -282,11 +339,11 @@ racket_sport_events = Event.create!([{
 
   title: "Pingpong tournament",
   description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
-  date: "20.09.2018",
+  date: "20.02.2019",
   intensity: 2,
   remote_photo_url: "https://cdn.funcheap.com/wp-content/uploads/2013/01/old-school-tiger_grande.jpg",
   price: 0,
-  address: "Templehofer Feld, Berlin",
+  address: "Yoyogi Park, Tokyo",
   capacity: 100,
   user_id: 1,
   sport_id: racket_sport.id
@@ -306,11 +363,11 @@ racket_sport_events = Event.create!([{
 {
   title: "Tennis in the backyard",
   description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
-  date: "20.09.2018",
+  date: "20.02.2019",
   intensity: 2,
   remote_photo_url: "http://www.courtofsport.com/websites/courtofsport/photogallery/5573747/backyard-tennis-court-house.jpg",
   price: 0,
-  address: "Stenhouse, Edinburgh",
+  address: "Shinjuku Gyoen National Garden, Tokyo",
   capacity: 4,
   user_id: 2,
   sport_id: racket_sport.id
@@ -337,7 +394,7 @@ yoga_events = Event.create!([{
   intensity: 1,
   remote_photo_url: "https://images.unsplash.com/photo-1513221323698-800407ce0781?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a752a5417d689bb6e938b2f90c96f9be&auto=format&fit=crop&w=1050&q=80",
   price: 0,
-  address: ", Bamboo Forest, Kyoto",
+  address: "Ginza, Tokyo",
   capacity: 10,
   user_id: 3,
   sport_id: yoga.id
@@ -367,13 +424,13 @@ yoga_events = Event.create!([{
   sport_id: yoga.id
 },
 {
-  title: "Restorative Yoga",
-  description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
-  date: "13.09.2019",
+  title: "Recovery stretch",
+  description: "Relax and chill with us in the beautiful area of Sasazuka.",
+  date: "13.02.2019",
   intensity: 2,
   remote_photo_url: "https://img.gtvcdn.com/cdn/farfuture/aDE1dPYX_0JPWreUCsPoL7RUehzaAxvqJL7VfLAAXS4/mtime%3A0/sites/default/files/imagecache/keyart_820x461/article_main_image/what-is-restorative-yoga-647x300.png",
   price: 22,
-  address: "Pelican Heights, Cape town",
+  address: "Sasazuka, Tokyo",
   capacity: 8,
   user_id: 1,
   sport_id: yoga.id
@@ -404,7 +461,34 @@ Participation.create!([{
   event_id: 15,
   user_id: 5,
   status: "going"
-}]
+},
+{
+  event_id: calisthenics.id,
+  user_id: 6,
+  status: "going"
+},
+,
+{
+  event_id: calisthenics.id,
+  user_id: 7,
+  status: "going"
+},
+{
+  event_id: calisthenics.id,
+  user_id: 8,
+  status: "going"
+},
+{
+  event_id: calisthenics.id,
+  user_id: 9,
+  status: "going"
+},
+{
+  event_id: calisthenics.id,
+  user_id: 10,
+  status: "going"
+}
+]
 )
 
 UserSport.create!([{
