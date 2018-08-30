@@ -24,7 +24,7 @@ class EventsController < ApplicationController
     @reply = Reply.new
     authorize @reply
     @participation = Participation.new
-    @events = sport.events.limit(3)
+    @events = sport.events.limit(4)
     # authorize @participation
     @markers = [{
         lat: @event.latitude,

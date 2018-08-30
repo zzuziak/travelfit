@@ -1,6 +1,7 @@
 <div class="events-tab-content tab-content">
   <div class="tab-pane active" role="tabpanel">
     <% @events.each do |event| %>
+    <% if event != @event %>
     <div class="user-event">
 
       <div class="event-details">
@@ -20,7 +21,7 @@
        </div>
 
        <div class="event-description">
-         <p><%= simple.format(event.description[0, 200]) %></p>
+         <p><%= simple_format(event.description[0, 200]) %></p>
         </div>
     </div>
 
@@ -28,5 +29,6 @@
      <%= cl_image_tag event.photo, crop: :crop, class:"event-cover" %>
    </div>
  </div>
+ <% end %>
  <% end %>
 </div>

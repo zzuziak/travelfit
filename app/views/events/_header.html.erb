@@ -11,10 +11,8 @@
         <div class="join-event">
             <% p = current_user.participations.find {|p| p.event_id == event.id } %>
             <% if p %>
-                <%= form_for p, method: :delete, data: {confirm: "Are you sure"} do |f| %>
-                  <%= f.submit "ATTENDING", class: "btn-joined" %>
-                <% end %>
-              <% else %>
+              <div class="btn-joined text-center">ATTENDING</div>  
+            <% else %>
             <div class="text-center">
               <%= simple_form_for [event, participation], method: :post do |f| %>
                 <%= f.hidden_field :status, value: 1 %>
