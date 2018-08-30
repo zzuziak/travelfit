@@ -54,7 +54,7 @@ racket_sport = Sport.create!(category: "Racket sports", photo: "https://well.pk/
 
 spartan = Event.create!(title: "Spartan Race Tokyo",
   description: "Obstacle Course Race comes to Tokyo again! Pick between Sprint, Super and Beast - all do them all! ",
-  date: "15.03.2019",
+  date: "09.10.2018",
   intensity: 5,
   remote_photo_url: "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/37407117_1779824532101894_2518401911355342848_n.jpg?_nc_cat=0&oh=7fc78f0c9dcfa1e234b1cca9e02b933c&oe=5C38D942",
   price: 40,
@@ -103,7 +103,7 @@ running_events = Event.create!([{
 {
   title: "Meguro River Run",
   description: "The run is about four kilometres long and crosses through three Tokyo wards – Shinagawa, Setagaya and Meguro. The path along the river is beautiful, especially in the spring, when it is full of cherry blossoms.",
-  date: "26.02.2019",
+  date: "07.10.2018",
   intensity: 3,
   remote_photo_url: "https://i.pinimg.com/originals/0c/37/b2/0c37b20ea0cdba3f4d13b165320def5c.jpg",
   price: 0,
@@ -117,7 +117,7 @@ running_events = Event.create!([{
   description: "The races will be conducted in accordance with the rules and regulations of the IAAF, JAAF and the Race Organizer.
 IAAF Road Race Label Regulations also applies to the Tokyo Marathon 2019, which has been certified by the IAAF as a Gold Label road race. Doping control is conducted under IAAF Anti-Doping Regulations and/or Japan Anti-Doping Regulations.
 World Para Athletics Rules and Regulations and the competition rules of the Tokyo Marathon applies to the wheelchair marathon. Doping control is conducted under World Para Athletics Anti-Doping Regulations and/or Japan Anti-Doping Regulations.",
-  date: "16.02.2019",
+  date: "27.10.2018",
   intensity: 3,
   remote_photo_url: "https://images.unsplash.com/photo-1494091778978-0711d4e36991?ixlib=rb-0.3.5&s=c9aabe286d620c9b103f5ca9745347e3&auto=format&fit=crop&w=1050&q=80",
   price: 0,
@@ -131,7 +131,7 @@ teamsports_events = Event.create!([{
 
   title: "3vs3 Rooftop Basketball",
   description: "The rooftop court at Kasumigaseki Building is the best place to ball in Tokyo! Join us for a 3on3 - semipro level skills required.",
-  date: "01.06.2019",
+  date: "12.10.2018",
   intensity: 4,
   remote_photo_url: "https://c1.staticflickr.com/3/2387/2224459077_20f0603f8b_b.jpg",
   price: 15,
@@ -143,7 +143,7 @@ teamsports_events = Event.create!([{
 {
   title: "Beach Volleyball",
   description: "bla",
-  date: "23.02.2019",
+  date: "04.10.2018",
   intensity: 2,
   remote_photo_url: "https://pixfeeds.com/images/sports/volleyball/1280-458355885-beach-volleyball-in-thailand-university-games.jpg",
   price: 0,
@@ -153,9 +153,9 @@ teamsports_events = Event.create!([{
   sport_id: teamsports.id
 },
 {
-  title: "Spring Soccer Tournament",
+  title: "Soccer Tournament",
   description: "3rd Annual Spring Shootout Soccer Tournament - come celebrate Cedar Point's 2019 opening weekend in Sandusky, Ohio! Last year's tournament had more than 70 teams and we expect 2019 to be even bigger!",
-  date: "03.05.2018",
+  date: "21.10.2018",
   intensity: 2,
   remote_photo_url: "https://cdn.primedia.co.za/primedia-broadcasting/image/upload/c_fill,h_289,q_70,w_463/euyjbw0hvcvlkf1va0ty",
   price: 35,
@@ -193,7 +193,7 @@ local_adventure_events = Event.create!([{
 {
   title: "Karate - intro",
   description: "Beginner class for all who want to get acquianted with basics of Karate",
-  date: "10.02.2019",
+  date: "13.10.2018",
   intensity: 3,
   remote_photo_url: "https://images.unsplash.com/photo-1529630218527-7df22fc2d4ee?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b55429a19dbc270c01c89f369927ec63&auto=format&fit=crop&w=1052&q=80",
   price: 5,
@@ -217,7 +217,7 @@ local_adventure_events = Event.create!([{
 {
   title: "Swimming class",
   description: "We will work on the foundations of basic styles in swimming at one of the best Tokyo spots.",
-  date: "28.03.2019",
+  date: "02.10.2018",
   intensity: 2,
   remote_photo_url: "https://images.unsplash.com/photo-1504309092620-4d0ec726efa4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f38e067fcad97bc3b247b3db0859af1c&auto=format&fit=crop&w=1050&q=80",
   price: 5,
@@ -243,7 +243,7 @@ fitness_events = Event.create!([
 {
 title: "Weekly calisthenics",
 description: "Weekly workout in Tokyo, suitable for beginners and advanced street workout freaks. We will work on strenght, mobility and balance. Extension bands provided!",
-date: "12.02.2019",
+date: "15.10.2018",
 intensity: 4,
 remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5PW52EmBoJUmQWDqrj9jLBVrk6cHzW67mZ2in1JUc06xAc1fr9w
 ",
@@ -268,7 +268,7 @@ sport_id: fitness.id
 {
   title: "Functional training",
   description: "Let's get together for a functional workout! No equipment needed, we will work with our own bodyweight. Appropriate for begginers and advanced people!",
-  date: "21.03.2019",
+  date: "20.10.2018",
   intensity: 3,
   remote_photo_url: "https://drummondeducation.com/wp-content/uploads/2015/07/715-outdoor-fitness-copy-.jpg",
   price: 0,
@@ -318,7 +318,7 @@ racket_sport_events = Event.create!([{
 {
   title: "Squash Matchup",
   description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
-  date: "14.01.2019",
+  date: "01.10.2018",
   intensity: 3,
   remote_photo_url: "https://muskelpower.de/wp-content/uploads/squash.jpg",
   price: 22,
@@ -345,7 +345,7 @@ yoga_events = Event.create!([{
 {
   title: "Chakras Yoga",
   description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
-  date: "24.03.2019",
+  date: "07.10.2018",
   intensity: 1,
   remote_photo_url: "http://pranashanti.com/wp-content/uploads/2018/06/Yoga-Paark.jpg",
   price: 0,
