@@ -4,14 +4,14 @@
     <div class="show-event-info-container">
       <div class="show-event-info">
         <div class="show-event-creator">
-          <%= cl_image_tag event.user.photo, class: "avatar avatar-small" %>
+          <%= cl_image_tag event.user.photo, class: "avatar-small" %>
           <%= event.user.first_name %>
           <%= event.user.last_name %>
         </div>
         <div class="join-event">
             <% p = current_user.participations.find {|p| p.event_id == event.id } %>
             <% if p %>
-              <div class="btn-joined text-center">ATTENDING</div>  
+              <div class="btn-joined text-center">ATTENDING</div>
             <% else %>
             <div class="text-center">
               <%= simple_form_for [event, participation], method: :post do |f| %>
