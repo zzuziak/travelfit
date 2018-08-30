@@ -4,7 +4,7 @@
       <div class="col-xs-8 col-xs-offset-2">
         <div class="form-inline search-flex">
           <%= text_field_tag :address, params[:address], value: params[:address], placeholder: "Location", id:"event_address", class:"form-control search-stretch input-field-home" %>
-          <%= date_field_tag :date_from, params[:date_from], value: params[:date_from], placeholder: "When?", id:"date-from", id:"range_start", class: "form-control input-field search-stretch date-field-home datepicker" %>
+          <%= date_field_tag :date_from, params[:date_from], value: params[:date_from], placeholder: Date.today.to_time.strftime('%b %d, %Y'), id:"date-from", id:"range_start", class: "form-control input-field search-stretch date-field-home datepicker" %>
         </div>
       </div>
     </div>
