@@ -9,7 +9,7 @@ puts "Creating seed!"
 
 
 User.create!([{
-  email: "test1@example.com",
+  email: "zuza@zuber.com",
   password: "123456",
   first_name: "Zuza",
   last_name: "Zuber",
@@ -69,7 +69,7 @@ User.create!([{
   password: "123456",
   first_name: "Alice",
   last_name: "Bradford",
-  remote_photo_url: "http://studiaorontica.org/img/pics-for-profile-2.jpg"
+  remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCnCfJlrYu2j8nnTfmIuU5RkCbwunmAolVD9EV8cOj_OL6cStY"
 },
 {
   email: "test10@example.com",
@@ -487,6 +487,11 @@ Participation.create!([{
   event_id: calisthenics.id,
   user_id: 10,
   status: "going"
+},
+{
+  event_id: calisthenics.id,
+  user_id: 3,
+  status: "going"
 }
 ]
 )
@@ -521,7 +526,7 @@ Post.create!([{
   content: "New Rules have been posted to the official website, everybody make sure you've read through them!"
 },
 {
-  event_id: calisthenics.id,
+  event_id: spartan.id,
   user_id: 5,
   content: "Should we bring our own equipment? Also, isn't the weather going to be an issue with all that forecasted rain?"
 },
@@ -537,15 +542,11 @@ Post.create!([{
 }]
 )
 
-Reply.create!([{
-  post_id: 4,
-  user_id: 3,
-  content: "We don't provide additional equipment - rain sounds perfect for an authentic Spartan Race."
-},
+Reply.create!([
 {
-  post_id: 3,
+  post_id: 6,
   user_id: 2,
-  content: "Cool - thanks for sharing!"
+  content: "I feel you, same here!"
 },
 {
   post_id: 2,
