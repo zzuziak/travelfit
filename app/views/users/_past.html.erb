@@ -15,7 +15,7 @@
 
         <%# Participation.where(participation.event.date <= Date.today) %>
           <div class="user-event">
-            <div class="event-details">
+            <div class="event-details hidden-xs">
               <div class="event-summary">
                <h3><%= link_to participation.event.title, event_path(participation.event) %></h3>
                <p><i class="fas fa-calendar-alt"></i><%= participation.event.date %></p>
@@ -38,6 +38,36 @@
               </div>
             </div>
           </div>
+<!-- mobile -->
+          <div class="event-details-mobile hidden-sm hidden-md hidden-lg">
+            <div class="event-summary">
+             <h4><%= link_to participation.event.title, event_path(participation.event) %></h4>
+             <p><i class="fas fa-calendar-alt"></i><%= participation.event.date.to_time.strftime('%b %d, %Y') %></p>
+
+             <div class="show-event-intensity">
+               <% participation.event.intensity.times do %>
+               <%= image_tag("flame.svg", width: "20px", alt: "flame", class: "img-intensity") %>
+               <% end %>
+               <% (5 - participation.event.intensity).times do %>
+               <%= image_tag("flame_alt.svg", width: "20px", alt: "flame", class: "img-intensity") %>
+               <% end %>
+             </div>
+           </div>
+
+           <div class="event-description">
+             <div class="update-participation">
+               <div><h5><i class="fas fa-check"></i>Going</h5></div>
+               <div>
+                <p>
+                  <%= form_for participation, method: :delete, data: {confirm: "Are you sure"} do |f| %>
+                  <%= f.submit "LEAVE", class: "btn leave-button" %>
+                  <% end %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
           <div class="event-picture">
            <%= cl_image_tag participation.event.photo, crop: :crop, class:"event-cover" %>

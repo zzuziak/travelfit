@@ -1,7 +1,20 @@
 <div class="col-xs-12 col-md-12 nopadding show-event-discussion">
   <div>
     <div class="col-xs-12 col-md-10 col-md-offset-1">
-      <div class="show-discussion-container">
+      <div class="show-discussion-container hidden-xs">
+        <% if current_user.participations.find {|p| p.event_id == event.id } %>
+          <div class="post-form">
+            <%= render 'posts/form_post', post: post, event: event %>
+          </div>
+        <% end %>
+        <div id="posts">
+          <% event.posts.order(created_at: :desc).each do |post| %>
+            <%= render 'posts/show', post: post, event: event, reply: @reply %>
+          <% end %>
+        </div>
+      </div>
+<!-- mobile  -->
+      <div class="hidden-sm hidden-md hidden-lg">
         <% if current_user.participations.find {|p| p.event_id == event.id } %>
           <div class="post-form">
             <%= render 'posts/form_post', post: post, event: event %>
