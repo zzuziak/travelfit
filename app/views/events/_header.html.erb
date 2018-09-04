@@ -3,7 +3,7 @@
   <div class="col-xs-12 col-md-6 nopadding">
     <div class="show-event-info-container">
       <div class="show-event-info">
-        <div class="show-event-creator">
+        <div class="show-event-creator hidden-xs">
           <%= cl_image_tag event.user.photo, class: "avatar-small" %>
           <%= event.user.first_name %>
           <%= event.user.last_name %>
@@ -33,7 +33,8 @@
           </div>
         </div>
         <div class="show-event-title">
-          <h1><%= event.title %></h1>
+          <h1 class="hidden-xs"><%= event.title %></h1>
+          <h2 class="hidden-sm hidden-md hidden-lg"><%= event.title %></h2>
         </div>
       </div>
     </div>

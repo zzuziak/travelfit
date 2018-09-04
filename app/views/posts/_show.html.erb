@@ -24,7 +24,13 @@
       </div>
 
     </div>
-    <div class="show-post-content">
+    <div class="show-post-content hidden-xs">
+      <p><%= post.content %></p>
+      <div class="reply-link">
+        <button class="btn-link reply-link reply-btn" id="btn<%= post.id %>">Reply</button>
+      </div>
+    </div>
+    <div class="show-post-content-mobile hidden-sm hidden-md hidden-lg">
       <p><%= post.content %></p>
       <div class="reply-link">
         <button class="btn-link reply-link reply-btn" id="btn<%= post.id %>">Reply</button>

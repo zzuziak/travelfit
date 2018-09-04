@@ -4,10 +4,10 @@
     <% if event != @event %>
     <div class="user-event">
 
-      <div class="event-details">
+      <div class="event-details hidden-xs">
         <div class="event-summary">
          <h3><%= link_to event.title, event_path(event) %></h3>
-         <p><i class="fas fa-calendar-alt"></i><%= event.date %></p>
+         <p><i class="fas fa-calendar-alt"></i><%= event.date.to_time.strftime('%b %d, %Y') %></p>
 
          <div class="show-event-intensity">
            <% event.intensity.times do %>
@@ -22,8 +22,26 @@
 
        <div class="event-description">
          <p><%= simple_format(event.description[0, 200]) %></p>
-        </div>
+      </div>
     </div>
+    <!-- mobile -->
+    <div class="event-details-mobile hidden-sm hidden-md hidden-lg">
+      <div class="event-summary">
+       <h4 class="hidden-sm hidden-md hidden-lg"><%= link_to event.title, event_path(event) %></h4>
+       <p><i class="fas fa-calendar-alt"></i><%= event.date.to_time.strftime('%b %d, %Y') %></p>
+
+       <div class="show-event-intensity">
+         <% event.intensity.times do %>
+         <%= image_tag("flame.svg", width: "20px", alt: "flame", class: "img-intensity") %>
+         <% end %>
+         <% (5 - event.intensity).times do %>
+         <%= image_tag("flame_alt.svg", width: "20px", alt: "flame", class: "img-intensity") %>
+         <% end %>
+       </div>
+     </div>
+
+
+  </div>
 
     <div class="event-picture">
      <%= cl_image_tag event.photo, crop: :crop, class:"event-cover" %>
