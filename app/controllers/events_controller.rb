@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show]
+  before_action :set_event, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
@@ -51,6 +51,21 @@ class EventsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    authorize @event
+  end
+
+  def update
+    authorize @event
+    if @event.update!(event_params)
+      redirect_to event_path(@event)
+    else
+      render :edit
+    end    
+  end
+
+
 
 
   private
