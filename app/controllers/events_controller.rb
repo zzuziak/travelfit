@@ -43,9 +43,10 @@ class EventsController < ApplicationController
     @user = current_user
     @event = Event.new(event_params)
     @event.user = @user
+    @sports = policy_scope(Sport)
+    @event.sport = Sport.find(params[:event][:sport])
     authorize @event
-    if @event.valid?
-      @event.save
+    if @event.save!
       redirect_to event_path(@event)
     else
       render :new
@@ -62,7 +63,7 @@ class EventsController < ApplicationController
       redirect_to event_path(@event)
     else
       render :edit
-    end    
+    end
   end
 
 

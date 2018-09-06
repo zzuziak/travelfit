@@ -6,19 +6,19 @@
 
       <div class="form-post">
         <h1 class="centered-title">Create a new Event</h1>
-        <%= simple_form_for @event do |f| %>
-          <%= f.input :title, placeholder: "What's the title of your event?" %>
-          <%= f.input :description, placeholder: "What's your event about?"%>
+        <%= form_for @event, url: {action: "create"} do |f| %>
+          <%= f.text_field :title, placeholder: "What's the title of your event?", class: "form-control" %>
+          <%= f.text_field :description, placeholder: "What's your event about?",  class: "form-control"%>
           <div class="category-choices">
-          <%= f.association :sport, as: :check_boxes, label_method: lambda { |sport| "#{sport.category}"}%>
+          <%= f.collection_select(:sport, Sport.all, :id, :category) %>
           </div>
-          <%= f.input :address, placeholder: "Where will it take place?"%>
-          <%= f.input :intensity, collection: Event::INTENSITIES, prompt: "Which Intensity?" %>
-          <%= f.input :capacity, placeholder: "How many people can join your event?"%>
-          <%= f.input :price, placeholder: "Price" %>
-          <%= f.input :date, class: "datepicker"%>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.text_field :address, placeholder: "Where will it take place?",  class: "form-control"%>
+          <%= f.select :intensity, Event::INTENSITIES %>
+          <%= f.text_field :capacity, placeholder: "How many people can join your event?",  class: "form-control"%>
+          <%= f.text_field :price, placeholder: "Price",  class: "form-control" %>
+          <%= f.text_field :date, class: "datepicker", placeholder: "Select date",  class: "form-control" %>
+          <%= f.file_field :photo ,  class: "form-control"%>
+          <%= f.hidden_field :photo_cache %>
           <%= f.submit "Create!", class: "search-button" %>
         <% end %>
       </div>
