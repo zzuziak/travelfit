@@ -46,7 +46,7 @@ class EventsController < ApplicationController
     @sports = policy_scope(Sport)
     @event.sport = Sport.find(params[:event][:sport])
     authorize @event
-    if @event.save!
+    if @event.save
       redirect_to event_path(@event)
     else
       render :new
