@@ -12,3 +12,25 @@
     color: $orange;
   }
 }
+
+.file-upload-btn {
+  width: 100%;
+  background-color: $green;
+  color: white;
+}
+
+.upload-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 0 !important;
+}
+
+.input-name {
+  background-color: transparent;
+  border: none;
+  color: white;
+  box-shadow: none;
+  margin: auto;
+}

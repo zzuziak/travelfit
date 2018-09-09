@@ -19,6 +19,9 @@ class Event < ApplicationRecord
   validates :date, presence: true
   validates :address, presence: true
   validates :description, presence: true
+  validates :photo, presence: true
+  validates :price, numericality: true
+  validates :capacity, numericality: true
 
 
   include PgSearch

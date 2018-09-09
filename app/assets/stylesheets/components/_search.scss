@@ -2,8 +2,18 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 80px 0 0 0;
+  margin: 100px 20px 0 20px;
+  flex-wrap: wrap;
 }
+
+.search-flex-home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 100px 20px 0 20px;  
+}
+
+
 
 .search-stretch {
   flex: 1 0 auto;
@@ -22,10 +32,11 @@
   border: 1px solid rgba(0, 0, 0, 0.3);
   height: 50px;
   color: rgb(20, 20, 20);
-  margin-right: 10px;
+  margin: 10px 10px;
   font-size: 16px;
   letter-spacing: 1px;
   overflow: hidden;
+  max-width: 90vw;
 }
 
 .input-field::placeholder {
@@ -34,6 +45,10 @@
 
 .date-field {
   flex: 0 0 30%;
+}
+
+#submit {
+  margin: auto;
 }
 .input-field-home {
   background-color: #eee;

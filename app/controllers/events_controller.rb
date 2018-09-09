@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show]
+  before_action :set_event, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
@@ -43,14 +43,30 @@ class EventsController < ApplicationController
     @user = current_user
     @event = Event.new(event_params)
     @event.user = @user
+    @sports = policy_scope(Sport)
+    @event.sport = Sport.find(params[:event][:sport])
     authorize @event
-    if @event.valid?
-      @event.save
+    if @event.save
       redirect_to event_path(@event)
     else
       render :new
     end
   end
+
+  def edit
+    authorize @event
+  end
+
+  def update
+    authorize @event
+    if @event.update!(event_params)
+      redirect_to event_path(@event)
+    else
+      render :edit
+    end
+  end
+
+
 
 
   private
@@ -77,7 +93,7 @@ class EventsController < ApplicationController
       dd = params[:date_from].split(" ")[2].split("-").map {|x| x.to_i}
       @events = @events.select{ |event| event.date <= Date.new(dd[0], dd[1], dd[2]) }
     end
-    if params[:free].present?
+    if params[:free] == "on"
       @events = @events.select{ |event| event.price == 0 }
     end
   end

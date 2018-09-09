@@ -13,12 +13,11 @@
 
 /* positioning */
 
-.switch-field {
+.switch-column {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
-  width: 20%;
-  margin-left: 30px;
+  margin-top: 7px;
 }
 
 .switch-label {

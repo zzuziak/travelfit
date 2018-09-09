@@ -6,20 +6,59 @@
 
       <div class="form-post">
         <h1 class="centered-title">Create a new Event</h1>
-        <%= simple_form_for @event do |f| %>
-          <%= f.input :title, placeholder: "What's the title of your event?" %>
-          <%= f.input :description, placeholder: "What's your event about?"%>
-          <div class="category-choices">
-          <%= f.association :sport, as: :check_boxes, label_method: lambda { |sport| "#{sport.category}"}%>
-          </div>
-          <%= f.input :address, placeholder: "Where will it take place?"%>
-          <%= f.input :intensity, collection: Event::INTENSITIES, prompt: "Which Intensity?" %>
-          <%= f.input :capacity, placeholder: "How many people can join your event?"%>
-          <%= f.input :price, placeholder: "Price" %>
-          <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= simple_form_for @event, url: {action: "create"} do |f| %>
+          <%= f.input :title, placeholder: "What's the title of your event?", class: "form-control" %>
+          <%= f.input :description, placeholder: "What's your event about?",  class: "form-control"%>
+          <%= f.input :sport,collection: Sport.all, label_method: :category, value_method: :id,label: "Sport category" ,:include_blank => false, style: "width: 100%;" %>
+          <%= f.input :address, placeholder: "Where will it take place?",  class: "form-control"%>
+          <%= f.input :intensity, collection: Event::INTENSITIES, label: "How intensive will be the workout?" %>
+          <%= f.input :capacity, as: :string, label: "How many people can join your event?",  class: "form-control"%>
+          <%= f.input :price, as: :string, placeholder: "Price" %>
+          <%= f.input :date, as: :string, required: false, placeholder: "Select date", input_html: {class: "datepicker"}  %>
           <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
-          <%= f.submit "Preview your Event!", class: "search-button" %>
+<div class="form-group file required event_photo form-group-invalid">
+  <label class="form-control-label file required" for="event_photo">
+    Photo <abbr title="required">*</abbr>
+  </label>
+  <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+    <div class="form-control uneditable-input" data-trigger="fileinput">
+      <i class="fa fa-file fileinput-exists"></i>
+      <span class="fileinput-filename"></span>
+    </div>
+    <div class="input-group-btn">
+      <div class="btn btn-default btn-file">
+        <span class="fileinput-new">Select file</span>
+        <span class="fileinput-exists">Change file</span>
+        <input class="file required file-upload" aria-invalid="true" type="file" name="event[photo]" id="event_photo"></div>
+        <button class="btn btn-default fileinput-exists" type="button" data-dismiss="fileinput">
+          <i class="fa fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+
+
+          <label class="btn file-upload-btn">
+            <div class="form-group file required event_photo upload-field">
+              <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                Add a photo
+                <div class="form-control uneditable-input input-name" data-trigger="fileinput">
+                  <i class="fa fa-file fileinput-exists"></i>
+                  <span class="fileinput-filename"></span>
+                </div>
+                <div class="input-group-btn"  style="display: none;">
+                    <input class="file required file-upload" type="file" name="event[photo]" id="event_photo"></div>
+
+                    </div>
+                    <button class="btn btn-default fileinput-exists" type="button" data-dismiss="fileinput"><i class="fa fa-times"></i></button>
+                  </div>
+                <span style="display:none;">
+              <%= f.input :photo_cache, as: :hidden %>
+            </span>
+          </label>
+          <br>
+          <br>
+          <%= f.submit "CREATE!", class: "btn create-button-event" %>
         <% end %>
       </div>
     </div>

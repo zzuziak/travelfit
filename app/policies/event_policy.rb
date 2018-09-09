@@ -11,6 +11,14 @@ class EventPolicy < ApplicationPolicy
     return true
   end
 
+  def edit?
+    return update?
+  end
+
+  def update?
+    current_user == record.user
+  end
+
   class Scope < Scope
     def resolve
       scope.all

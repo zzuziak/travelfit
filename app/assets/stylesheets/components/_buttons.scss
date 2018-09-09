@@ -186,6 +186,18 @@
   color: #EFEFEF;
 }
 
+.create-button-event {
+  background-color: $orange;
+  font-family: 'Lemon Milk Bold', sans-serif;
+  height: 50px;
+  color: white;
+  width: 100%;
+  &:hover {
+    background-color: #EA9800;
+    color: #EFEFEF;
+  }
+}
+
 
 .btn-map {
   background-color: $orange;
