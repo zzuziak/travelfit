@@ -93,7 +93,7 @@ class EventsController < ApplicationController
       dd = params[:date_from].split(" ")[2].split("-").map {|x| x.to_i}
       @events = @events.select{ |event| event.date <= Date.new(dd[0], dd[1], dd[2]) }
     end
-    if params[:free].present?
+    if params[:free] == "on"
       @events = @events.select{ |event| event.price == 0 }
     end
   end

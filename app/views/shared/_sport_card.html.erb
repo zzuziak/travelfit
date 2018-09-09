@@ -1,4 +1,4 @@
-<div class="card-sport" style="background-color: rgb(38, 38, 38);">
+<div class="card-sport hidden-xs hidden-sm" style="background-color: rgb(38, 38, 38);">
   <div class="<% if sport.category == "Fitness" %>
                 overlay-green
               <% elsif sport.category == "Running" %>
@@ -13,4 +13,21 @@
                 overlay-blue
               <% end %>"></div>
   <h1><%= sport.category %></h1>
+</div>
+
+<div class="card-sport-mobile hidden-md hidden-lg" style="background-color: rgb(38, 38, 38);">
+  <div class="<% if sport.category == "Fitness" %>
+                overlay-green
+              <% elsif sport.category == "Running" %>
+                overlay-red
+              <% elsif sport.category == "Racket sports" %>
+                overlay-grey
+              <% elsif sport.category == "Teamsports" %>
+                overlay-yellow
+              <% elsif sport.category == "Yoga" %>
+                overlay-mint
+              <% elsif sport.category == "Local adventure" %>
+                overlay-blue
+              <% end %>"></div>
+  <h3 class="rotated-text"><%= sport.category %></h1>
 </div>
