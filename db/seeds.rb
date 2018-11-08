@@ -405,18 +405,6 @@ yoga_events = Event.create!([{
   capacity: 17,
   user_id: 1,
   sport_id: yoga.id
-},
-{
-  title: "Recovery stretch",
-  description: "Relax and chill with us in the beautiful area of Sasazuka.",
-  date: "01.10.2019",
-  intensity: 2,
-  remote_photo_url: "https://img.gtvcdn.com/cdn/farfuture/aDE1dPYX_0JPWreUCsPoL7RUehzaAxvqJL7VfLAAXS4/mtime%3A0/sites/default/files/imagecache/keyart_820x461/article_main_image/what-is-restorative-yoga-647x300.png",
-  price: 22,
-  address: "Sasazuka, Tokyo",
-  capacity: 8,
-  user_id: 1,
-  sport_id: yoga.id
 }])
 
 
