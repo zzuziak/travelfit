@@ -1,11 +1,11 @@
 console.log("HELP2")
 function refreshForm(content) {
-  const newPostForm = document.getElementById('new-post');
+  var newPostForm = document.getElementById('new-post');
   newPostForm.innerHTML = content;
 }
 
 function addPost(postHTML) {
-  const posts = document.getElementById('posts');
+  var posts = document.getElementById('posts');
   posts.insertAdjacentHTML('beforebegin', postHTML);
 }
 
