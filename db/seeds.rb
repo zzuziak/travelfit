@@ -455,7 +455,7 @@ Participation.create!([{
 },
 {
   event_id: calisthenics.id,
-  user_id: 10,
+  user_id: 7,
   status: "going"
 },
 {
