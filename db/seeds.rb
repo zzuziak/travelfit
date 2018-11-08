@@ -58,13 +58,6 @@ User.create!([{
   remote_photo_url: "https://img.freepik.com/free-photo/happy-young-man-smiley-profile-face_6602-285.jpg?size=338&ext=jpg"
 },
 {
-  email: "test8@example.com",
-  password: "123456",
-  first_name: "Edith",
-  last_name: "Smith",
-  remote_photo_url: "https://d2ai51kpatikht.cloudfront.net/wp-content/uploads/2014/01/Belotero.jpg"
-},
-{
   email: "test9@example.com",
   password: "123456",
   first_name: "Alice",
