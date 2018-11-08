@@ -393,18 +393,7 @@ yoga_events = Event.create!([{
   user_id: 3,
   sport_id: yoga.id
 },
-{
-  title: "Chakras Yoga",
-  description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
-  date: "07.10.2019",
-  intensity: 1,
-  remote_photo_url: "http://pranashanti.com/wp-content/uploads/2019/06/Yoga-Paark.jpg",
-  price: 0,
-  address: "Yoyogi-Park, Tokyo",
-  capacity: 17,
-  user_id: 1,
-  sport_id: yoga.id
-},
+
 {
   title: "Kundalini yoga",
   description: "Show us your Ping-Pong skills with our double elimination tournament! Tournament open to everyone, and winner will receive a 50€ gift card from Le Wagon",
