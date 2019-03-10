@@ -30,7 +30,7 @@ class EventsController < ApplicationController
         lat: @event.latitude,
         lng: @event.longitude,
         infoWindow: { content: render_to_string(partial: "/shared/map_box", locals: { event: @event }) },
-        icon: 'https://res.cloudinary.com/deduga1kr/image/upload/v1535620816/marker.png'
+        icon: 'https://res.cloudinary.com/deduga1kr/image/upload/v1550070613/markers.png'
       }]
   end
 
