@@ -1,4 +1,5 @@
 import "../plugins/flatpickr";
+import 'mapbox-gl/dist/mapbox-gl.css';
 import $ from 'jquery';
 global.$ = jQuery;
 global.jQuery = jQuery;
@@ -6,7 +7,11 @@ import "bootstrap";
 
 import "../plugins/flatpickr";
 
+
+import { initMapbox } from './map.js';
 import { tabs } from  "../components/tab";
+initMapbox();
+
 tabs();
 
 let arrow = document.getElementById("arrow-1");
