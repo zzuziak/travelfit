@@ -19,7 +19,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'cloudinary'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 2.1'
 gem "pundit"
 gem "faker"
 gem 'pg_search'
